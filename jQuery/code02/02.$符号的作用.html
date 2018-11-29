@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script src="jquery-1.12.4.js"></script>
+
+    <script>
+        // $();
+        // 来源：jq提供的
+        // console.log($);
+
+        // 1. 参数： 函数
+        //      作用： 入口函数
+        $(function(){
+
+        })
+
+        // 2. 参数 dom对象
+        //  作用： dom转成jq对象
+        $(document).ready()
+
+        // 3. 参数： 选择器
+        //  作用： 获取元素
+        $("div")
+
+        // jQuery: 区分不小写
+        console.log(jQuery === $);
+
+        jQuery(function(){
+            console.log("这是jQuery的入口函数");
+        })
+    </script>
+</body>
+</html>

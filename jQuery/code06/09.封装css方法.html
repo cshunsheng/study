@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>达达</div>
+    <div>达达</div>
+    <div>达达</div>
+    <div>达达</div>
+    <div>达达</div>
+
+
+    <p>达达在看着我们</p>
+    <p>达达在看着我们</p>
+    <p>达达在看着我们</p>
+    <p>达达在看着我们</p>
+
+
+    <script>
+    (function(window) {
+        // 需求：省去new操作，还能的到jq的实例对象
+        var jQuery = function(selector) {
+
+            // jQuery不是构造函数了，而是工厂函数，内部new + 构造函数，并且return
+            // 在jq里面，init才是真正的构造函数
+
+            // return new 构造函数()；
+            return new jQuery.fn.init(selector);
+        }
+
+        jQuery.fn = jQuery.prototype = {
+            constructor: jQuery, // 指定构造函数jQuery
+            init: function(selector){
+                // 才是真正的构造函数
+                // 获取元素
+                var ele = document.querySelectorAll(selector);
+                [].push.apply(this, ele);
+
+                // $();
+                // 
+                // 
+            },
+            extend: function(obj){
+                // 让原型调用extend方法，来给jq原型添加方法
+                for(var k in obj){
+                    if(obj.hasOwnProperty(k)){
+                        this[k] = obj[k];
+                    }
+                }
+            }
+        }
+
+
+        // 给jq原型添加样式操作
+        jQuery.fn.extend({
+            css: function(){
+                // css(name, value) ==> 设置单个样式
+                // css(name)        ==> 获取第一个元素的样式
+                // css(obj)         ==> 设置多个样式
+
+                if(arguments.length === 2){
+                    var name = arguments[0]; // 需要设置的样式
+                    var value = arguments[1]; // 需要设置的样式值
+
+                    // 参数为两个，给获取到的所有元素设置单个样式
+                    // this ==> 就是获取到的所有元素
+                    for(var i = 0; i < this.length; i++){
+                        // name 是个变量，需要通过[name]来添加
+                        this[i].style[name] = value;
+                    }
+                }else if(arguments.length === 1){
+                    // 参数为1个的时候，判断参数类型
+                    //  1.1 如果是对象，设置多个
+                    //  1.2 如果是字符串，获取第一个元素的样式值
+
+                    var name = arguments[0]; // {color,  fontSize}
+                    if(typeof name === "object"){
+                        // 给获取到的所有元素设置上对象里的样式和样式值
+                        for(var i = 0; i < this.length; i++){
+                            // 遍历每一个元素
+                            for(var k in name){
+                                // 遍历对象
+                                // this[i]  // 就是每个元素
+                                this[i].style[k] = name[k];
+                            }
+                        }
+                    }else if(typeof name === "string"){
+                        // 获取第一个元素
+                        // style: 只能设置和获取行内样式
+                        // return this[0].style[name];
+                        return window.getComputedStyle(this[0], null)[name];
+                    }
+                }
+
+                // 目的： 为了能够实现链式编程
+                return this;
+            },
+            hasClass: function(){
+
+            },
+            addClass: function(){
+                console.log("我添加了类名");
+            },
+            removeClass: function(){
+
+            },
+        });
+
+
+        // jQuery.fn: jq的原型
+        // 让init构造函数的原型指向了jq的原型，让init的实例对象可以访问到jq原型上的方法了。
+        jQuery.fn.init.prototype = jQuery.fn;
+
+        window.jQuery = window.$ = jQuery;
+    })(window)
+
+    // 如何用jQuery实例化对象
+    var divs = $("div");
+    console.log(divs);
+
+    divs.css({
+        color: "lime",
+        fontSize: "30px"
+    }).css("marginTop", "30px");
+
+    console.log(divs.css("color"));
+    </script>
+</body>
+
+</html>

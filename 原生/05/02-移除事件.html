@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="box">box</div>
+<button>点击按钮,移除box的点击事件</button>
+<script>
+//  注册事件:
+//   元素.on+事件名 = 事件处理函数;
+//    元素.addEventListener('事件名', 事件处理函数, false);
+//  移除事件:
+//    元素.on+ 事件名 = null;
+//    removeEventListener('事件名', 事件处理函数, false);
+
+var box = document.getElementById('box');
+
+box.addEventListener('click', fn, false );
+function fn(){
+  console.log(1);
+  box.removeEventListener('click', fn, false);
+}
+
+
+
+//var btn = document.querySelector('button');
+//box.addEventListener('click', fn, false);
+//function fn(){
+//  console.log(1);
+//}
+//box.addEventListener('click', function(){
+//  console.log(2);
+//}, false);
+//
+//btn.onclick = function(){
+//  //移除box的点击事件
+////  移除时,在removeEventListener中要传入一个函数,但是移除又不需要执行代码,为什么要传入函数呢?
+////  因为addEventListener可以给同一个元素,同时注册多个同一事件,那么在移除的时候,要明确的申明要移除对应的哪个事件处理函数
+////
+////  注意: 如果后面要移除事件,那么在注册的时候在事件处理函数的位置,就不要使用匿名函数
+//  box.removeEventListener('click', fn, false);
+//}
+
+
+
+
+
+
+
+
+
+//  var box = document.getElementById('box');
+//  box.onclick = function(){
+//    console.log('执行了');
+//  }
+  
+  
+  //需求: box点击时,只能打印一次
+//  var box = document.getElementById('box');
+//  box.onclick = function(){
+//    console.log('执行了');
+//    //移除事件
+//    box.onclick = null;
+//  }
+  
+    //点击按钮,移除box的点击事件
+////    1. 获取元素
+//      var box = document.getElementById('box');
+//      var btn = document.querySelector('button');
+////    2. 给box注册一个点击事件
+//      box.onclick = function(){
+//        console.log(1);
+//      }
+//
+////      3.给按钮注册点击事件
+//      btn.onclick = function(){
+//        //4.移除box的点击事件
+//        box.onclick = null;
+//      }
+//
+</script>
+</body>
+</html>

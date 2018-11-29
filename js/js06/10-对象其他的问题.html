@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  遍历对象  for..in循环 专门有来遍历对象的
+//  for(var 变量名 in 对象){
+//    //具体的代码
+//  }
+  
+  var obj = {
+    name : 'zs',
+    age : 18,
+    gender:'man'
+  }
+  
+//  for(var key in obj){
+//    //obj里面有几个属性,花括号里面的代码就会执行几次
+////    第一次key里面存的是'name'
+////    第二次key里面存的是'age'
+////    console.log(key);
+////    console.log(obj.key);
+//    console.log(obj[key]); //obj['name'] obj['age'] obj['gender']
+//  }
+  
+  
+//  删除对象的属性:  delete 对象.属性名
+  
+//   delete obj.name;
+//    console.log(obj);
+  
+  
+//  js中有6中数据类型:
+//  基本数据类型/简单数据类型/ 值类型
+//  数字
+//  字符串
+//  布尔
+//  null
+//  undefined
+//  复杂数据类型/引用数据类型
+//  对象 : 数组, 函数, new Object()
+//
+//  在内存中:
+//  栈: 栈存储的是基本数据类型以及变量
+//  堆: 对象(应用数据类型)
+  
+  
+//  this 在函数中存在,this就相当于是一个变量,this的指向根据函数的调用儿不同的
+//    this需要明确一点:函数中的this,只有在调用的时候,才知道this只向谁
+//    function fn(){
+//      console.log(this);
+//    }
+//
+////    fn(); //普通函数调用  this --> window
+//
+//    var obj = {
+//      a : 1
+//    };
+//    obj.f = fn;
+//    obj.f();  //对象调用模式 this --> 对象
+  
+//    new 函数()  new 让this指向新的对象
+  
+  
+//    为什么是数组,函数,{} 是对象
+//    数组 底层都是 - > new Array();
+//    函数 底层都是 - > new Function();
+//    obj 底层都是 - > new Object();
+    
+</script>
+</body>
+</html>

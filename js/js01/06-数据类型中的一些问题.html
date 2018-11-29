@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  typeof 判断变量中存储的数据是什么类型的
+//  var a = 1; // number 数字 而这个number是字符串
+//  var a = '1'; // string 字符串 这个string也是字符串
+//  var a = true; //boolean 布尔 这个boolean 也是字符串
+//  var a = undefined; //undefiend  这个undefined也是一个字符串
+    var a = null;
+    
+//  alert(a);
+//  alert(typeof a); //会展示变量中数据的类型
+  // 由于所有的数据都会加载到内存中,而这些数据在内存中都有地址,像对象的话,地址一般都是0x00..
+//  那么null在一开始设计的时候,是一个对象占位符(如果一个变量后面要赋值为对象的话,那么在申明的时候,希望直接赋值为null,但是实际开发中没有人这么写),所以null在内存中的地址也是0x00..
+//      typeof 判断数据的类型,恰恰是根据地址的前几位判断的,所以误以为null是对象
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .box {
+            width: 600px;
+            height: 500px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .hd {
+            height: 45px;
+        }
+
+        .hd span {
+            display: inline-block;
+            width: 140px;
+            background-color: pink;
+            line-height: 45px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .hd span.current {
+            background-color: yellow;
+        }
+
+        .bd div {
+            height: 255px;
+            background-color: yellow;
+            display: none;
+        }
+
+        .bd div.select {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="hd" id="hd">
+            <span class="current">体育</span>
+            <span>娱乐</span>
+            <span>新闻</span>
+            <span>综合</span>
+        </div>
+        <div class="bd" id="bd">
+            <div class="select">
+                <!--  -->
+                <img src="imgs/01.jpg" alt="" width="600" height="500">
+            </div>
+            <div>
+                <img src="imgs/findwork.jpg" alt="" width="600" height="500">
+            </div>
+            <div>
+                <img src="imgs/02.png" alt="" width="600" height="500">
+            </div>
+            <div>
+                <img src="imgs/s.jpg" alt="" width="600" height="500">
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //需求:  1. 鼠标移入,对应span高亮  2. span高亮,对应的内容展示
+        
+//        1. 获取元素 span
+            var spans = document.getElementsByTagName('span');
+            var bd = document.getElementById('bd');
+            var divs = bd.getElementsByTagName('div');
+//        2. 注册鼠标移入事件 mouseover
+            for(var i = 0; i < spans.length; i++) {
+              spans[i].onmouseover = spanover;
+                //通过操作标签自定义属性的方式,把span的下标存储起来
+                spans[i].setAttribute('index', i);
+            }
+            //鼠标移入到span的时候调用的函数
+            function spanover(){
+                // 3. 在事件处理函数当中,给对应的span高亮
+                for(var i = 0; i < spans.length; i++) {
+                  spans[i].className = '';
+                }
+                this.className = 'current';
+                
+                
+                //3. 找到对应的div
+//                通过this.可以找到对应移入到了那个span里面,由于span和对应的div的下标是一致的,所有需要获取到当前span的下标,然后根据这个下标去div的伪数组中找对应的div
+                var index = this.getAttribute('index'); //当前span在伪数组中的下标
+                console.log(divs[index]);
+                //4. 让对应的div展示出来 (添加select类名)
+                //排他
+                for(var i = 0; i < divs.length; i++) {
+                  divs[i].className = '';
+                }
+                divs[index].className = 'select';
+    
+            }
+
+
+      
+    
+    
+    </script>
+
+</body>
+
+</html>

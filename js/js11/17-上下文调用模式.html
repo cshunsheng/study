@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      
+      // 上下文调用方式  (方法借用) call 和  apply
+      
+      // 函数
+      // 其实每个函数 都可以调用call (调用); 函数名()一样 方法调用
+      function test(num1,num2) {
+        console.log('哈');
+        console.log(this);
+        console.log(num1,num2);
+      }
+
+      // test();
+      var obj = {}
+      // test.call();
+      // test.call(obj,10,20);
+      test.call(null,10,20);
+
+
+      // 1. 没有参数的 同上 简单的一个调用
+      //   test.call() == test();
+
+      // 2. 有参数的 
+      // 结构 : 函数.call(参数1,参数2,参数3....)
+      // 参数1 : this的指向 (函数里的this 指向了这个参数1) 
+      //         参数1 :null => window 
+      // 参数2,3, :  相当于正常的实参了
+
+
+
+    </script>
+</body>
+</html>

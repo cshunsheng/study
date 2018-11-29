@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <img src="07.jpg" alt="面向对象编程" title="面向对象编程">
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // js操纵属性  
+            // setAttribute() getAttribute()  removeAttribute()
+
+            // attr(): 对setAttribute() getAttribute()的封装
+            // 设置(修改)和获取元素的属性
+            // attr(name, value)
+            //  name: 需要修改的属性， 是个字符串
+            //  value： 修改对应的属性值
+            // $("img").attr("title", "面向对象编程真的很好");
+            // $("img").attr("alt", "达达在家就这么编程");
+
+
+            // attr(obj): 需要修改元素的多个属性
+            $("img").attr({
+                width: 500,
+                title: "巧了，小马哥在家也这么编程",
+                alt: "大家呢，你们有没有这么编程，希望这样么"
+            })
+
+
+            // attr(name)： 获取元素的属性
+            console.log($("img").attr("alt"));
+
+
+            // removeAttr(name): 移除元素的属性
+            $("img").removeAttr("alt");
+
+
+            // 小结：
+            // 1. attr(name, value)  ==> 给元素设置单个属性
+            // 2. attr(obj)          ==> 给元素设置多个属性
+            // 3. attr(name)         ==> 获取元素的属性
+            // 4. removeAttr(name)   ==> 移除指定的属性
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>达达</div>
+    <div>达达</div>
+    <div>达达</div>
+    <div>达达</div>
+    <div>达达</div>
+
+
+    <script>
+    (function(window) {
+        // 需求：给所有的jq实例对象都能使用到jq提供的方法 -- 原型
+        var jQuery = function(selector) {
+            var ele = document.querySelectorAll(selector);
+            [].push.apply(this, ele);
+        }
+
+        // 原型: jQuery.prototype  jQuery.fn
+        // 原型替换存在的问题： 丢失了constructor属性
+        // jQuery.fn 简写了 jQuery.prototype
+        jQuery.fn = jQuery.prototype = {
+            constructor: jQuery, // 指定构造函数jQuery
+            css: function(){
+
+            },
+            hasClass: function(){
+
+            },
+            addClass: function(){
+                console.log("我添加了类名");
+            },
+            removeClass: function(){
+
+            }
+        }
+
+        window.jQuery = window.$ = jQuery;
+    })(window)
+
+    // 如何用jQuery实例化对象
+    var divs = new $("div");
+    divs.addClass();
+
+
+    </script>
+</body>
+
+</html>

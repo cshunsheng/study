@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+    <script>
+      //  伪数组 :  
+      // 1. 伪数组是一个对象 不是一个真正的数组 
+      // 2. 只不过有下标 和 length => 可以遍历
+      var obj = {
+        0:'zs',
+        1:'ls',
+        2:'ww',
+        length : 3
+      }
+      // obj.push(4);
+      // 函数.call(对象,实参1)
+      Array.prototype.push.call(obj,4); // obj.push(4)
+      dd.liaomei.call(mg) ; // mg.liaomei()
+      console.log(obj);
+      // var arr = [];
+      // arr.push(4);
+
+    </script>
+</body>
+</html>

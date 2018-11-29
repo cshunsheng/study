@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            background-color: #f99;
+            margin: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">展示</button>
+    <button id="btn2">设置内容</button>
+    <button id="btn3">颜色</button>
+
+    <div>01</div>
+    <div>02</div>
+    <div>03</div>
+
+
+    <script>
+        // 觉得不好的地方：
+        // 1. 获取元素方法名字太长，书写和记忆不利于
+        // 2. 使用on系列注册的事件，会存在覆盖，
+        // 3. 代码冗余（for）
+        // 4. 给元素添加动画效果，需要手动封装代码
+
+
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var btn3 = document.getElementById("btn3");
+        var divs = document.querySelectorAll("div");
+
+        btn1.onclick = function(){
+            for(var i = 0; i< divs.length; i++){
+                divs[i].style.display = "block";
+            }
+        }
+
+        // btn1.onclick = function(){
+        //     console.log("111");
+        // }
+
+        btn2.onclick = function(){
+            for(var i = 0; i< divs.length; i++){
+                divs[i].innerText = "我是内容";
+            }
+        }
+
+        btn3.onclick = function(){
+            for(var i = 0; i< divs.length; i++){
+                divs[i].style.color = "#fff";
+            }
+        }
+
+
+    </script>
+</body>
+</html>

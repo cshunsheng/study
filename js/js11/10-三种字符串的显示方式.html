@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // 三种方式
+      // 方式1 :  引号
+      var str1 = 'var num1 = 20; var num2 = 20; console.log(num1+num2)';
+      eval(str1); 
+
+      // 方式2 :  引号 +   fn+右键
+      var str2 =  'var num1 = 10;'+
+                 'var  num2 = 20;'+
+                  'console.log(num1+ num2); ';
+      eval(str2);
+
+      //  方式3 :  反引号
+      var str3 = ` var num1 = 10;
+                  var  num2 = 10;
+                   console.log(num1+ num2); `;
+      eval(str3);
+    
+      // 拓展  ${变量名}   读取变量数据
+      var name = '马哥';
+
+      var str6 = `name 航头第一帅`;
+      console.log(str6);
+
+      var str7 = `${name} 航头第一帅`;
+      console.log(str7);
+      
+
+
+
+      // var num = 200;
+      // var str4 = `console.log(num)`;
+      // // 可以使用 $ 来读取数据
+      // var str5 = `console.log(${num})`;
+      // // eval(str4)
+      // console.log(str4);
+      // console.log(str5);
+      
+      
+   
+
+
+    </script>
+</body>
+</html>

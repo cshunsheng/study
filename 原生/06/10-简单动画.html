@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width:100px;
+            height:100px;
+            background-color:red;
+            position:absolute;
+        }
+    
+    </style>
+</head>
+<body>
+    <button id="btn">点击盒子移动到400</button>
+    <div id="box"></div>
+</body>
+</html>
+<script>
+    
+   //需求: 点击按钮,让盒子缓慢移动 从0 ~ 400位置
+//    1. 获取元素 btn box
+        var btn = document.getElementById('btn');
+        var box = document.getElementById('box');
+        var timeid; //用于存储定时器的id;
+//    2. 给btn注册点击事件
+        btn.onclick = function(){
+//             var timeid;
+//            5. 每一次点击的时候,先判断有没有定时器,如果有,就将原来的清楚掉
+            if(timeid){
+                clearInterval(timeid);
+            }
+            //    3. 在事件处理函数中,让box缓慢移动
+            //3.2 让box自己移动起来
+           timeid = setInterval(function(){
+                //3.1 box移动起来
+                //设置box的left和top可以让box位置发生变化
+//            想要移动起来,先知道自己原来的位置在哪里,然后在原来位置的基础上加几个像素
+                var current = box.offsetLeft;//返回当前元素,距离定位父元素的左偏移量
+                console.log(current);
+                //4. 判断box当前的位置是否已经到达目标的位置,如果到达就清除定时器
+//                if(current == 400){
+//                    //清除定时器,定时器下一次不会在执行了,但是当前执行的这一次,还是执行完毕的
+//                    clearInterval(timeid);
+//                    console.log(box.offsetLeft);
+//                    return; //如果已经到位置了,就return 函数,下面的代码不想执行了
+//                }
+    
+                if(current >= 800){
+                    //清除定时器,定时器下一次不会在执行了,但是当前执行的这一次,还是执行完毕的
+                    clearInterval(timeid);
+//                    console.log(box.offsetLeft);
+                    box.style.left = '800px';
+                    console.log(box.offsetLeft);
+                    return; //如果已经到位置了,就return 函数,下面的代码不想执行了
+                }
+    
+                //target是在当前基础上,加了10个像素之后,box应该处于的位置
+                var target =  current + 7;
+    
+                //给box的left赋值,让box移动
+                box.style.left = target + 'px';
+                
+//                console.log(box.offsetLeft);
+                
+            },15);
+        }
+
+    
+    
+
+
+   
+</script>

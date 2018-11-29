@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: #f99;
+            padding: 10px;
+        }
+        p{
+            padding: 10px;
+            background-color: lime;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>这里是达达的乐园</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <button>解绑div的事件</button>
+    <br>
+    <br>
+    <button>点击我创建达达</button>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // #region ========= 事件名() =========
+            // // 1. 事件名()
+            // $("div").click(function(){
+            //     alert(111)
+            // });
+
+            // // jq注册的事件不会被覆盖
+            // $("div").click(function(){
+            //     alert(222)
+            // });
+
+            // $("div").click(null);
+
+            // // 通过事件名() , 来注册事件的问题： 无法解绑
+            // #endregion
+
+
+            // #region ========= bind(): 来绑定事件 =========
+            // // bind(type, fn)
+            // //  type: 事件类型
+            // //  fn：  事件处理函数
+            // // bind还可以注册多个事件，如果需要给元素注册多个事件，在事件类型里面以空格隔开多个事件即可  “click mouseenter”
+            // // $("div").bind("click mouseenter", function(){
+            // //     alert(1)
+            // // })
+
+            // // // unbind(type): 来解绑事件
+            // // //  type: 可选参数，如果没有该参数，解绑元素的所有事件
+            // // //          如果有该参数，解绑元素的对应事件
+            // // $("button").eq(0).click(function(){
+            // //     $("div").unbind("mouseenter");
+            // // })
+            // // bind绑定事件存在的问题： 无法支持动态绑定, 动态创建出来的元素没有事件
+
+            // $("p").bind("click", function(){
+            //     alert("达达好月半");
+            // })
+
+            $("button").eq(1).click(function(){
+                var $p = $("<p>这是创建出来的达达</p>");
+                $("div").append($p);
+                // $p.appendTo( $("div") );
+            })
+            // #endregion
+
+
+            // delegate(): 事件委托
+            // 事件注册给父元素，由子元素来触发
+            // delegate(selector, type, fn);
+            //      selector: 由指定的子元素来触发事件, 参数是个选择器
+            //      type： 事件类型
+            //      fn：   事件处理函数
+
+            // 还是给p元素注册事件
+            $("div").delegate("p", "click", function(){
+                alert(2233);
+            })
+
+            // delegate的问题： 父元素没有了事件，需要单独给父元素注册
+
+            // undelegate(selector, type): 来解绑事件
+            // selector, type 两个参数都是可选的，如果都没有，把 元素的所有的注册的事件委托都清除了
+            // 如果都有，清除掉指定的事件委托
+            $("button").eq(0).click(function(){
+                $("div").undelegate("p", "click");
+            })
+            
+            // 小结：
+            // 1. click()     ==>  无法解绑  
+            // 2. bind()      ==>  不支持动态绑定                  unbind()
+            // 3. delegate()    ==>  父元素触发不了事件            undelegate()
+
+        })
+    </script>
+</body>
+</html>

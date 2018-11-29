@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//    1. 判断是否是数组:
+//      Array.isArray()
+//      对象 instanceof 构造函数
+  
+//    2. 数组增删的方法 都会改变原来的数组
+//      增加的方法: 返回的增加后的长度
+//        push(1,2,3)
+//        unshift(4,5,6)
+//       删除的方法: 返回的被删除的值
+//          pop() 删除最后一个
+//          shift() 删除第一个
+//      var arr = ['a'];
+////console.log(arr.push(1, 2, 4));
+//console.log(arr.unshift(1, 2, 4));
+//console.log(arr);
+  
+//      3. 拼接和截取
+//      数组.concat(另一个数组)  返回拼接后的新的数组,原来的数组不改变
+//
+//      slice(开始的下标, 结束的下标) 包含头,不包含尾  返回一个新的数组, 原来的数组不改变
+//      splice(开始的下标, 截取长度, 替换项[,替换项]); 从开始的下标开始,截取对应长度,返回截取的部分,原来的数组发生了变化
+  
+//      4. 查找数组中的数据
+//        indexOf(查找的值, 查找开始的下标)  从前往后找,找到返回的是对应的下标,如果找不到返回的是-1
+//        lastIndexOf(查找的值, 查找开始的下标)  从后往前找,找到返回的是对应的下标,如果找不到返回的是-1
+//      5. 操作数组中每一项数据的方法
+//          forEach(function(item, index, arr){}) 专门遍历数组
+//          filter(function(item, index, arr){}) 过滤的作用,返回过滤后的结果(数组)
+//          some(function(item, index, arr){}) 只要有一项符合条件就返回true
+//          every(function(item, index, arr){}) 每一项都符合条件才就返回true,否则是false
+  
+//      6. 清空数组
+//        var arr = [1,2,3];
+//        6.1 arr = [];
+//        6.2 arr.length = 0;
+//        6.3 arr.splice(0, arr.length);
+      
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  indexOf(要查找的元素, 开始查找起始下标) 从前往后找
+//    lastIndexOf(要查找的元素, 开始查找起始下标) 从后往前找
+//var arr = ['a', 'b','a', 'c', 'a' ,'d'];
+//console.log(arr.indexOf('a' , 1)); //2
+//console.log(arr.lastIndexOf('a' , 1)); //0
+  
+//   操作数组中数据的方法:
+//   forEach(function(item, index, arr){})  专门用来遍历数组
+//      item是数组中的每一项
+//      index是对应每一项的下标
+//      arr被遍历数组本身
+//var arr = ['a', 'b','c', 'd', 'e' ,'f'];
+//
+//  arr.forEach(function(item ,index ){
+//    //数组中有多少项,那么匿名函数就会被调用多少次
+//    console.log(item, index, arr);
+//  });
+//    filter() 有过滤的作用 返回的是一个新的数组,里面存储的是过滤后的值
+//    var arr = [1,2,5,12,10,13];
+//    var result = arr.filter(function(item,index,arr){
+////      console.log(item,index,arr);
+//      return item > 10;
+//    });
+//    console.log(result);
+//    console.log(arr);
+    
+//    some()  只要数组中有符合条件的就返回true
+var arr = [1,2,5,12,10,13];
+////需求: 判断这个数组中有没有小于10的值,如果有就返回true,如果没有就返回false
+//var flag = false; //假设没有小于10的
+//for(var i = 0; i < arr.length; i++) {
+//  if(arr[i] < 10){
+//    flag = true;
+//  }
+//}
+//if(flag){
+//
+//}else{
+//
+//}
+//    var result = arr.some(function(item, index, arr){
+//      return item < 10;
+//    });
+//    console.log(result);
+
+
+//    every() 数组中的每一项都符合条件,才返回true, 否则就是false
+//    var result = arr.every(function(item, index, arr){
+//      return item < 10;
+//    });
+//console.log(result);
+</script>
+</body>
+</html>

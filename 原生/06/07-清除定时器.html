@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button id="btn">点击清除定时器</button>
+<script>
+  //setTimeout里面的回调函数只执行一次
+  //  setTimeout(function(){
+  //    console.log('3秒钟到了,爆炸了');
+  //  }, 3000);
+  
+  //setInterval 会一直执行回调函数
+    var timeid1 = setInterval(function(){
+      console.log('一个定时器');
+    }, 2000);
+    var timeid2 = setInterval(function(){
+      console.log('另一个定时器');
+    }, 2000);
+  
+  //返回的定时器的id是一个数字类型,并且一定是一个非0的数字
+//  var timeid1 = setTimeout(function(){
+//    console.log('boom!');
+//  }, 4000);
+//
+//  var timeid2 = setTimeout(function(){
+//    console.log('boomboomboom!');
+//  }, 4000);
+//  console.log(timeid1);
+//  console.log(timeid2);
+  
+  
+  //清除定时器
+//  clearTimeout(定时器的id)
+//  clearInterval(定时器的id)
+  
+  var btn = document.getElementById('btn');
+  btn.onclick = function(){
+    //点击按钮,清楚定时器
+//    clearTimeout(timeid1);
+//    clearTimeout(timeid2);
+    
+//    clearInterval(timeid1);
+//    clearInterval(timeid2);
+  }
+</script>
+</body>
+</html>

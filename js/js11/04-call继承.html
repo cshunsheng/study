@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // call
+      function Person(age,car) {
+        this.age = age;
+        this.car = car
+      }
+      
+      var p =  new Person(18,'法拉利');
+
+      //空对象
+      var dd = {};
+
+      // Person 里面的 this 指向了dd
+      // 待会细讲 
+      Person.call(dd,19,'三轮');
+
+      console.log(dd);
+      
+
+
+      
+
+    </script>
+</body>
+</html>

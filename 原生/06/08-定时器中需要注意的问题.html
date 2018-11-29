@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  console.log(1);
+//  //此时只是开启一个定时器,开始计时,此时会调函数不执行
+//  setTimeout(function(){
+//    console.log(2);
+//  },2000);
+//  console.log(3);
+
+
+
+  console.log(1);
+  //定时器中回调函数的代码必须要等到定时器后面的代码执行完毕了之后才能执行
+  setTimeout(function(){
+    console.log(2);
+  },0);
+  console.log(3);
+  for(var i = 0; i < 10; i++) {
+    console.log('a');
+  }
+</script>
+</body>
+</html>

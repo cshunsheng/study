@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    Person.prototype.liao = function () {
+      console.log('达达只会撩妹');
+    }
+
+    var p = new Person('达达', 19);
+
+    //  __ptoto__ : 对象可以通过这个属性找到原型
+    // console.log(Person.prototype);
+
+    // console.log(p.__proto__);
+
+    // console.log(Person.prototype === p.__proto__);
+    
+    // 1. 可以通过两种方式 找到 原型对象
+    //  通过构造函数找 : Person.prototype 
+    //  通过实例对象找 : p.__proto__
+
+    // 2. 添加方法  用上面的 
+
+    // 3. 以后使用场景 : 
+    //  Person.prototype  :  负责添加方法
+    //  p.__proto__ : 查找原型对象 (待会最后的时候,一直会用)
+
+
+
+    
+    
+
+
+  </script>
+</body>
+
+</html>

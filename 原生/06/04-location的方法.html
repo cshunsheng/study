@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button id="btn">点击刷新页面</button>
+<script>
+    var btn = document.getElementById('btn');
+    btn.onclick = function(){
+//      location.reload(true);
+//      location.assign('http://www.itheima.com');
+//      location.replace('http://www.itheima.com');
+      location.href = 'http://www.itheima.com';
+    }
+  
+//  reload() 刷新
+//    location.reload();
+//      如果传false , 就是普通刷新
+//      如果传true,  就是强制刷新
+    
+//  assign() 跳转页面 会记录历史
+//    location.assign('url地址')
+//  replace() 跳转页面 不会记录历史
+//    location.replace('url地址')
+
+    console.log(location.href);
+//    给href赋值,也有跳转也页面的作用,效果跟assign是一样的
+//    location.href = 'http://www.itheima.com';
+</script>
+</body>
+</html>

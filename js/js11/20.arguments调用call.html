@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      //  伪数组
+
+      function test() {
+
+        console.log(arguments);
+
+        // arguments.push('mg');
+
+
+        // 方法借用
+         Array.prototype.push.call(arguments,'mg') ;
+
+         console.log(arguments);
+         
+        
+      }
+
+      test('zs','ls','ww');
+
+      // 
+        // var arr = [];
+        // console.log(arr);
+
+    </script>
+</body>
+</html>

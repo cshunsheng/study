@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      //  继承 
+      //1. 混入式继承  : for遍历 
+      //   缺点 :  多加了一个方法 
+      // var obj1 = {
+      //   car : '摩拜'
+      // }
+
+      // var obj2 = {
+      //   money :1000
+      // }
+
+      // var dada = {
+      //   name : 'dada',
+      //   jicheng : function ( obj ) {
+      //     for (var key in obj) {
+      //       this[key] = obj[key];
+      //     }
+      //   }
+      // }
+
+      // // 需求 : dada 继承 obj1 里所有的属性
+      // dada.jicheng(obj1);
+      // dada.jicheng(obj2);
+      // console.log(dada);
+
+
+      //2. 原型继承
+      //  缺点 : 只能继承一个对象
+    function Person(name,age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    var mg = {
+      constructor : Person,
+      car : '法拉利'
+    }
+
+    var qianqian = {
+      constructor : Person,
+      car : '破三轮'
+    }
+
+    Person.prototype = mg;
+
+    Person.prototype = qianqian;
+    
+    var p =  new Person('dd',18);
+    console.log(p.car);
+    console.log(p);
+    
+    
+      
+
+    </script>
+</body>
+</html>

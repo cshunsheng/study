@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    来点文字
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // $("body").css("backgroundColor", "#f99").css("fontSize").css(
+            //     "color", "lime");
+
+            // 在进行设置性操作的时候，返回出jq对象, jq对象可以继续调用jq的方法 ，， 就是链式编程了
+            // 在进行获取性操作的时候，返回的是具体的值，就不能调用jq的方法了
+            console.log($("body").css("backgroundColor", "#f99").css("fontSize"));
+        })
+    </script>
+</body>
+</html>

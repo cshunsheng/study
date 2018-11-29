@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // 需求 : 统计一个函数的调用次数
+      // var count = 0;
+      // function test() {
+      //   count++;
+      //   console.log('访问的次数 :' + count);
+        
+      // }
+
+      // test();
+      // test();
+      // count = 1000;
+      // test();
+      // count作为全局的 风险太大 
+
+
+      
+
+      function outer() {
+        
+          var ml_count = 0;
+          function inner() {
+            ml_count ++;
+            console.log('访问的次数 :' + ml_count );
+            
+          }
+          return inner;
+      }
+
+     var xxx = outer();
+     xxx();
+     xxx();
+     xxx();
+     xxx();
+     xxx();
+     xxx();
+     xxx();
+     xxx();
+     
+
+
+
+
+
+    </script>
+</body>
+</html>

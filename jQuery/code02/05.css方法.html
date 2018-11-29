@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>达达很帅，很绿</li>
+        <li>今天大家好像很困</li>
+        <li>css法法</li>
+    </ul>
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // css()
+        // 设置或者修改元素的样式
+        // css(name, value);  ==> 给元素设置单个样式
+        //  name: 样式， 是字符串
+        //  value： 对应的样式值
+        // 操作的是元素的style属性
+        // 
+        // css设置元素：会把获取到的所有元素都设置上相同的样式
+
+        // $("li").css("color", "green");
+        // $("li").css("background-color", "lime");
+        // // jq内部， 如果是数值，默认加上px单位，如果是字符串，直接赋值给元素的样式
+        // $("li").css("fontSize", "30%");
+
+
+        // 设置多个样式
+        // css(obj);
+        //  obj: 是个对象，对象里面是样式和样式值的键值对
+        $("li").css({
+            color: "red",
+            fontSize: 30,
+            backgroundColor: "lime"
+        })
+
+
+        $("li").eq(0).css("fontSize", 40);
+        $("li").eq(1).css("fontSize", 36);
+        $("li").eq(2).css("fontSize", 38);
+
+
+        // 获取样式：
+        // 获取的是第一个元素的样式值
+        // css(name);
+        // name 是个字符串
+        console.log($("li").css("fontSize"));
+
+        // 小结:
+        // css() 设置元素的样式
+        // css(name, value);  ==> 设置单个样式
+        // css(obj);          ==> 设置多个样式
+        // css(name);         ==> 获取元素的样式
+        // 设置是给所有的元素都设置上相同的样式
+        // 获取元素的样式仅仅是获取第一个元素的样式
+    </script>
+</body>
+</html>

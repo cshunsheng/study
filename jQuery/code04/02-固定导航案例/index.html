@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0
+    }
+
+    img {
+        vertical-align: top;
+        width: 100%;
+    }
+
+    .main {
+        margin: 10px auto 0;
+        width: 1000px;
+    }
+
+    .fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="top" id="topPart">
+        <img src="images/top.png" alt="" />
+    </div>
+    <div class="nav" id="navBar">
+        <img src="images/nav.png" alt="" />
+    </div>
+    <div class="main" id="mainPart">
+        <img src="images/main.png" alt="" />
+    </div>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+      $(function () {
+        // 思路：
+        // 1. 给window注册scroll事件，监听页面滚动事件
+        // 2. 实时的拿到页面垂直反向卷曲距离
+        // 3. 拿到#topPart的高度，和页面卷曲距离进行比较
+        //      1. 页面卷曲距离  >= #topPart的高度, 让导航固定定位
+        
+        // 拿取#topPart的高度
+        var H = $("#topPart").height();
+        var nav = $("#navBar");
+        var navH = nav.height();
+        var $mainPart = $("#mainPart");
+
+        $(window).scroll(function(){
+            var scrollTop = $(window).scrollTop();
+
+            console.log(scrollTop);
+
+            if(scrollTop >= H){
+                // 此时需要给navBar固定定位，就是要添加fixed类名
+                nav.addClass("fixed");
+
+                // 由于nav固定定位了，会脱标，不占位置，mainPart会跑上去，所以需要给$mainPart 设置marginTop为 nav的高度 + 自身的10px
+
+                $mainPart.css("marginTop", 10 + navH);
+            }else{
+                nav.removeClass("fixed");
+
+                // 取消固定定位了，需要把mainPart的marginTop设置成原来的10px
+                $mainPart.css("marginTop", 10);
+            }
+        })
+
+      });
+    </script>
+</body>
+
+</html>

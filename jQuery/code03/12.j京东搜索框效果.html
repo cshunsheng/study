@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="这是达达带的26期">
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // onfocus: 
+            // onblur();
+
+            $("input").focus(function(){
+                if($(this).val() === "这是达达带的26期"){
+                    $(this).val("");
+                }
+            })
+
+            $("input").blur(function(){
+                if($(this).val().trim().length === 0){
+                    $(this).val("这是达达带的26期");
+                }
+            })
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      //   验证手机
+
+      // - 11位数字组成
+      // - 号段13[0-9] 147 15[0-9] 17[0178] 166 18[0-9] 199
+      // var str = '15221185414';
+      // var reg = /^(13[0-9]|147|15[0-9]|17[0178]|18[0-9])\d{8}$/;
+      // console.log(reg.test(str));
+      
+
+//       验证邮箱
+// xmg521@itcast.cn
+// xmg521@itcast.com.cn
+
+// - 前面是字母或者数字
+// - 必须有@
+// - @后面是字母或者数字
+// - 必须有.
+// - .后面是字母或者数字
+
+var str = 'xmg521@itcast.com.cn';
+var reg = /^\w+@\w+\.\w+$/;
+var reg = /^\w+@\w+(\.\w+)+$/;
+console.log(reg.test(str));
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

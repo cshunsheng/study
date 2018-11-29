@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+
+      // eval()  
+      // 作用 : 执行一段字符串代码
+      // 好处 : 可以提前存一些要执行的代码作为字符串 ,存储起来 , 以后需要执行,直接拿过来执行即可
+      // 缺点 : 无法调试 可读性比较差
+
+      // var fn = new Function('alert(1)');
+      // fn();
+
+      eval('alert(2)');
+
+      eval('var num1 = 20;var num2 = 20; console.log(num1 + num2)');
+
+      var num1 = 20; 
+      var num2 = 20; 
+     console.log(num1 + num2); 
+      
+
+
+    </script>
+</body>
+</html>

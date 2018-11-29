@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>五角星评分案例</title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .comment {
+        font-size: 40px;
+        color: #ff16cf;
+    }
+
+    .comment li {
+        float: left;
+    }
+
+    ul {
+        list-style: none;
+    }
+    </style>
+</head>
+
+<body>
+    <ul class="comment">
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+    </ul>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+    $(function() {
+        // 移入上去
+        // 1. 获取到li元素
+        // 2. 给li注册mouseenter
+        // 3. 让当前的li以及前面所有的li文字都变成实心，当前的后面所有的变成空心
+        // 4. 给ul注册mouseleave
+        // 5. 让所有的li变成空心
+        // 6. 给li注册click
+        // 7. click 记录点击那个li的索引  -- 点击的时候，只做标记
+        //      1. 记录下标
+        //      2. 添加类名，这个类名作为标记（current）
+        // 8. 当鼠标离开的时候，找到这个标记，给标记的元素以及前面所有的元素设置为实心
+
+        var wjx_s = "★";
+        var wjx_k = "☆";
+
+        var $lis = $(".comment li");
+        var $comment = $(".comment"); // ul元素
+
+        $lis.on("mouseenter", function(){
+            // prev():            上一个兄弟
+            // prevAll():         前面所有的
+            
+            // 处理当前的以及前面所有的
+            $(this).text(wjx_s).prevAll().text(wjx_s);
+            // 处理后面的li元素
+            $(this).nextAll().text(wjx_k);
+
+            // 继续链式编程，把上面两行代码链式成一行
+            // prevObject: 属性，上一次找到的jq对象
+            // end():  把prevObject给封装起来了
+            // 建议：不要链式编程 的太长
+            // console.log($(this).text(wjx_s).prevAll().text(wjx_s).prevObject.nextAll());
+            // $(this).text(wjx_s).prevAll().text(wjx_s).end().nextAll().text(wjx_k);
+        })
+
+        $comment.on("mouseleave", function(){
+            $lis.text(wjx_k);
+
+            // 1. // 在鼠标离开的时候，找到上次点击的那个li（下标--index）
+            // $lis.eq(index).text(wjx_s).prevAll().text(wjx_s);
+
+            // 2. 找到点击过的带有current的li元素
+            $(".comment li.current").text(wjx_s).prevAll().text(wjx_s);
+        })
+
+        /*
+        // 1. 仅仅是声明了index变量
+        var index;
+        $lis.on("click", function(){
+            index = $(this).index();
+        })*/
+
+        // 2. 标记-类名
+        $lis.on("click", function(){
+            // 注意：这里需要排他
+            $(this).addClass("current").siblings().removeClass("current");
+        })
+
+
+        // 小结；
+        // 1. prevAll() ==> 找到前面所有的兄弟
+        // 2. nextAll() ==> 找到后面所有的兄弟
+        // 3. next()    ==> 找到后一个兄弟
+        // 4. prev()    ==> 找到前一个兄弟
+        // 5. siblings()==> 找到所有兄弟，不包含自己
+        // 6. prevObject， 属性，   找到上一次的jq对象， end()
+    });
+    </script>
+</body>
+
+</html>

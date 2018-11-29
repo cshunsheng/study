@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  词法作用域(静态作用域):
+//  1. 代码书写完毕,那么作用域以及作用域链就已经形成了,与函数的调用没有关系
+//  2. 外部作用域无法访问内部作用域的变量,但是内部可以访问外部
+//  3. 访问变量时,先在自己的作用域找,如果自己的作用域找不到,会沿着作用域链一直往上找,直到全局
+//  4. 访问变量或者给变量赋值之前,会先找变量.
+//  5. 如果给变量赋值,先在自己的作用域找这个变量,如果找不到,沿着作用域链往上找,最终全局也没有的话,会在全局创建这个变量
+  
+  
+    
+    
+//    function fn(){
+//      var num = 1;
+//      console.log(num);
+//    }
+//    fn();
+//    console.log(num);
+  
+//     var num = 1;
+      function fn(){
+//         var num = 2;
+        function fnSon(num){
+//          var num;
+          num = 3;
+          console.log(num); //3
+        }
+        fnSon();
+        console.log(num); //报错
+      }
+      
+      fn();
+      console.log(num);//3
+    
+  
+</script>
+</body>
+</html>

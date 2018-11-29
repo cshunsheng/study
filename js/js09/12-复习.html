@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+
+
+    // 数组
+    var arr = [1, 2, 3];
+
+    // 函数
+    var fn = function () {
+      console.log('哈哈');
+    }
+    // 对象
+    var obj = { name: 'zs' }
+
+    // 自定义构造函数
+    function Person() {
+      this.name = 'zs';
+      this.age = 18;
+    }
+
+    Person.prototype.sex = '女';
+
+    //1. constructor 找它的构造函数   ★
+
+    var p = new Person();
+
+    console.log(p.constructor.name);
+
+    // 场景 : 判断三个复杂类型的具体类型
+    console.log(arr.constructor.name);
+    console.log(obj.constructor.name);
+    console.log(fn.constructor.name);
+
+
+    //2. hasOwnProperty() 判断是否是'自己拥有`的属性   ★
+    // 自己的  (原型不可以)
+    console.log(p.hasOwnProperty('name'));
+    console.log(p.hasOwnProperty('age'));
+    console.log(p.hasOwnProperty('sex'));
+
+    //2.1  in (自己的 + 原型链上的)   ★
+    // 场景1 : 
+    if ('name' in p) {
+
+      console.log('在');
+
+    } else {
+      console.log('不在');
+    }
+
+    // 场景2 : for...in
+    for (var key in p) {
+      console.log(key);
+
+    }
+
+    // 场景3 : 遍历自己的属性  (如果有原型添加属性的话)
+    for (var key in p) {
+      if (p.hasOwnProperty(key)) {
+        console.log(key);
+      }
+    }
+
+
+    //3. propertyIsEnumerable() (了解) 判断该属性是否是可遍历/可枚举的自身属性
+    // - 可遍历/ 可枚举
+    // - 自身属性
+    console.log(p.propertyIsEnumerable('name'));
+    console.log(p.propertyIsEnumerable('age'));
+    console.log(p.propertyIsEnumerable('sex'));
+
+    // 4.  Object.definedProperty()  定义/修改一个属性   ★
+    // p.sex = '男'
+    // 第一个参数 : 给哪个对象添加/修改属性
+    // 第二个参数 : 添加什么属性?   属性字符串
+    // 第三个参数 : 属性的描述符/装饰  对象的形式写额
+    Object.defineProperty(p, 'xxx', {
+      value: 'xxx',  //值
+      enumerable: true,  // 可遍历
+      writable: true, // 可修改
+      configurable: true,  // 可以删除 可以修改描述符(比如改为不可遍历)
+    })
+
+    // 5 . set 和  get 
+    // set :  赋值的时候是会调用
+    // get :  取值的时候回调用
+    // 前提 : 注释 value 和 writable
+    Object.defineProperty(p, 'xxx', {
+      // value: 'xxx',  //值
+      // writable: true, // 可修改
+
+      enumerable: true,  // 可遍历
+      configurable: true,  // 可以删除 可以修改描述符(比如改为不可遍历)
+
+      set : function (newVal) {
+        
+        xxx = newVal;
+      },
+
+      get: function () {
+        return xxx;
+      }
+    })
+
+
+    p.xxx = 'ooo';
+
+    // p.xxx
+    console.log(p.xxx);
+
+    //6.isPrototypeOf    ★
+    // 结构 : A.isPrototypeOf( B )
+    // 功能 : A 是否在 B 的原型链上 
+    console.log(Person.prototype.isPrototypeOf(p)); 
+    console.log(Object.prototype.isPrototypeOf(p)); 
+
+    // instanceof 
+    // 结构 :  object instanceof constructor
+    // 功能(最常用的) :  后者实例化前者  
+    console.log( arr instanceof Array);
+    console.log( fn instanceof Function);
+    console.log( obj instanceof Object);
+
+
+    //7. valueOf toString toLocaleString
+    // toString   转化为字符串   ★
+    // toLocaleString  转化为字符串 (date => 我们自己容易识别的格式)  ★
+    // valueOf  返回值的本身
+    
+    
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

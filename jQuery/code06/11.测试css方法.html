@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: #f99;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>11</div>
+    <div>22</div>
+    <div>33</div>
+    <div>33</div>
+    
+    <script src="封装/05.css方法.js"></script>
+    <script>
+        $("div").css({
+            color: "lime",
+            fontSize: "30px",
+            width: "400px"
+        });
+
+        console.log($("div").css("marginTop"));
+    </script>
+</body>
+</html>

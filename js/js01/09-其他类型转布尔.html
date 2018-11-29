@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  Boolean(其他类型) //返回一个boolean类型
+  
+//  alert(Boolean(' '));// 有内容的字符串一定是true
+//  alert(Boolean(''));  //空字符串就是false
+  
+//    alert(Boolean(0)); //0是false
+//    alert(Boolean(-1)); //非0是true
+//    alert(Boolean(NaN)); // NaN也是false
+  
+//    alert(Boolean(null)); //false
+//    alert(Boolean(undefined)); //false
+  
+  
+//    小结:
+//    字符串转布尔: 空字符串一定是false,其他就是true
+//    数字转布尔: 0和NaN是false, 其他都是true
+//    null转布尔:一定是false
+//    undefiend转布尔:一定是false
+  
+//      ! 取反
+//      alert(!!'123'); 当浏览器看到!,会先将后面的数据转成布尔,然后取反
+      alert(!!0);
+</script>
+</body>
+</html>

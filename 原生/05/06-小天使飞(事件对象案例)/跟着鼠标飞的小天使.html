@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 1500px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/tianshi.gif" alt="">
+    <script>
+        //需求: 鼠标在页面中移动到哪里,小天使的图片跟着鼠标移动到哪里
+//        1. 获取元素 img
+            var img = document.getElementsByTagName('img')[0];
+//        2. 注册事件  鼠标移动的事件 mousemove
+//            由于document代表整个页面,所有要给页面注册事件的话,要注册给document
+            document.onmousemove = function(e){
+    //        3. 在事件处理函数中
+    //        3.1 获取鼠标的位置
+                //鼠标在可视区的位置
+//               var x =  e.clientX;
+//               var y =  e.clientY;
+//              鼠标相对页面的坐标
+                var x =  e.pageX;
+               var y =  e.pageY;
+    //        3.2 把鼠标的坐标赋值给img的left和top
+                img.style.left = x +'px';
+                img.style.top = y +'px';
+                img.style.position = 'absolute';
+            }
+
+    </script>
+</body>
+
+</html>

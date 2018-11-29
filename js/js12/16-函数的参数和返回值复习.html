@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      function test() {
+
+            return function () {
+              console.log('嘻嘻');
+              
+            };
+      }
+
+      var num =  test();
+      console.log(num);
+      num();
+      
+
+      // 参数和返回值复习
+      // 函数 参数 + 返回值
+
+      // 函数作为参数 : 
+      // 场景 : 回调  (多)
+
+      // 函数作为返回值
+      // 场景 : 闭包  
+
+    </script>
+</body>
+</html>

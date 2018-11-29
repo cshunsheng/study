@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // apply  和 call 基本上都一样
+      // 作用一样 : 指定this的指向
+      // 区别 ? 参数不同
+      // call :  参数列表
+      // apply : 参数数组
+      // 结构 :
+      // 函数.call(this的指向,实参1,实参2,实参3,,,,,)
+      // 函数.apply(this的指向,[实参1,实参2,实参3,,,])
+
+      // 知识回顾 : Math.max(值1,值2)  参数列表
+
+
+      // 练习
+// 1. 使用call 求一些数的最大值   1,4,7,2,5,8;
+// Math.max()
+// var max = Math.max(1,4,7,2,5,8);
+// console.log(max);
+
+  var max =  Math.max.call(null, 1,4,7,2,5,8);
+  console.log(max);
+  
+// 2. 使用apply 求数组的最大值 var arr = [1,4,7,2,5,8]; 
+ 
+ // 函数.apply(this的指向,[]);
+ var max1 =   Math.max.apply(null, [1,4,7,2,5,8]);
+  console.log(max1);
+  
+  
+// 3. 分别用call和apply,求出 1,4,7,2,5,8 的最小值
+
+    // call
+   var min =    Math.min.call(null,1,4,7,2,5,8);
+  console.log(min);
+
+  // apply
+   var min1 =  Math.min.apply(null,[1,4,7,2,5,8]);
+    console.log(min1);
+    
+
+
+    </script>
+</body>
+</html>

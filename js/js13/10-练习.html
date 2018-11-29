@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // 正则.test(字符串)
+
+      //1. 验证座机号
+          // - 比如 010-12345678  0797-1234567
+          // - 开头是3-4位，首位必须是0
+          // - -后面是7-8位
+
+          // var str = '0558-7972123';
+          // var reg = /^0\d{2,3}-\d{7,8}$/;
+          // console.log(reg.test(str)); 
+          
+      //2. 验证姓名
+      // - 只能是汉字  \u4e00-\u9fa5
+      // - 长度2-6位之间
+      // - 汉字范围[\u4e00-\u9fa5]
+
+      // var str = '田达';
+      // var reg =/^[\u4e00-\u9fa5]{2,6}$/;
+      // console.log(reg.test(str));
+
+      //   验证QQ
+
+      // - 只能是数字
+      // - 开头不能是0  
+      // - 长度为5-11位
+
+      // var str = '1046529955';
+      // var reg = /^[1-9]\d{4,10}$/;
+      // console.log(reg.test(str));
+      
+
+      
+
+      
+
+    </script>
+</body>
+</html>

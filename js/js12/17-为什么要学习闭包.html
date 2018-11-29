@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      //1. 里面访问外面的变量值 ok
+      // var num = 20;
+      // function test() {
+      //   console.log(num);
+      // }
+      // test();
+
+      //2. 外面能不能访问里面的? 只读
+      // function test() {
+      //   var num = 210;
+      //   return num;
+      // }
+      //  var n = test();
+      //  console.log(n);
+       
+      //3. 想操作这个num值 
+      // function test() {
+        
+      //   var num = 10;
+
+      //   // 操作num
+      //   function inner( n ) {
+      //     num = n;
+      //     console.log(num);
+      //   }
+
+      //   inner(1900);
+
+      // }
+      // test();
+
+      //4. 外面 想操作这个num
+      function outer() {
+        
+        var num = 10;
+
+        // 操作num
+        function inner( n ) {
+          num = n;
+          console.log(num);
+        }
+        return inner;
+      }
+      
+      var inner =   outer();
+      console.log(inner);
+      inner(400);
+      // 闭包 :
+      //1 . 外部函数 outer
+      //2.  子函数  inner
+      //3.  子函数里面访问外部函数的变量 
+
+      // 为什么要学习闭包
+      //学习闭包可以随意的操作 函数内部的数据 
+      
+
+
+
+    </script>
+</body>
+</html>

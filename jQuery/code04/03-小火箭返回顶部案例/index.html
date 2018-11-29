@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body {
+        height: 8000px;
+    }
+
+    a {
+        color: #FFF;
+    }
+
+    .actGotop {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        width: 150px;
+        height: 195px;
+        display: none;
+        z-index: 100;
+    }
+
+    .actGotop a,
+    .actGotop a:link {
+        width: 150px;
+        height: 195px;
+        display: inline-block;
+        background: url(images/gotop.png) no-repeat;
+        outline: none;
+    }
+
+    .actGotop a:hover {
+        width: 150px;
+        height: 195px;
+        background: url(images/gotop.gif) no-repeat;
+        outline: none;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 返回顶部小火箭 -->
+    <div class="actGotop"><a href="javascript:;" title="Top"></a></div>
+    
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+    $(function() {
+        // 1. 控制小火箭的显示与隐藏
+        // 思路：
+        //  1.1 给window注册scroll事件
+        //  1.2 实时去获取页面垂直方向的卷曲距离
+        //  1.3 距离和1000比较
+        //      距离  > 1000  ==> 显示小火箭
+        //      距离  < 1000  ==> 隐藏小火箭
+
+        var $actGotop = $(".actGotop");
+
+        $(window).scroll(function(){
+            var scrollTop = $(window).scrollTop();
+
+            if(scrollTop >= 1000){
+                $actGotop.fadeIn(1000)
+            }else{
+                $actGotop.fadeOut(1000)
+            }
+        })
+
+
+        // 2. 点击小火箭，返回顶部（缓慢的）
+        $actGotop.click(function(){
+            // 如何去返回顶部（缓慢）
+
+            // 没动画效果
+            // $(window).scrollTop(0);
+
+            // 不行，没效果
+            // $(window).animate({
+            //     scrollTop: 0
+            // }, 1000)
+
+
+            // $(window).scrollTop(0) ==> jq内部操作的是下面的属性
+            // window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+            // window.pageYOffset ， 只读的，修改不了
+            // document.documentElement  ==> html
+            // document.body             ==> body
+            // 在内部修改的是html，body的scrollTop = 0
+
+            // 兼容更多浏览器
+            $("html, body").animate({
+                scrollTop: 0
+            }, 1000)
+        })
+
+
+    });
+    </script>
+</body>
+
+</html>

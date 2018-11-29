@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+1. 节点常用的属性:
+    1.1 类型的属性: nodeType nodeName nodeValue
+    1.2 层级的属性:
+        找儿子:
+          children   返回所有子元素
+          childNodes  返回所有子节点
+          firstElementChild 返回第一个子元素
+          lastEelementChild  返回最后一个子元素
+          firstChild  返回第一个子节点
+          lastChild   返回最后一个子节点
+        找爹:
+          parentNode
+        找兄弟:
+          nextElementSibling 返回下一个兄弟元素
+          previousElementSibling  返回上一个兄弟元素
+          nextSibling 返回下一个兄弟节点
+          previousSibling 返回上一个兄弟节点
+
+
+    2. 操作节点的方法 有剪切的效果
+      appendChild(节点)  往一个节点的最后面添加子节点
+      insertBefore(新的节点, 参考的子节点) 在一节点的指定子节点之前插入一个子节点
+      replaceChild(新的节点, 被替换的子节点) 替换子节点
+
+      removeChild(子节点) 删除子节点
+
+      cloneNode() 克隆节点
+      如果不传参数,相当于传入了一个false, 那么只克隆节点本身
+      如果传了true,就是克隆节点的所有内容(包括子节点)
+</body>
+</html>

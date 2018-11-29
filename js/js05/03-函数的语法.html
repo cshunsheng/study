@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  1. 创建函数
+//    1.1 函数申明
+//       function 函数名(){}
+//    1.2 函数表达式
+//        var 函数名 = function (){}
+//
+//        在底层都是调用了 new Function() 创建出来这个函数的
+  
+//        function fn(){}  -> var fn = new Function();
+//        var fn1 = function(){} --> var fn1 = new Function();
+  
+//    函数中的三要素:
+//      函数名: 调用函数
+//      参数:
+//          形式参数: 写在创建函数的小括号里面的变量就叫做形式参数
+//          实际参数: 写在调用函数的小括号里面的变量/值,就叫做实际参数
+//      返回值 : 一个函数调用完了之后,一定会有返回值 return
+//            如果函数中没有写return或者写了return但是后面没有值 ,那么函数调用之后,返回的一定是undefined
+//            如果函数中写了return, 并且return后面写了具体的值,那么返回就是这个值
+//            return 关键字后面的代码是不执行的
+  
+//      var x = 3;
+//      var y = 5;
+//      var result = x + y;
+//      console.log(result);
+  
+//        function add(a, b){
+//          var result = a + b;
+//          console.log(result);
+//        }
+//
+//        add(3, 5);
+  
+//          function fn(x){
+//            console.log(x);
+//          }
+//          var a = 1;
+//          fn(a);
+  
+//          function fn(){
+//            return 1;
+//          }
+//          var result = fn();
+//          console.log(result);
+  
+            function add(x, y){
+              var result = x + y;
+              return ;
+              console.log('123');
+            }
+            
+            var haha = add(3,5);
+            console.log(haha);
+</script>
+</body>
+</html>

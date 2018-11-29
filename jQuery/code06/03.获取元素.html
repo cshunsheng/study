@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>达达</div>
+    <div>达达</div>
+    <div>达达</div>
+    <div>达达</div>
+    <div>达达</div>
+
+
+    <script>
+    (function(window) {
+        // 根据参数去获取页面上的元素，把元素添加到实例对象
+        var jQuery = function(selector) {
+            var ele = document.querySelectorAll(selector);
+            // console.log(ele)
+
+            // // 实例对象 用谁表示  （ 添加 ）
+            // for(var i = 0; i < ele.length; i++){
+            //     this[i] = ele[i];
+            // }
+            // //手动维护实例的长度
+            // this.length = ele.length;
+
+
+            // 数组的push
+            // this.push(ele)
+            // 借用： call、apply   ，区别： 参数不一样
+            // Array.prototype.push ==> 通过数组的原型拿到数组push方法
+            // 借用的好处：
+            //  1. 添加
+            //  2. 自动维护了length的长度
+            // Array.prototype.push.apply(this, ele);
+            // 注意： 使用下面这种形式，就是数组的前面要有分号结束标识
+            [].push.apply(this, ele);
+        }
+
+        window.jQuery = window.$ = jQuery;
+    })(window)
+
+    // 如何用jQuery实例化对象
+    console.log(new $("div"));
+
+
+    </script>
+</body>
+
+</html>

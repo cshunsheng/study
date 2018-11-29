@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      //1. * 出现0次或者多次   非精确匹配
+      console.log(/a*/.test('123a'));  
+      // console.log(/^a*$/.test('123a'));
+      // console.log(/^a*$/.test('a'));
+      // console.log(/^a*$/.test('aa'));
+
+      //2. + 出现1次或者多次     {1,}
+      // console.log(/^a+$/.test('a'));
+      // console.log(/^a+$/.test('aa'));
+      // console.log(/^a+$/.test('aaa'));
+
+      // 3. ?   0次或者1次  (match测试)    非精确匹配 
+
+      // 4.  {n}  n次
+      // console.log(/^a{2}$/.test('a'));
+      // console.log(/^a{2}$/.test('aa'));
+      // console.log(/^a{2}$/.test('aaa'));
+
+      // 5. {n,}  n次以上 
+      // console.log(/^a{2,}$/.test('a'));
+      // console.log(/^a{2,}$/.test('aa'));
+      // console.log(/^a{2,}$/.test('aaa'));
+
+      //6. {m,n}  m次以上  n次以下 
+      // console.log(/^a{2,5}$/.test('a'));
+      // console.log(/^a{2,5}$/.test('aa'));
+      // console.log(/^a{2,5}$/.test('aaa'));
+      // console.log(/^a{2,5}$/.test('aaaa'));
+      // console.log(/^a{2,5}$/.test('aaaaa'));
+      // console.log(/^a{2,5}$/.test('aaaaaa'));
+
+      // 总结 :  
+      //1. *  0次或者多次
+      //2. + 1次或者多次 精确匹配  (多)
+      //3. ? 0次或者1次 
+      //4. {n} n次  精确匹配
+      //5. {n,} n次以上  精确匹配
+      //6. {m,n} m次以上 n次一下  精确匹配 (多)
+ 
+
+      
+
+    </script>
+</body>
+</html>

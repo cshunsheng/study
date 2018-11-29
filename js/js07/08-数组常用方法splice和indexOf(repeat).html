@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  splice 切割数组
+//  splice(开始的小标, 切割的长度, 后面可以继续添加参数)
+//    var arr = ['a', 'b', 'c', 'd'];
+//    console.log(arr.splice(0, 2));
+//    console.log(arr);
+//
+//var arr = ['a', 'b', 'c', 'd'];   //== > ['a', 1, 2, 'd']
+//console.log(arr.splice(1, 2, 1, 2, 'a', 'e' ,'f'));
+//console.log(arr);
+  
+
+//  indexOf
+//    数组.indexOf(值) 如果在数组中找到了这个值返回这个值的下标,如果没找到返回-1
+
+//var arr = ['a', 'b', 'c', 'd'];
+var arr = ['a', 'b','a', 'c', 'a' ,'d'];
+//console.log(arr.indexOf('a'));
+//console.log(arr.indexOf('a'));
+//  for(var i = 0; i < arr.length; i++) {
+//    if(arr[i] === 'a'){ //如果判断字符串是否相等,一般都用全等
+//      console.log(i);
+//    }
+//  }
+  
+//  var count = 0;
+  for(var i = 0; i < arr.length; i++){
+    if(arr.indexOf('a', i) != -1){
+      i = arr.indexOf('a', i);
+      console.log(i);
+    }
+//    count++;
+  }
+  
+//  console.log(count);
+  
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: lime;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button>展示div</button>
+    <button>隐藏div</button>
+    <button>切换div</button>
+
+    <div></div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // slideDown(speed, easing, callback) slideUp() slideToggle()
+        //  参数和show系列是一样的
+        //  向下展开    向上收起                            切换
+        //  没有参数，默认是有动画效果
+        //  主要修改的是元素的height样式
+
+        // $("button").eq(0).click(function(){
+        //     $("div").slideDown(1000, function(){
+        //         console.log("slideDown 结束了");
+        //     });
+        // })
+
+        // $("button").eq(1).click(function(){
+        //     $("div").slideUp(1000, function(){
+        //         console.log("slideUp 结束了");
+        //     });
+        // })
+
+        // $("button").eq(2).click(function(){
+        //     // toggle： 切换，当元素展示，隐藏，如果元素是隐藏，展示元素
+        //     $("div").slideToggle(2000, function(){
+        //         console.log("slideToggle 结束了");
+        //     });
+        // })
+
+
+        // fadeIn()  fadeOut()    fadeToggle()
+        //  淡入      淡出（隐藏）  切换
+        //  只修改了元素的opacity样式
+
+        $("button").eq(0).click(function(){
+            $("div").fadeIn(1000, function(){
+                console.log("fadeIn 结束了");
+            });
+        })
+
+        $("button").eq(1).click(function(){
+            $("div").fadeOut(1000, function(){
+                console.log("fadeOut 结束了");
+            });
+        })
+
+        $("button").eq(2).click(function(){
+            // toggle： 切换，当元素展示，隐藏，如果元素是隐藏，展示元素
+            $("div").fadeToggle(2000, function(){
+                console.log("fadeToggle 结束了");
+            });
+        })
+    </script>
+</body>
+</html>

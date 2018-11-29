@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: lime;
+            position: relative;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>swing</div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            //
+            //     width: 200,
+            //     height:200,
+            //     
+
+            // 需求：有顺序的动画
+            // 这样会形成回调地狱的问题，这样写代码不好维护
+            /*$("div").eq(0).animate({
+                left: 800,
+            }, 1000, function(){
+                    
+                $("div").eq(0).animate({
+                    top: 300,
+                }, 1000, function(){
+                    
+                    $("div").eq(0).animate({
+                        borderRadius: "50%"
+                    }, 1000, function(){
+
+                    })
+
+                })
+            })*/
+
+            // 和链式编程一样，通过.继续往下写就行了
+            $("div")
+                .animate({left: 800}, 2000)
+                .animate({top: 300}, 2000)
+                .animate({borderRadius: "50%"}, 2000)
+                .slideUp(1000)
+                .slideDown(1000)
+        })
+
+
+        // jq提供了动画队列： 给元素添加了多个动画，jq会把元素的动画添加到元素的动画队列中去，依次执行这些动画。
+
+        // 好处：让元素能够有顺序的执行动画
+        // 坏处：不停的给元素添加动画，让元素一直在指定动画队列里面的动画 
+
+    </script>
+</body>
+</html>

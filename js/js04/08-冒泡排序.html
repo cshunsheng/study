@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  冒泡排序: 是计算机编程中的一个算法(就是做一件事情,需要按照指定的步骤去做)
+//
+//  由于是6个数,所以会比较5趟 // 数组中有length个数据,比较length-1趟
+//  第一趟比较5次 length - 1
+//  第二趟比较4次 length - 2
+//  第三趟比较3次 length - 3
+//  第四趟比较2次 length - 4
+//  第五趟比较1次 length - 5
+
+//29 45 51 68 72 97
+var arr = [29, 45, 51, 68, 72, 97];
+  
+//这个循环是控制趟数
+  for(var i = 0; i < arr.length - 1; i++) {
+    //这个是每一趟比较的次数
+    for(var j = 0; j < arr.length - 1 - i; j++){
+//      arr[j] arr[j + 1]
+//      如果前面的大于后面的值,就交换两个值的位置
+      if(arr[j] > arr[j + 1]){
+        //交换位置
+        var temp;//用于交换位置
+        temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j +1] = temp;
+      }
+    }
+  }
+  
+  console.log(arr);
+</script>
+</body>
+</html>

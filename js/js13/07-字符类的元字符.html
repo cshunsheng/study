@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      //1.  [] 表示一个字符的位置 
+      // [abc] == a | b |c  或者的关系
+      // console.log(/[abc]/.test('123a'));
+      // console.log(/[abc]/.test('123b'));
+      // console.log(/[abc]/.test('123c'));
+      // console.log(/[abc]/.test('abc'));
+      // console.log(/[abc]/.test('123'));
+
+      //2. [^] 中括号里的^ , 非,除了
+      // [^0]  是否包含 (除了0) 以外的字符 => true
+      // console.log(/[^0]/.test('123'));
+      // console.log(/[^0]/.test('anc0'));
+      // console.log(/[^0]/.test('0'));
+
+      //3. [a-z] 一个字符的位置 a-z:a|b|c...z      abc:a|b|c 
+      // console.log(/[a-z]/.test('abc'));
+      // console.log(/[a-z]/.test('123'));
+      // console.log(/[a-z]/.test('ABC'));
+
+      // [0-9]  
+      // console.log(/[0-9]/.test('abc'));
+      // console.log(/[0-9]/.test('123'));
+      // console.log(/[0-9]/.test('ABC'));
+
+      // [A-Z]
+      // console.log(/[A-Z]/.test('abc'));
+      // console.log(/[A-Z]/.test('123'));
+      // console.log(/[A-Z]/.test('ABC'));
+      
+      // [a-zA-Z0-9]
+      // console.log(/[a-zA-Z0-9]/.test('abc'));
+      // console.log(/[a-zA-Z0-9]/.test('123'));
+      // console.log(/[a-zA-Z0-9]/.test('ABC'));
+
+
+      //  阶段总结 :
+
+      //1. 优先级
+      // |   或
+      // () 范围优先级最高的  (b|f)oot => boot | foot
+
+      //2. 字符类的元字符
+      // 2.1  [] => 1个字符类的位置  [abc] => a|b|c
+      // 2.2  [^]  => [^0]  非0  除了0  =>包含除了0以外的字符 => true
+      // 2.3  [a-zA-Z]   包含了a-z或者A-Z其中的一个就为true
+
+
+
+      
+
+    </script>
+</body>
+</html>

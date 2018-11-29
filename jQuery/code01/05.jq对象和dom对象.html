@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>达达真帅</div>
+    <div>达达真帅</div>
+    <div>达达真帅</div>
+    
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // dom对象：使用原生js方法获取到的元素就是dom对象
+        // document.getElementById();
+        // 就是说dom对象不能使用jq提供的方法，只能使用自身的属性和方法
+
+
+        // jq对象：通过jq提供 $() 获取的元素就是jq对象
+        // jq对象是一个伪数组，伪数组里面以下标的形式存储着获取到的dom对象
+        // jq对象无法使用dom对象的属性和方法，只能使用jq提供的方法
+
+
+        // dom对象
+        var div = document.querySelector("div");
+        // console.dir(div);
+        // div dom对象没有show方法
+        // div.show();
+
+
+        // 如果dom对象要想使用jq的方法，把dom对象转成jq对象
+        // $(dom对象) ==>  jq对象
+        console.log($(div));
+        $(div).show();
+
+
+        // 如果jq对象要想使用dom对象的方法属性，只需要把jq对象中的dom对象取出来即可
+        // [index] ==> 是一个dom对象
+        // console.log($("div"));
+        $("div")[0].style.color = "red";
+
+        // 小结：
+        // dom对象：原生js方法获取到的元素
+        // jq对象： $()
+        // 互相转化： 
+        //  目的： 为了使用对象的方法
+        //  dom对象 ==>  jq对象  ：   $(dom对象)
+        //  jq对象转成dom对象  ：    以下标的形式取出来，取出来是一项
+    </script>
+</body>
+</html>

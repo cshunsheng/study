@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <div>
+      <p>请问谁是最帅的男人</p>
+    </div>
+
+    <script>
+
+      // 回顾
+      // 复制  克隆  拷贝
+      // 克隆节点
+      // 元素.cloneNode(是否是深拷贝)
+      // true : 深拷贝  把里面的内容也都拷贝了一份
+      // false : 浅拷贝  只克隆了一层 
+
+      // var div =  document.querySelector('div');
+      // var newDiv =  div.cloneNode(false);
+      // console.log(newDiv);
+      // var newDiv1 =  div.cloneNode(true);
+      // console.log(newDiv1);
+
+      // 对象
+      var obj = {
+        name : '马哥',
+        age : 18,
+        car : {
+          name :'法拉利',
+          price : 1000
+        }
+      }
+
+      //  需求 : 把这个对象 拷贝一份 独立的一份
+      // var obj1 = obj;
+      // obj1.name = '小可爱';
+      
+    
+      // console.log(obj1);
+
+      // 拷贝 : 
+      // 浅拷贝 :  只复制了一层属性  
+      // 需要深拷贝 : 拷贝 对象里面的对象
+
+      //1. 创建一个新对象
+      var obj1 = {};
+      //2. 拷贝老的对象,,把老对象里的属性和值都拿到新对象里
+      for (var key in obj) {
+
+        // 给新对象添加属性并且赋值
+           obj1[key] =  obj[key]    
+      }
+
+      // obj1.name ='小可爱';
+
+      obj1.car.name = '雅迪';
+      console.log(obj);
+      console.log(obj1);
+
+      
+
+
+      
+      
+      
+
+
+
+
+    </script>
+</body>
+</html>

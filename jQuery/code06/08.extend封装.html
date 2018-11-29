@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+<script>
+    var dada = {
+        money: 100000,
+        house: "新疆海景房"
+    }
+
+    dada.__proto__.gender = "male";
+
+    var qianqian = {
+        beauty: "so beauty"
+    }
+
+    var zs = {
+        age: 19,
+        extend: function(obj){
+            for(var k in obj){
+                // 判断属性是否是对象自身的
+                if(obj.hasOwnProperty(k)){
+                    // this ==> zs
+                    this[k] = obj[k];
+                }
+            }
+        }
+    }
+
+    // zs 拥有dada的东西
+    // for(var k in dada){
+    //     zs[k] = dada[k];
+    // }
+
+    // for(var k in qianqian){
+    //     zs[k] = qianqian[k];/**/
+    // }
+
+
+    zs.extend(dada);
+    zs.extend(qianqian)
+
+    console.log(zs);
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+        .basic{
+            background-color: lime;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button>点击添加basic类名</button>
+    <button>点击移除basic类名</button>
+    <button>点击判断是否有basic类名</button>
+    <button>点击切换basic类名</button>
+
+    <div>达达，歌神</div>
+    <div>达达，歌神</div>
+    <div class="aa bb cc">达达，歌神</div>
+    <div>达达，歌神</div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $("button").eq(0).click(function(){
+            // // 原生js操作类名,className 会造成覆盖的问题
+            // $("div")[0].className = "aa bb cc basic";
+
+
+            // 添加类名： addClass(name), 只会负责添加类名，不会造成覆盖问题
+            // 注意： 不要手动加 . 
+            // 需要添加多个类名，空格隔开即可
+            $("div").addClass("basic dd ff");
+
+            // 移除类名
+            // removeClass(name)
+        })
+
+        $("button").eq(1).click(function(){
+            $("div").removeClass("basic aa");
+        })
+
+        // 判断是否有指定的类名
+        // hasClass(name); 返回值是布尔类型， true ，有这个类名
+        // 判断标准： 只要有一个元素有指定的类名，就返回true，所有的元素都不包含指定的类名就返回false
+        $("button").eq(2).click(function(){
+            var ret = $("div").hasClass("basic");
+            console.log(ret);
+        })
+
+
+        // 切换类名：
+        // 切换类名：判断元素是否有指定的类名，如果有，就移除，没有，就添加上，
+        $("button").eq(3).click(function(){
+            // if($("div").hasClass("basic")){
+            //     $("div").removeClass("basic");
+            // }else{
+            //     $("div").addClass("basic");
+            // }
+
+            // toggleClass(name)
+            $("div").toggleClass("basic");
+        })
+
+        console.log($("div").hasClass("aa"));
+
+        // 小节：
+        // 操作元素类名：
+        // 1. addClass(name)
+        // 2. removeClass(name);
+        // 3. hasClass(name);
+        // 4. toggleClass(name)
+    </script>
+</body>
+</html>

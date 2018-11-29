@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+       var obj = {
+        name :　'达达',
+        liaomei: function () {
+          console.log(this.name + '只会撩妹');
+          
+        }
+      }
+
+      // obj.liaomei(); //达达只会撩妹
+      var mg = {
+        name : '马哥'
+      }
+
+      // //call
+      // // 函数.call(this的指向,实参);
+      // 方法借用
+      obj.liaomei.call(mg); // mg.liaomei();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+
+      //  场景1:
+      function  Student() {
+        this.name  = 'zs';2
+        this.age = 18;
+      }
+      var s =  new Student();
+      console.log(s);
+      
+
+      // 遍历
+      for (var key in s) {
+        console.log(key);
+        // console.log(s[key]);
+      }
+
+
+
+    // 场景2 : 有原型添加属性
+       function  Person() {
+        this.name  = 'zs';
+        this.age = 18;
+      }
+      
+      Person.prototype.sex = '男';
+      var p = new Person();
+      console.log(p);
+
+        for (var key in p) {
+
+          if (p.hasOwnProperty(key)) {
+            
+            console.log(key);
+          }
+          
+        }
+      
+
+
+    </script>
+</body>
+</html>

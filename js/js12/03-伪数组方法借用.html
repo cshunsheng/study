@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // 伪数组
+      //1. 伪数组不是一个真正的数组
+      //2. 其实是一个对象
+      //3. 有下标 有长度
+      //4. 可以遍历 可以访问
+      //5. 又因为不是真正的数组 ,所以不能使用真正数组里的方法 
+
+      //1. 模拟伪数组
+      var obj = {
+        0 : 'zs',
+        1 : 'ls',
+        length : 2
+      }
+
+      // 添加元素
+      // obj.push('mg');
+
+    // 函数.call(this的指向,实参);
+    Array.prototype.push.call(obj,'mg') ; // obj.push('mg') 
+
+
+      // console.log(obj);
+
+
+      //2. 真正的伪数组
+      function test() {
+
+        // arguments.Arr(9);
+
+        Array.prototype.push.call(arguments,9);
+
+        console.log(arguments);
+        
+        Array.prototype.pop.call(arguments);
+        console.log(arguments);
+
+      }
+
+      test(1,4,7);
+      
+
+
+    </script>
+</body>
+</html>

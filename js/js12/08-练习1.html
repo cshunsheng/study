@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+
+
+    // 1. js代码执行的全过程 : 预解析 一行一行的执行
+    // function test() {
+    //   var b;
+    //   console.log(b); //un
+    //    a = 1;
+    //    b = 1;
+    // }
+    // var a;
+
+
+    // console.log(a); // un
+    // test(); 
+    // a = 1;
+    // console.log(a); //1
+
+
+    console.log(a);
+    function test() {
+      console.log(b);
+      a = 1;
+      var b = 1;
+    }
+    test();
+    var a = 1;
+    console.log(a);
+
+
+  </script>
+</body>
+
+</html>

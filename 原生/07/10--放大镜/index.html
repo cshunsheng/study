@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<link rel="stylesheet" href="css/index.css">-->
+    <style>
+        img {
+            display: block;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 350px;
+            height: 350px;
+            margin: 100px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        .big {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 360px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            display: none;
+        }
+
+        .big img {
+            position: absolute;
+
+        }
+
+        .mask {
+            width: 175px;
+            height: 175px;
+            background: rgba(255, 255, 0, 0.4);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            cursor: move;
+            display: none;
+        }
+
+        .small {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <div class="small" id="small" >
+            <img src="images/small.jpg" width="350" alt="" />
+            <div class="mask" id="mask"></div>
+        </div>
+        <div class="big" id="big" >
+            <img src="images/big.jpg" width="800" alt="" id="img" />
+        </div>
+    </div>
+</body>
+
+
+<script>
+    
+    
+    //获取元素
+    var box = document.getElementById('box');
+    var small = document.getElementById('small');
+    var mask = document.getElementById('mask');
+    var big = document.getElementById('big');
+    var img = document.getElementById('img');
+//    需求:
+//    1. 鼠标移入到small里面,让mask 和 bg展示出来
+//        鼠标移入mouseenter 鼠标移出mosueleave 不冒泡的
+        small.onmouseenter = function(){
+            mask.style.display = 'block';
+            big.style.display = "block";
+        }
+//    2. 鼠标移出small的时候,让mask 和 bg隐藏
+        small.onmouseleave = function(){
+            mask.style.display = 'none';
+            big.style.display = "none";
+        }
+//    3. mask只能在small里面移动
+//      3.1 让mask在small中跟着鼠标动起来
+        small.onmousemove = function(e){
+//            3.1.1 获取鼠标在可视区的坐标
+            var x = e.clientX;
+            var y = e.clientY;
+//            3.1.2 获取box相对body的偏移量
+            var posX = box.offsetLeft;
+            var posY = box.offsetTop;
+//            3.1.3 计算鼠标相对于small里面的坐标
+            var targetX = x - posX;
+            var targetY = y - posY;
+//            3.1.4 让鼠标到mask的中间(实际是给mask赋值的坐标-mask宽高的一半)
+            targetX = targetX - mask.offsetWidth/2;
+            targetY = targetY - mask.offsetHeight/2;
+            
+            
+            
+//            4. 让mask只能在small里面移动
+//            4.1 计算mask可以移动的最大距离
+              var maxX = small.offsetWidth - mask.offsetWidth;
+              var maxY = small.offsetHeight- mask.offsetHeight;
+//            4.2 判断当前位置,限制位置
+            targetX = targetX > maxX ? maxX : targetX;
+            targetY = targetY > maxY ? maxY : targetY;
+            targetX = targetX < 0 ? 0 : targetX;
+            targetY = targetY < 0 ? 0 : targetY;
+            
+//            先让mask跟着鼠标在small中的坐标动起来
+            mask.style.left = targetX + 'px';
+            mask.style.top = targetY + 'px';
+    
+    
+            //    4. big里面的img随着mask的移动,跟着移动
+//            img移动的距离 = mask移动的距离/ mask可以移动的最大距离* img可以移动的最大距离
+//            4.1   获取img可以移动的最大距离
+              var imgmaxX =  img.offsetWidth - big.offsetWidth;
+              var imgmaxY =  img.offsetHeight - big.offsetHeight;
+            
+//            4.2 计算img要移动的距离
+            var targetImgX = targetX / maxX * imgmaxX;
+            var targetImgY = targetY / maxY * imgmaxY;
+            
+//            4.3.给img的left和top赋值(真正的动起来)
+            img.style.left = -targetImgX + 'px';
+            img.style.top = -targetImgY + 'px';
+            
+        }
+        
+            
+
+    
+    
+   
+</script>
+
+</html>

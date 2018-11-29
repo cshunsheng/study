@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button id="btn"> 点击按钮,假装去服务器拿数据</button>
+<div id = "container">
+  <!--<ul>-->
+    <!--<li>html</li>-->
+    <!--<li>css</li>-->
+    <!--<li>es5.0js</li>-->
+    <!--<li>dom</li>-->
+  <!--</ul>-->
+</div>
+
+<script>
+  var arr = ['html', 'css', 'es5.0js', 'dom'];
+  //需求: 点击按钮,将后台返回给我们的数据,通过创建元素,展示到页面中
+//  1. 获取元素
+    var btn = document.getElementById('btn');
+    var container = document.getElementById('container');
+//  2. 给btn注册点击事件
+      btn.onclick = function(){
+//        container.innerHTML = '<ul><li>html</li><li>css</li></ul>';
+//        container.innerHTML = '<ul>';
+//        arr.forEach(function(item){
+////            console.log('<li>'+item+'</li>');
+//          container.innerHTML += '<li>'+item+'</li>';
+//        });
+//        container.innerHTML += '</ul>';
+        //  3. 在事件处理函数中,通过arr,动态的创建元素(无序列表)
+        var str = '<ul>';
+        arr.forEach(function(item){
+//
+          str += '<li>'+item+'</li>';
+        });
+        str += '</ul>';
+        
+        console.log(str);
+        //  4. 把元素添加到container中
+        container.innerHTML = str;
+        
+        // 5. 给每一个li鼠标移入时,高亮
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        for(var i = 0; i < lis.length; i++) {
+          lis[i].onmouseover = liOver;
+        }
+        
+        function liOver(){
+          //排他
+          for(var i = 0; i < lis.length; i++) {
+            lis[i].style.backgroundColor = '';
+          }
+          this.style.backgroundColor = 'gray';
+        }
+      }
+
+//  var lis = document.getElementsByTagName('li');
+//  console.log(lis);
+    
+    
+
+
+
+
+  
+  
+</script>
+</body>
+</html>

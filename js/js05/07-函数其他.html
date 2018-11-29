@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  1. 函数也是引用数据类型的
+//  2. 既然是引用数据类型,可以被赋值给变量,可以当做参数,传递到另外一个函数中,也可以当成结果,从一个函数中返回出来
+//   2.1 可以把函数赋值给变量
+//    function fn(){
+//      console.log('坚持一下,快下课了');
+//    }  // --> var fn = new Function();
+////    fn();
+//
+//    var a = fn; //注意:如果函数名后面有小括号,就一定是调用函数,如果没有小括号就是把函数赋值给另外一个变量
+//    a();
+//   fn();
+  
+//  2.2 可以把函数当成参数,传递到另一个函数中
+  
+//    function fn(f){
+//      f();
+//    }
+//
+//    function log(){
+//      console.log('离下课还有11分钟');
+//    }
+//
+//    fn(log);
+  
+//  2.3 函数可以当做数据/结果,从另一个函数中返回出来
+//    function fn(){
+//      return function (){
+//        console.log('还有7分钟');
+//      }
+//    }
+//
+//    var f = fn(); // var f = function (){
+//                    // console.log('还有7分钟');
+////                    }
+//    f();
+    
+//   自调用函数:
+//     function fn(){
+//       console.log('5分钟');
+//     }
+//     fn();
+//  fn();
+//  fn();
+  
+//  function fn(){
+//
+//  }
+//  fn();
+  
+//(function (){
+//  console.log('3分钟');
+//})();
+  
+//(function(){})()  == > (匿名函数)()
+    
+  
+</script>
+
+</body>
+</html>

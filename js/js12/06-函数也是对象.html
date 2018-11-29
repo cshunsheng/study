@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // var arr = []; 
+      // var obj = {};
+      // var fn = function () {
+        
+      // }
+
+      // new Function
+      // var p  = new Person(); // new 的作用 : 创建一个新对象
+      // var fn = new Function();
+
+      function Person(name) {
+        this.name = name;
+        this.age = 18;
+
+        console.log(arguments);
+        
+      }
+      
+      var p =  new Person('zs',18);
+
+      console.log(Person.name);
+
+
+      
+
+
+      //  研究一下 函数里面的原型链 
+      
+      // Person.__proto__
+      // console.dir(Person.__proto__.__proto__);
+
+      // console.dir(Function.prototype);
+      
+      
+
+      console.log(Math.__proto__);
+
+
+    </script>
+</body>
+</html>

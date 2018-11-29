@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>达达真的得</div>
+    <div>达达真的得</div>
+    <div>达达真的得</div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // 隐式迭代:  
+            // 隐式: 偷偷的
+            // 迭代：遍历
+            // jq内部帮我们遍历的获取到元素设置上相同的样式
+            $("div").css("fontSize", 30);
+            $("div").eq(0).css("fontSize", 32);
+            // $("div").on("click", function(){
+            //     alert(11)
+            // })
+
+            // 对于获取性操作，返回的是第一个元素的对应的值
+            console.log($("div").css("fontSize"));
+
+            // 对于每个元素需要的不同的操作，手动遍历  for
+            // each() 方法
+        })
+    </script>
+</body>
+</html>

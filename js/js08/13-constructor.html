@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    Person.prototype.liao = function () {
+      console.log('达达只会撩妹');
+    }
+
+    var p = new Person('达达', 19);
+
+  // 构造函数 => 原型 
+  // console.log(Person.prototype);
+
+  // //  原型找构造函数  原型.constructor
+  // console.log(Person.prototype.constructor);
+
+  console.log(p.__proto__.constructor);
+  
+  
+  
+
+
+
+
+    
+    
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  var date = new Date();
+//  console.log(date.getSeconds()); //获取时间对象的秒
+//  console.log(date.getMinutes()); //获取时间对象的分钟
+//  console.log(date.getHours()); //获取时间对象的小时
+//  console.log(date.getDay()); //获取时间对象的星期 星期日 ->0  星期1 -> 1
+//  console.log(date.getDate()); //获取时间对象的几号
+//  console.log(date.getMonth()); //获取时间对象的几月 月份是从0开始的
+//  console.log(date.getFullYear()); //获取时间对象的几月 月份是从0开始的
+  
+  
+//  var date = new Date();
+//console.log(date);
+//console.log(date.toLocaleDateString());
+
+
+//写一个函数，格式化日期对象，返回yyyy-MM-dd HH:mm:ss的形式
+//  function formateDate(date){
+//
+//    var year = date.getFullYear(); //年
+//    var month = date.getMonth(); //月
+//    var day = date.getDate(); //日
+//    var hour = date.getHours(); //小时
+//    var minute = date.getMinutes(); //分钟
+//    var second = date.getSeconds(); //秒
+//
+//    //由于month返回的月份是从0开始的,所以需要在month的基础上加1
+//    month++;
+//
+////    在原来的基础上,如果是一位数,前面要加个0
+//      month = month < 10 ? '0' + month : month;
+//      day = day < 10 ? '0' + day : day;
+//      hour = hour < 10 ? '0' + hour : hour;
+//      minute = minute < 10 ? '0' + minute : minute;
+//      second = second < 10 ? '0' + second : second;
+//
+////    console.log(year, day, second);
+////    console.log(year + '-' + month + '-' + day + ' ' + hour +':' + minute + ':' + second);
+//    return year + '-' + month + '-' + day + ' ' + hour +':' + minute + ':' + second
+//
+//  }
+//
+//  console.log(formateDate(new Date()));
+  
+  
+  
+  //计算代码执行的时间
+  
+  var before = +new Date();
+  for(var i = 0; i < 5000; i++){
+    console.log('事件流逝');
+  }
+  var after = +new Date();
+
+console.log(after - before); //毫秒
+console.log((after - before) / 1000); //秒
+
+</script>
+</body>
+</html>

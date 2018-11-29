@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+
+    // defineProperty : define定义 
+    // 定义一个新属性/ 修改属性  
+
+    function Person() {
+      this.name = 'zs';
+      this.age = 18;
+    }
+
+    var p = new Person();
+
+    // p.sex = '男';
+
+    // 底层 : 
+    // 第一个参数 : 给哪个对象添加属性
+    // 第二个参数 : 属性的名字 属性字符串
+    // 第三个参数 : 属性的装饰 对象的形式存在
+    Object.defineProperty(p, 'sex', {
+      value: '男',  // 值
+      enumerable: true, // 可枚举
+      writable: true,    // 可修改
+      configurable: true, // 可删除属性 + 可修改描述符
+    })
+
+    console.log(p.sex);
+
+    // 1. 问题来了 不可以遍历
+    // 解决办法 : enumerable : true ,
+    // for (var key in p) {
+    //   console.log(key);
+    // }
+
+    // console.log(p.propertyIsEnumerable('sex'));
+
+
+    //2. 问题又来了  不可以修改值
+    // 解决办法 : writable : true 
+    //    p.sex = '女';
+
+    //  console.log(p.sex);
+
+
+
+
+    //3. 问题又来了    不能删除属性 , 也不能修改描述符
+    //解决办法 : configurable : true
+    
+
+    // 删除属性
+    //  delete p.sex;
+
+    // 修改描述符
+    //     Object.defineProperty(p,'sex',{
+    //       enumerable :false
+    //     })
+
+
+    // console.log(p.propertyIsEnumerable('sex'));
+
+
+    console.log(p);
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+      position:absolute;
+    }
+    
+  </style>
+</head>
+<body>
+  <button id="btn">点击移动到400</button>
+  <button id="btnBack">点击移动到0</button>
+  <div id="box"></div>
+  <script>
+    var btn = document.getElementById('btn');
+    var btnBack = document.getElementById('btnBack');
+    var box = document.getElementById('box');
+    var timeid;// 不管是从左到右,还是从右到左,都是操作box这个元素,一个元素,保证只有一个定时器,所以timeid可以重复使用
+    //点击按钮,从0 到 400
+    
+    
+    btn.onclick = function(){
+      //为了预防添加多个定时器,所以每次点击的时候先判断,是否已经有定时器,如果已经有,则移除掉
+//      if(timeid){
+//        clearInterval(timeid);
+//      }
+//      //让盒子缓慢移动的逻辑
+//      timeid =  setInterval(function(){
+////        1. 获取当前box的位置
+//        var current = box.offsetLeft;
+////        2. 判断当前的位置是否已经到达目标位置了
+//        if(current>=400){
+////          如果到达目标位置,则清除掉定时器,并且直接给box目标位置
+//          clearInterval(timeid);
+//          box.style.left = '400px';
+//          return;
+//        }
+////      3. 如果没有到达目标位置,则加几个像素,继续往前走
+//        var target = current + 7;
+//
+//        box.style.left = target + 'px';
+//
+//      },15);
+      animate(400, 7, box);
+    }
+    
+//    点击另一个按钮,从400 到 0
+    btnBack.onclick = function(){
+//      if(timeid){
+//        clearInterval(timeid);
+//      }
+//     timeid = setInterval(function(){
+//       //1.获取当前的位置
+//       var current =  box.offsetLeft;
+////      2. 判断box是否到达目标位置
+//       if(current <= 0){
+//         box.style.left = '0px';
+//         clearInterval(timeid);
+//         return;
+//       }
+////      3. 如果没有到达,减去几个像素
+//       var target = current - 7;
+////        4. 让box移动起来
+//       box.style.left = target + 'px';
+//
+//     },15);
+      animate(0, 7, box);
+    }
+    
+    
+//    这个函数的作用: 实现从左到右或者是从右到左,缓慢移动的功能
+    function animate(target, step, element){
+      if(element.timeid){
+        clearInterval(element.timeid);
+      }
+      element.timeid = setInterval(function(){
+        //1.获取当前的位置
+        var current =  element.offsetLeft;
+//      2. 判断box是否到达目标位置
+        //由于从左往右和从右往左都要实现,判断你的依据需要修改一下
+//        如果目标位置- 当前位置得到的差值 < 每一次走的步数,我们就认为马上要到达了,所以就直接把目标位置赋值为元素
+//          Math.abs(target - current)   <   step
+        if(Math.abs(target - current) < step){
+          element.style.left = target + 'px';
+          clearInterval(element.timeid);
+          return;
+        }
+//      3. 如果没有到达,减去几个像素
+//        var target = current - step;
+        if(target > current){
+          var pos = current + step;
+        }else{
+          var pos = current - step;
+        }
+//        4. 让box移动起来
+        element.style.left = pos + 'px';
+    
+      },15);
+    }
+    
+    
+    
+  </script>
+</body>
+</html>

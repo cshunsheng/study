@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+
+            function Person(name, age){
+                this.name = name;
+                this.age= age;
+            }
+
+            // sayHi()
+            Person.prototype.sayHi = function(){
+                console.log("hello 我是 " + this.name);
+            }
+
+            var p1 = new Person("ls", 20);
+            p1.sayHi();
+
+            var dada = new Person("达达", 19);
+            dada.sayHi();
+
+
+            // 通过$()  获取到的元素其实是jQuery的实例，（jq内部帮我们new + 构造函数）
+            // $()
+
+
+            // jQuery的原型
+            // jQuery.prototype
+            // jQuery.fn
+            // $.prototype
+            // $.fn    ==>  最简单
+
+            // 往jQuery的原型上添加了aaa方法，那么jq的实例对象不就可以范问到aaa方法
+            $.fn.aaa = function(){
+                alert("大家困吗，饿吗");
+            }
+
+            // jq插件的原理： 把方法添加到jq的原型上
+            $("body").aaa();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul,li{
+            list-style: none;
+        }
+        li{
+            width: 200px;
+            height: 200px;
+            background-color: #f99;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li>达达很帅，看不见的帅气</li>
+        <li>达达很帅，看不见的帅气</li>
+        <li>达达很帅，看不见的帅气</li>
+        <li>达达很帅，看不见的帅气</li>
+        <li>达达很帅，看不见的帅气</li>
+        <li>达达很帅，看不见的帅气</li>
+        <li>达达很帅，看不见的帅气</li>
+        <li>达达很帅，看不见的帅气</li>
+        <li>达达很帅，看不见的帅气</li>
+        <li>达达很帅，看不见的帅气</li>
+    </ul>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // each(): 用来遍历jq对象
+            // each(function(index, ele){}): 为每一次匹配到的元素都来执行这个函数
+            //      index: 当前遍历的元素的下标
+            //      ele： 当前遍历的这个元素, 是个dom对象
+            //      在这个函数内，可以使用this来表示当前遍历的元素
+
+
+            // 需求： 给每个li设置上不同的样式
+            var $lis = $("li");
+            // for(var i = 0; i < $lis.length; i++){
+            //     $lis.eq(i).css("opacity", (i+1) / 10 );
+            // }
+
+            $lis.each(function(index, ele){
+                // console.log(index, ele);
+                // console.log(this);
+                // $(ele): 表示当前遍历的元素
+                $(this).css("opacity", (index+1)/ 10)
+            })
+            
+            // var arr = [1,2,3];
+            // console.log(arr); // 静态
+            // arr.push(4, 5);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text" ><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text">
+<script>
+  //需求: 点击input,input的背景颜色变成黄色
+//  1. 获取元素
+    var inputs = document.getElementsByTagName('input');
+//  2. 给每一个input都要注册点击事件
+    for(var i = 0; i < inputs.length; i++) {
+//      inputs[i].onclick = inputClick; //注册点击事件
+      inputs[i].onfocus = inputClick; //注册获得焦点事件 focus
+    }
+    
+    function inputClick(){
+      //  3. 在事件处理函数中,给点击的那个input背景颜色设置成高亮
+//      console.log(this);
+      //排他思想
+      for(var i = 0; i < inputs.length; i++) {
+        inputs[i].style.backgroundColor = '';
+      }
+      this.style.backgroundColor = 'yellow';
+    }
+
+</script>
+</body>
+</html>

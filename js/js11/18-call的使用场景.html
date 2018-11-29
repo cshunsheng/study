@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      //  使用场景
+      //  函数.call(this的指向, 实参1,实参2)
+
+      // 场景1 : 继承 
+      function Person(name,age) {
+        this.name = name;
+        this.age = age;
+      }
+      
+      var p =  new Person('zs',18);
+
+      var dada = {};
+      Person.call(dada,'达',90)
+      
+      // 场景2 : 方法借用
+     function Person(name,age) {
+       this.name = name;
+       this.age = age;
+       this.liaomei = function () {
+         console.log(this.name + '只会撩妹');
+       }
+     }
+     var dd =  new Person('达达',18);
+     
+      var mg = {
+        name : '马哥'
+      };
+      //  call 
+      // 函数.call(this的指向)
+      // 函数里的this 指向了call里的第一个参数
+      dd.liaomei.call(mg); // mg.liaomei(); 
+
+      // dd.liaomei();
+
+
+      
+
+      
+
+    </script>
+</body>
+</html>

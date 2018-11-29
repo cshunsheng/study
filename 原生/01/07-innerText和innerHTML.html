@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div>
+  hello
+  <p> 我是一个p标签</p>
+</div>
+<!--<input type="text">-->
+<script>
+  var div = document.querySelector('div');
+//  console.log(div.innerText); //innerText 返回的是文本
+//  console.log(div.innerHTML); //innerHTML 返回的是内容
+  
+//    div.innerText = 'abc'; //会覆盖原来的所有的内容
+//    div.innerHTML = 'abc'; //会覆盖原来的所有的内容
+  
+//      div.innerText = '<span>span的文本</span>'; //不会识别标签
+//      div.innerHTML = '<span>span的文本</span>'; //会识别标签
+  
+  
+//  innerText 和 innerHTML
+  //  相同点: 赋值时,都会覆盖原来的所有内容
+  //  不同点:
+  //      获取时, innerText只返回文本 , innerHTML返回所有内容
+  //      赋值时, innerText不能识别标签 , innerHTML会识别标签
+  
+//    注意: 主要用于操作双标签
+
+  console.log(div.innerText);
+  console.log(div.innerHTML);
+//  div.innerText = 'haha';
+//  div.innerText = '<div>haha</div>';
+  div.innerHTML = '<div>haha</div>';
+
+
+</script>
+</body>
+</html>

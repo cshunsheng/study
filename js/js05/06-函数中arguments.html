@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  arguments函数中的一个对象,写arguments都要写在函数内,
+//arguments的作用: 用来存储传递进来的所有实参
+//arguments长的像数组,但是不是真的数组,所以我们人为的又给这类起了新的名字叫做伪数组
+//有下标,有length属性
+  
+//  function fn(){
+//    console.log(arguments);
+//  }
+//
+////  fn(1,2,3,4,5,6);
+//  fn('a','b','c');
+//  console.dir([1]);
+//  console.dir(['a']); //一定会以对象的形式展示出来
+//  求任意个数的和
+//  function getMax(x, y){
+////    console.log(x);
+////    console.log(y);
+//    console.log(x, y);
+//  }
+//
+//  getMax(0,1,2);
+  
+  function getMax(){
+//    console.log(arguments);
+//    arguments是一个伪数组,有下标,有length
+    var max = arguments[0]
+    for(var i = 0; i < arguments.length; i++){
+//      console.log(arguments[i]);
+      if(max < arguments[i]){
+        max = arguments[i];
+      }
+    }
+    return max;
+  }
+
+console.log(getMax(1, 2, 4, 8, 9));
+  
+  
+  
+</script>
+</body>
+</html>

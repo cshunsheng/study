@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            height: 4000px;
+            width: 4000px;
+        }
+        button{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <button>点击返回顶部</button>
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // 原生js如何去获取页面垂直的卷曲的距离
+        // window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+
+
+        // scrollTop():  设置和获取页面垂直方向卷曲的距离
+        // console.log($(window).scrollTop());
+         $(window).scrollTop(1000)
+
+        // scrollLeft():  设置和获取页面水平方向卷曲的距离
+        // console.log($(window).scrollLeft());
+
+
+        // 实时的去获取页面卷曲的距离
+        $(window).scroll(function(){
+            console.log($(window).scrollTop());
+        });
+
+        // 返回顶部
+        $("button").click(function(){
+            $(window).scrollTop(0);
+        })
+
+    </script>
+
+</body>
+</html>

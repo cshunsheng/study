@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // 预解析
+
+      // js执行的全过程 :  (记住)
+      //1. 预解析 (变量声明提升) 
+      //2. 代码一行一行执行 
+
+      // 预解析 规则
+      //1. var声明的变量提升; (声明提升,赋值不提升)
+      //                   当前作用域的最顶端
+      //    var num = 20;  var fn = function(){..}
+
+      //2. 函数的声明,,提升的是整个函数 ,,,,,,,, 
+
+      //3. 两个函数重名, 后者会覆盖前者
+    
+      //4. var声明的变量和函数名, 重名,  函数覆盖var声明的
+
+      
+          function test() {
+            console.log('哈哈');
+            
+          }
+
+        console.log(test);
+
+
+         test = 20;
+
+          console.log(test);
+
+
+
+      // console.log(test);
+
+      // function test() {
+      //   console.log('哈哈');
+        
+      // }
+
+      // var test = 20;
+
+      // console.log(test);
+      
+
+      
+
+
+
+      
+   
+
+     
+
+
+
+    </script>
+</body>
+</html>

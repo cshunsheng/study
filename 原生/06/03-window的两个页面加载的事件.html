@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="">
+  <script>
+    //  load   页面中所有的内容加载完毕
+//    console.log(document.getElementsByTagName('img'));
+//    var img = document.getElementsByTagName('img')[0];
+//    console.log(img.src);
+    
+      window.onload = function(){
+        var img = document.getElementsByTagName('img')[0];
+        console.log(img.src);
+      }
+    //  unload  页面关闭的时候触发
+      window.onunload = function(){
+        console.log('页面关闭了');
+      }
+    
+  </script>
+</head>
+<body>
+<img src="" alt="">
+<script src=""></script>
+
+</body>
+</html>

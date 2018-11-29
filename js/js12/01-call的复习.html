@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // call  上下文调用函数模式 
+      // 作用 : 任何一个函数都可以调用call, call可以指定this的指向 
+      // call 的使用 (2种)
+      // 结构 : 函数.call(this的指向, 实参1,实参2....)
+      //1. 没有参数的
+      function test() {
+        
+      }
+      test();
+      test.call();
+
+      //2. 有参数的
+      function test(num1,num2) {
+        
+      }
+
+      var obj = {};
+      // test函数里的this指向了 obj 
+      test.call(obj,10,20)
+
+      // call 的使用场景(2种) 
+      //1. 继承 
+      function Person() {
+        this.name = 'zs';
+        this.car = '摩拜';
+      }
+
+      var obj = {};
+
+      // 函数.call(this的指向,实参1,,,)
+      Person.call(obj);
+
+      //2. 方法借用  
+      var obj = {
+        name :　'达达',
+        liaomei: function () {
+          console.log(this.name + '只会撩妹');
+          
+        }
+      }
+
+      // obj.liaomei(); 达达只会撩妹
+      var mg = {
+        name : '马哥'
+      }
+
+      //call
+      // 函数.call(this的指向,实参);
+      obj.liaomei.call(mg); // mg.liaomei();
+
+
+
+    </script>
+</body>
+</html>

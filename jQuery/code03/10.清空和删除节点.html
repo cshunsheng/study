@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p class="innerp">里面的p元素</p>
+    </div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // js removeChild()
+
+            // jq remove() : 删除自身，自杀
+            // $(".innerp").remove();
+            // $("div").remove();
+
+
+            // 清空 innerHTML= "";
+            // empty(): 自身保留，清理门户
+            // $("div").empty(); // 不会造成内存泄漏的问题，把元素绑定的事件会清除在一个个的移除掉元素
+
+
+            // 克隆节点：
+            // clone()
+            //  参数：是否克隆元素的事件， true，克隆事件，默认值是false
+
+            $(".innerp").click(function(){
+                alert();
+            })
+
+            var p = $(".innerp").clone(true);
+            $("div").append(p);
+        })
+    </script>
+</body>
+</html>

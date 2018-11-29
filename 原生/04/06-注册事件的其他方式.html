@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="box">我是div</div>
+  <script>
+    var box =  document.getElementById('box');
+//    优点: 写法简单, 没有兼容性问题
+//    缺点: 不能给同一个元素注册多个相同的事件
+//    box.onclick = function(){
+//      console.log('假装有100行代码');
+//
+//    }
+//
+//    //==========
+//    box.onclick = function(){
+//
+//    }
+    
+//    addEventLIstener()
+//    元素.addEventListener('事件名', 事件处理函数, false);
+//    优点: 可以给同一个元素,注册多个同一事件
+//    缺点: 有兼容性问题,写起来相对没有on+事件名的方式简洁
+    box.addEventListener('click', function(){
+      console.log('假装有一万行代码');
+    }, false);
+    
+    box.addEventListener('click', function(){
+      console.log('后来增加的逻辑');
+    },false);
+
+  </script>
+</body>
+</html>

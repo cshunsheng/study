@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <label><input type="checkbox" checked="checked"> 点击我切换状态 </label>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // 需求： 点击input，获取input的checked属性
+        $("input").click(function(){
+            // 使用attr方法去获取表单元素的checked属性会存在问题
+            console.log($(this).attr("checked"));
+
+            // 如果需要获取的属性是 checked、selected、disabled这些表单元素的属性，不能使用attr方法获取和设置，只能通过prop方法
+            // prop方法能够获取到最新的表单元素的状态，对于 checked、selected、disabled属性的返回值是布尔类型的
+            console.log($(this).prop("checked"));
+
+            // attr 、、 prop
+            // 任何属性都可以使用attr方法，除了这三个checked、selected、disabled这些表单元素的属性
+            // prop方法专门来处理这三个checked、selected、disabled这些表单元素的属性
+
+            // attr方法设置获取元素的自定义属性（index = 1）
+            // prop方法是设置获取元素的固有属性（src、alt， type、checked）
+            // attr()
+
+        })
+    </script>
+</body>
+</html>

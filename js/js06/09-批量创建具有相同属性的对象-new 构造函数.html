@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //需求: 要批量创建一个动物对象, 动物对象要有名字,要有年龄,要有毛色,品种,性别
+//  自定义构造函数法
+//   js中内置的构造函数 Object Array Function
+//   我们自己写的构造函数,叫做自定义构造函数
+//   构造函数: 就是一个函数,只是这个函数需要和new配合使用,并且这个函数是专门用来和new一起创建对象的
+//    注意: 一般在写构造函数的时候,函数名首字母要大写(这是约定俗成.如果不大写,语法也没有错)
+  
+  function Cat(name, age, color, type, gender){
+    this.name = name;
+    this.age = age;
+    this.color = color;
+    this.type = type;
+    this.gender = gender;
+  }
+ 
+  
+  var obj = new Cat('哈哈', 1, 'hotpink', '美短', '公');
+  console.log(obj);
+  
+  //this也是函数中的一个关键字,这个关键字我们可以当做是一个变量
+//  this到底存的是什么取决于函数是如何调用的
+  
+//  new 是js中的一个关键字,一般主要用来和函数配合使用,用来创建对象
+//    1. 在内存中开辟一块空间,创建一个空对象
+//    2. new 关键字在会调用后面的函数,让函数里面的代码执行
+//    3. new关键字,控制函数中this的指向,让this指向第一步中创建出来的那个新的空的对象
+//    4. new 让函数执行完之后,把新的对象返回出来
+</script>
+</body>
+</html>

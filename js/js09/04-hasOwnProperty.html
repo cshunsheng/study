@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+
+    // hasOwnProperty   是否是`自己拥有`的属性
+    // has: 是否  Own: 自己拥有   Property:属性
+    // 语法 :
+    //  对象.hasOwnProperty(属性字符串)
+
+    function Person() {
+      this.name = 'zs';
+      this.age = 18;
+    }
+
+    Person.prototype.sex = '男';
+    // Person.prototype.constructor = Person;
+
+    var p = new Person();
+
+    console.log(p.sex);
+    // console.log(p.constructor);
+
+    console.log(p.hasOwnProperty('name'));
+    console.log(p.hasOwnProperty('age'));
+    console.log(p.hasOwnProperty('sex'));
+    console.log(p.hasOwnProperty('constructor'));
+
+    // 拓展 : in  
+    // 判断属性 是否在 p 里面
+    // 判断属于 是否可以让p使用 
+    //  ★ in :  自己的属性 + 原型链上的属性
+    // 区别 : 
+    // 结构 :  if (属性字符串 in 对象) {}
+    // if (name in p)
+    // if ('name' in p) {
+    //   console.log('ok');
+    // }
+    console.log('name' in p);
+    console.log('age' in p);
+    console.log('sex' in p);
+    console.log('constructor' in p);
+
+
+    // for..in... 遍历对象
+    // for..in.. 遍历属性  遍历的都是可遍历的可枚举的
+    // 遍历 颜色 深的
+    // 遍历的自己的+ 原型链上的
+    for (var key in p) {
+
+      // name age sex
+      console.log(key);
+    }
+
+    console.log(Object.prototype);
+
+    console.log(p);
+
+
+
+
+    // 打印有个浅白色 :  不可枚举 不可遍历 
+
+
+
+    // 需求 : 遍历自己的属性  for 
+    // 场景 : 
+    for (var key in p) {
+
+      if (p.hasOwnProperty(key)) {
+        console.log(key);
+      }
+    }
+
+
+
+  </script>
+</body>
+
+</html>

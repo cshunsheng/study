@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      margin-left: 100px;
+    }
+    .one{
+      border:5px solid green;
+    }
+  </style>
+</head>
+<body>
+<!--<div style="width:100px; height:100px; background-color: red" class="one"></div>-->
+<div class="two"></div>
+<script>
+  var div = document.getElementsByTagName('div')[0];
+  //通过style属性添加样式
+  div.style.width = '100px';
+  div.style.height = '100px';
+  div.style.backgroundColor = 'red'; //在css中用-链接的属性,在js中一律改成驼峰命名法
+  
+  
+  //通过clasName 添加样式
+//  div.className = 'one';
+  
+  
+  //获取样式的问题:
+//  style的问题:
+  console.log(div.style.width);
+  console.log(div.style.height);
+  console.log(div.style.backgroundColor);
+  console.log(div.style.border);
+  console.log(div.style.marginLeft);
+  
+//   类名的问题
+  console.log(div.className);
+  
+  
+//  注意:
+//  给className赋值的时候,新的值会把原来的值覆盖掉
+  div.className += ' one';
+  console.dir(div);
+</script>
+</body>
+</html>

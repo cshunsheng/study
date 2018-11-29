@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  
+//  昨天达达说如果课下练习时代码如果是抄老师那等于没掌握，那像我这样大部分代码第一遍自己独立敲不出来，会看看老师的才能敲完整 ，然后自己理解后 试着独立再敲出一遍的练习方式可行吗？但有时不知道第二遍自己敲出来的是凭记忆 会背了才敲出来的，还是真的自己掌握了。。但真的第一遍自己敲不太行 T.T 所以后天考试都有什么题型呢？有算术题让自己敲出来的那种吗，难不难，怎么复习呢 （空调下午调28度等于除了前两排后面全热的出汗的温度 希望学习环境像来之前介绍的一样 别光跟十年前没空调那时比啊...）
+  
+  //请老师再讲一下预解析；就是变量名和函数名相同时，后面把前面覆盖是怎么回事
+
+//    var fn ;
+//    function fn(){
+//
+//    }   //var fn = new Function()
+  
+//  思考题的第三题，对于最终打印的num2结果想不通，求指点
+
+
+//    var num1 = 55;
+//    var num2 = 66;
+//    function f1(num, num1) {
+//      num = 100;
+//      num1 = 100;
+//      num2 = 100;
+//      console.log(num); //100
+//      console.log(num1); //100
+//      console.log(num2); //100
+//    }
+//
+//    f1(num1, num2); // f1(55, 66);
+//    console.log(num1); //55
+//    console.log(num2); //100
+//    console.log(num); //报错
+  
+  //将数组中重复项去掉,返回一个新的数组   [1,3,4,5,4,3,9,7] --> [1,3,4,5,9,7]
+  
+  var arr = [1,3,4,5,4,3,9,7];
+  var newArr = [];
+  newArr[0] = arr[0];
+  //newArr = [1,2,3];
+
+//2. 把arr中的每一项和newArr的中所有进行比较
+for(var j = 0; j < arr.length; j++) {
+  //  1. 要把arr中的一项,拿出来和newArr中的每一项进行比较
+  var flag = true; //假设没有重复的
+  for(var i = 0; i < newArr.length; i++) {
+    if(arr[j]== newArr[i]){
+      //3.证明有重复的,如果有重复的就不把arr[j],放到newArr中,否则,就添加到newArr中
+      flag = false;
+      break;//为了优化代码
+    }
+  }
+  
+  if(flag){
+    //如果flag是true,证明没有重复的,就把arr[j],添加到newArr中
+    newArr[newArr.length] = arr[j];
+  }
+  
+  
+}
+
+console.log(newArr);
+
+
+</script>
+</body>
+</html>

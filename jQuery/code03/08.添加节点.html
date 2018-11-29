@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+            height: 400px;
+            background-color: #f99;
+        }
+        p{
+            padding: 10px;
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="innerP">听说倩倩很彪， 弹奏小星星很有范</p>
+    </div>
+    <p class="outerP">听说达达很温柔， 弹奏小星星很有骚气</p>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // js appendChild    insertBefore()
+
+        // append() 
+        // A.append(B);  把B添加A里面去，作为最后一个子元素
+        // 1. 参数如果是 jq的选择器， 把页面上的元素剪切添加到容器内
+        // $("div").append( $(".outerP") );
+
+        // 2. 参数是html字符串，根据参数创建元素，然后把创建的元素添加到节点
+        // $("div").append( '<p class="outerP">11111听说达达很温柔， 弹奏小星星很有骚气</p>' );
+
+
+        // appendTo()
+        // B.appendTo(A);
+        // 参数A可以是jq对象
+        // $(".outerP").appendTo( $("div") );
+        // 也可以是选择器，内部会根据选择器找到这个元素，在把元素添加到里面去
+        // $(".outerP").appendTo( "div" );
+
+
+
+        // prepend()
+        // A.prepend(B); 把B添加到A里面，B作为第一个子元素
+        // $("div").prepend( $(".outerP") );
+        // $("div").prepend( '<p class="outerP">11111听说达达很温柔， 弹奏小星星很有骚气</p>' );
+
+        // prependTo()
+        // B.prependTo(A); 
+        // $(".outerP").prependTo( $("div") );
+        // $(".outerP").prependTo( "div" );
+
+
+        // after()/ before()
+        // A.after(B);   // 把B添加到A的后面，A和B就是兄弟关系
+        // $("div").after( $(".innerP") );
+
+        // A.before(B);  // 把B添加到A的前面，A和B就是兄弟关系
+        $("div").before( $(".innerP") );        
+
+
+        // 小结：
+        // 1. append()
+        // 2. appendTo()
+        // 3. prepend()
+        // 4. prependTo()
+        // 5. after()
+        // 6. before();
+    </script>
+</body>
+</html>

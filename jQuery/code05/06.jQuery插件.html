@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: #f99;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <!-- 引入jq插件 -->
+    <script src="jquery.color.js"></script>
+
+    <script>
+        $(function(){
+            // jq插件：
+            //  其实还是一个js文件，在jq的基础上，新增了一些功能（插件依赖于jQuery），需要使用功能的时候，引用文件即可（前提： 先引用jQuery）
+
+            // jQuery.color.js：  让jq支持做颜色值的动画
+
+            // jq的自定义动画支持数值型的动画颜色值的变化不支持
+            $("div").animate({
+                width: 700,
+                backgroundColor: "lime"
+            })
+        })
+
+    </script>
+</body>
+</html>

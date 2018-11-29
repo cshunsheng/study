@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      
+      // 混入原型继承
+      // 1. for 
+      // 2. Person.prototype
+
+      function Person(name,age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      var  obj1 = {
+        car : '法拉利'
+      }
+
+      var obj2 = {
+        money : 1000
+      }
+
+      //新的继承方法 
+      Person.prototype.extend = function (obj) {
+
+        for (var key in obj)  {
+          this[key] =  obj[key];
+        }
+      }
+
+      // 好处 ： 
+      //1. 在原型里添加方法 , 避免了再对象里添加方法造成资源浪费
+      //2. 方法里面通过for循环遍历， 可以继承多个对象
+      
+      var p =  new Person('dd',18);
+
+      // Person.prototype.extend(obj1);
+      p.extend(obj1);
+      p.extend(obj2);
+
+      console.log(p.car);
+      console.log(p.money);
+      
+      
+      
+
+    </script>
+</body>
+</html>

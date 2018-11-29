@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      width: 300px;
+      height: 300px;
+    
+      margin: 0 auto;
+      margin-top: 100px;
+      border: 1px solid lightgray;
+      text-align: center;
+    }
+    
+    span{
+      line-height: 300px;
+      font-size: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <span id="content"></span>
+  </div>
+
+  <script>
+   //需求:打开页面,则监听键盘事件, 如果按下的是r,背景变红色,g 绿色, b 蓝色. 如果是其他的按键,一律变成粉色. 还要动态的展示keyCode
+    
+//    1. 获取元素 box content
+      var box = document.getElementById('box');
+      var content = document.getElementById('content');
+//    2. 注册事件 keydown
+//        打开页面直接监听键盘事件,这种情况,一般会给document注册
+      document.onkeydown = function(e){
+//        3. 根据按下的字符,给box修改背景颜色,修改content的文本
+//        82 r
+//        71 g
+//        66 b
+//        console.log(e.keyCode);
+        //3.1 修改box的背景颜色
+        switch(e.keyCode){
+          case 82 :
+            box.style.backgroundColor='red';
+            break;
+          case 71 :
+            box.style.backgroundColor='green';
+            break;
+          case 66 :
+            box.style.backgroundColor='blue';
+            break;
+          default:
+            box.style.backgroundColor='pink';
+            break;
+        }
+        
+        //3.2 修改content的文本
+        content.innerText = e.keyCode;
+      }
+      
+    
+    
+
+  </script>
+</body>
+</html>

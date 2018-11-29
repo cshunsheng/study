@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+         // |  : 或者  
+        // console.log(/boot|foot/.test('bootfoot'));
+        // console.log(/boot|foot/.test('bootf'));
+        // console.log(/boot|foot/.test('btfoot'));
+        // console.log(/boot|foot/.test('btfot'));
+        
+
+         // () : 优先级最高的
+         console.log(/(b|f)oot/.test('bootfoot'));
+         console.log(/(b|f)oot/.test('bootot'));
+         console.log(/(b|f)oot/.test('tfoot'));
+
+
+
+    </script>
+</body>
+</html>

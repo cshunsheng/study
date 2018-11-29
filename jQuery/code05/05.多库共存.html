@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script src="dada.js"></script>
+    <script src="jquery-1.12.4.js"></script>
+    
+    <script>
+        // console.log($); // jQuery
+
+        // Conflict: 冲突
+        // 作用： 释放jq对$的控制权, 返回了jQuery函数
+        var a = jQuery.noConflict();
+        console.log(a);
+
+        // console.log($); // dada
+
+        // 多库共存：jq可以来释放对$的控制权，可以自定义使用其他变量来表示jQuery的功能
+        a(function(){
+            // console.log(111);
+            a("body").css("backgroundColor", "#f99");
+        })
+    </script>
+
+</body>
+</html>

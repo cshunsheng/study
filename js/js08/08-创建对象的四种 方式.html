@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      //  单独创建 2种
+      //1. 字面量创建对象
+      // 字面量 直接量  一眼就能看出来它是什么类型的
+      // 12 '12' []  {} 
+      var obj = {
+        name : 'zs',
+        age : 18
+      }
+
+      // 缺点 :不能批量创建 
+
+      //2. 通过系统的构造函数  Object 创建对象
+      // 构造函数一定要配合 new一起使用
+      var obj = new Object();
+      obj.name = '达达'
+
+      // 缺点 :不能批量创建对象
+
+
+      //   批量创建 2种
+      //1. 工厂函数 
+      function createPerson( name , age ) {
+
+          //1. 创建空对象
+          var obj = {};
+
+          //2. 赋值属性
+          obj.name = name ;
+          obj.age = age;
+
+          //3. 返回对象
+          return obj;
+      }
+      
+      var p =  createPerson('达达',19);
+      console.log(p);
+      var p1 =  createPerson('马哥',18);
+      console.log(p1);
+      
+
+      // 缺点 : 不能看出来类型   Object
+      
+
+      //2. 自定义构造函数 
+      function Person(name , age ) {
+          this.name = name;
+          this.age = age;
+          this.say = function () {
+            console.log('阿尼亚赛哟');
+          }
+      }
+
+      var p =  new Person('马哥',18);
+
+    // 1. Person()  构造函数 函数 + 首字母大写 
+    // 2.  构造函数 配合 new 一起使用
+    
+    // 3. new 的四个作用 (面试 )
+    //  - 创建一个新对象
+    //  - this指向了这个新对象
+    //  - 执行构造函数 添加属性和方法 (实例化对象)
+    //  - 返回这个新对象 
+
+
+
+
+
+    </script>
+</body>
+</html>

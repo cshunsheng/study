@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+
+    // set 和 get 
+    // set : 设置  赋值 var name = 'zs';  p.name = 'ls'
+    // get : 拿到获取    console.log(name)   console.log(p.name)
+
+
+    function Person() {
+      this.name = 'zs';
+      this.age = 18;
+    }
+
+    var p = new Person();
+
+    // 底层 : 
+    Object.defineProperty(p, 'sex', {
+      // value: '男',  // 值
+      //  writable: true,    // 可修改
+
+
+      enumerable: true, // 可枚举
+      configurable: true, // 可删除属性 + 可修改描述符
+      
+      set: function (newVal) {
+        console.log('调用了set');
+
+        if (newVal == '马哥') {
+          sex = newVal + '第一帅';
+        }else {
+          sex = newVal + '第三帅';
+        }
+      },
+      
+      get : function () {
+        console.log('调用了get');
+        return sex;
+      } 
+    })
+
+    p.sex = '倩倩';
+
+    console.log(p.sex);
+
+    // 注意 :
+    //1. 使用set和get之前,要注释一点东西 注释 value和writable 
+
+
+
+
+
+  </script>
+</body>
+
+</html>

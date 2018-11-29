@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+
+    // 概念 :
+    //1. 闭包的概念 : 外函数嵌套一个子函数, 子函数调用了外函数里的变量
+    //2. 闭包产生的条件 : 子函数调用了外函数的变量 
+    // outer(外部函数)  inener(子函数)
+    //3. 闭包的作用 :
+    // 1. 将变量保护起来
+    // 2. 将变量的值始终保存在内存中
+
+
+    function outer() {
+
+      // 变量 计数
+      var count = 0;
+
+      // 闭包 就是我们想要调查的函数调用次数
+      function inner() {
+
+        count++;
+        console.log('调用的次数' + count);
+
+      }
+
+      // 返回出去
+      return inner;
+    }
+
+     var inner =  outer();
+     inner();
+     inner();
+
+     inner = null;
+
+
+    //  function test() {
+       
+    //    var count = 0;
+    //  }
+
+    //  test();
+    //  test();
+
+
+
+
+
+  </script>
+</body>
+
+</html>

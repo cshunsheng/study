@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="box"> </div>
+<script>
+  //由于在实际工作当中,会需要在标签上存储一些信息,所以需要在标签上自定义一些属性
+  var box = document.getElementById('box');
+//  console.log(box.id); //符合w3c标准的属性,可以直接通过点语法操作
+//  console.log(box.index); //但是自定义的属性,不能使用点语法操作
+  
+//  1. 给标签添加自定义属性
+//   元素.setAttribute('属性名', '属性的值')
+//  box.setAttribute('i', '0');
+//
+////  2. 获取标签上的自定义属性的值
+////    元素.getAttribute('属性名') 返回属性的值
+//  console.log(box.getAttribute('i'));
+//
+////  3.删除标签上自定义属性
+////    元素.removeAttribute('属性名说')
+//  box.removeAttribute('i');
+  
+//  操作标签的自定义属性: 优点: 可以在标签上看到,显式的存储方式
+//                        缺点: 书写麻烦
+//  元素是对象,给元素直接添加属性的方式也可以存储数据
+//    优点: 书写简单
+//    缺点: 看不到存储的是什么
+//  box.index = 0;
+  
+  
+//  注意点: 能够操作标签上的所有属性(包括w3c标准属性)
+//  box.setAttribute('class', 'one');
+//  console.log(box.getAttribute('class'));
+//  box.removeAttribute('class');
+  
+  
+</script>
+</body>
+</html>

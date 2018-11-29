@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  break 和 continue :
+//  break: 停止循环
+//  continue : 跳过当前循环,继续执行下一次循环
+  
+//   数组: 有序的集合(容器) ,下标是从0开始的.用来存储多个数据
+//     创建数组:
+  //      var arr = new Array()
+  //      var arr1 = []
+//      往数组中存储数据:
+//        arr[0] = 'a';
+//        new Array('a', 'b', 'c')
+//        ['a', 'b', 'c']
+  
+//        数组中可以存储任何数据,但是一般一个数组中都存储同一类型的数据
+//        访问数组中的数据:
+//          var arr = ['a', 'b', 'c'];
+//          arr[0] --> 'a'
+          //遍历数组
+//          for(var i = 0;i < arr.length; i++){
+//            console.log(arr[i]);
+//          }
+  
+   
+//  var arr = [1,5,8,9,12];
+  var arr = [-1,-5,-8,-9,-12];
+  var max = arr[0];
+  for(var i = 0; i < arr.length; i++){
+    
+    if(max < arr[i]){
+      
+      max = arr[i];
+    }
+    
+  }
+  console.log(max);
+          
+    
+        
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+    body {
+      font-family: "Helvetica","Arial",serif;
+      color: #333;
+      background-color: #ccc;
+      margin: 1em 10%;
+    }
+    h1 {
+      color: #333;
+      background-color: transparent;
+    }
+    a {
+      color: #c60;
+      background-color: transparent;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    ul {
+      padding: 0;
+    }
+    li {
+      float: left;
+      padding: 1em;
+      list-style: none;
+    }
+    #imagegallery {
+    }
+    
+    #imagegallery a {
+      margin: 0px 20px 20px 0px;
+      padding: 0px;
+      display: inline;
+    }
+    
+    #imagegallery a img {
+      border: 0;
+    }
+  </style>
+
+</head>
+<body>
+<h2>
+  美女画廊
+</h2>
+
+<div id="imagegallery">
+  <a href="images/1.jpg" title="美女A">
+    <img src="images/1-small.jpg" width="100px" alt="美女1" />
+  </a>
+  <a href="images/2.jpg" title="美女B">
+    <img src="images/2-small.jpg" width="100px" alt="美女2" />
+  </a>
+  <a href="images/3.jpg" title="美女C">
+    <img src="images/3-small.jpg" width="100px" alt="美女3" />
+  </a>
+  <a href="images/4.jpg" title="美女D">
+    <img src="images/4-small.jpg" width="100px" alt="美女4" />
+  </a>
+</div>
+
+<div style="clear:both"></div>
+
+<img id="image" src="images/placeholder.png" alt="" width="450px" />
+<p id="des">选择一个图片</p>
+
+</body>
+</html>
+<script>
+ //需求: 点击小图,更改大图的src路径, 修改p标签的文本
+  // 给所有a标签注册点击事件,在事件处理函数中,获取到对应的大图的路径和文本,
+//  然后赋值给img和p标签
+//  1.获取元素
+    var imgG = document.getElementById('imagegallery');
+    var links = imgG.getElementsByTagName('a');
+    var img = document.getElementById('image');
+    var des = document.getElementById('des');
+    
+//  2. 给四个a注册点击事件
+//    links[0].onclick = function(){}
+//    links[1].onclick = function(){}
+//    links[2].onclick = function(){}
+      for(var i = 0; i < links.length; i++) {
+        
+        links[i].onclick = function(){
+          //  3. 在事件处理中,要获取对应的值,然后给img和p赋值
+//          3.1 获取a标签的href和title的值
+          console.log(this); //点击谁,在事件处理函数中就指向谁
+          var href = this.href; //获取大图的路径
+          var txt = this.title;
+          // 3.2 给img的src和p的innerText赋值
+          img.src = href;
+          des.innerText = txt;
+          return false;
+        }
+        
+      }
+
+  
+
+</script>
+

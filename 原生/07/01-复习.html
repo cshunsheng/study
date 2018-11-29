@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+   浏览器抽象成了window对象
+   
+   url: 统一资源定位符
+  协议://主机名:端口号/路径?查询字符串#锚点
+  location的成员
+    href : 返回地址栏中的url
+    host : 主机名
+    search : 查询字符串
+    hash : 锚点
+    reload() true是强制刷新
+    assign()  跳转页面
+    replace() 跳转页面
+  history的方法
+    back()
+    forward()
+    go()
+  navigator.userAgent  返回用户设备以及浏览器信息的字符串
+
+  定时器:
+    设置定时器
+      setTimeout(回调函数, 时间毫秒) 返回当前定时器的id, 非0的数字
+      setInterval(回调函数, 时间毫秒)  返回当前定时器的id, 非0的数字
+    清除定时器
+      clearTimeout(定时器的id)
+      clearInterval(定时器的id)
+
+
+      console.log(1);
+      setTimeout(function(){
+        console.log(2);
+      },0);
+      console.log(3);
+</body>
+</html>

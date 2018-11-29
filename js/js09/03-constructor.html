@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // constructor    构造函数
+
+      function Person() {
+        this.name = 'zs';
+      }
+
+      var p =  new Person();
+
+      // console.log(Person.prototype.constructor);
+      // 
+      var arr = []; // Array 
+      var obj = {}; // Object
+      var fn = function () {
+      }  // Function
+
+      console.log(arr.constructor.name);
+      console.log(obj.constructor.name);
+      console.log(fn.constructor.name);
+
+      // 判断类型 
+      // 5个简单数据类型  typeof 
+      // log(typeof null)  => object
+       // typeof 的结果 :  number  string boolean undefined  object 
+
+      // 3个复杂类型
+      // constructor.name
+      // console.log(arr.constructor.name);
+      // console.log(obj.constructor.name);
+      // console.log(fn.constructor.name);
+      
+      
+    </script>
+</body>
+</html>

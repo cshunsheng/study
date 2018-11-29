@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      border: 0;
+    }
+    
+    .all {
+      width: 500px;
+      height: 300px;
+      padding: 7px;
+      border: 1px solid #ccc;
+      margin: 100px auto;
+      position: relative;
+    }
+    
+    .screen {
+      width: 500px;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .screen li {
+      width: 500px;
+      height: 300px;
+      overflow: hidden;
+      float: left;
+    }
+    
+    .screen ul {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 3000px;
+    }
+    
+    .all ol {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      line-height: 20px;
+      text-align: center;
+    }
+    
+    .all ol li {
+      float: left;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 1px solid #ccc;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    
+    .all ol li.current {
+      background: yellow;
+    }
+    
+    #arr {
+      display: none;
+      z-index: 1000;
+      
+    }
+    
+    #arr span {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      margin-top: -20px;
+      background: #000;
+      cursor: pointer;
+      line-height: 40px;
+      text-align: center;
+      font-weight: bold;
+      font-family: '黑体';
+      font-size: 30px;
+      color: #fff;
+      opacity: 0.3;
+      border: 1px solid #fff;
+    }
+    
+    #arr #right {
+      right: 5px;
+      left: auto;
+    }
+  </style>
+</head>
+
+<body>
+<div class="all" id='box'>
+  <div class="screen" id="screen">
+    <ul>
+      <li>
+        <img src="images/1.jpg" width="500" height="300"/>
+      </li>
+      <li>
+        <img src="images/2.jpg" width="500" height="300"/>
+      </li>
+      <li>
+        <img src="images/3.jpg" width="500" height="300"/>
+      </li>
+      <li>
+        <img src="images/4.jpg" width="500" height="300"/>
+      </li>
+      <li>
+        <img src="images/5.jpg" width="500" height="300"/>
+      </li>
+    </ul>
+    <ol>
+    </ol>
+  </div>
+  <div id="arr">
+    <span id="left">&lt;</span>
+    <span id="right">&gt;</span>
+  </div>
+</div>
+<!--引入animate.js,实现缓慢移动的效果-->
+<script src="animate.js"></script>
+<script>
+  //需求:
+  //        1. 根据ul中li的个数,动态的创建出ol中的li(数字按钮)
+  //          1.1 获取元素 ul, ul里面的li, ol
+  var box = document.getElementById('box');
+  var arr = document.getElementById('arr');
+  var left = document.getElementById('left');
+  var right = document.getElementById('right');
+  var screen = document.getElementById('screen');
+  var ul = screen.getElementsByTagName('ul')[0];
+  var lis = ul.children;
+  var ol = screen.getElementsByTagName('ol')[0];
+  var indexGlobal = 0; //用于存储当前展示的是第几张图片的下标
+  
+ 
+  
+//  2. 动态创建数字按钮 根据lis里面的个数(要展示几张图,就有几个数字按钮)
+  for(var i = 0; i < lis.length; i++) {
+     var li = document.createElement('li');
+      li.innerText = i + 1;
+      ol.appendChild(li);
+      //2.1 判断如果是第一个li就默认高亮
+      if(i == 0){
+        li.className = 'current';
+      }
+      
+      //给每一个数字按钮(li)注册点击事件
+      li.onclick = numBtnClick;
+    
+    // 给每一个数字按钮,存储自己的下标
+      li.setAttribute('index', i);
+      
+  }
+
+  // !!!! 偷偷的克隆第一张图,添加到ul的最后面
+//  要放在动态创建数字按钮的后面
+  var newli = lis[0].cloneNode(true);
+  ul.appendChild(newli);
+  
+  //3. 点击数字按钮,展示对应的图片
+  function numBtnClick(){
+//    3.1 展示对应的图片
+//    求 ul的位置  数字按钮的下标 * screen的宽度
+    var target = this.getAttribute('index') * screen.offsetWidth;
+//    ul.style.left = -target + 'px';
+    animate(-target, 8, ul);
+    //由于点击数字按钮,会改变展示的图片,所以对应的indexGlobal的值也应该跟着变化
+    indexGlobal = this.getAttribute('index');
+    
+//    3.2 对应的数字按钮高亮
+    //排他
+    for(var i = 0; i < ol.children.length; i++) {
+      ol.children[i].className = '';
+    }
+    this.className = 'current';
+  }
+  
+  //4. 鼠标移入到box中,arr展示, 移出box,arr隐藏
+//  4.1 移入事件  mouseenter
+  box.onmouseenter = function(){
+    arr.style.display = 'block';
+    //8.1 鼠标移入,自动轮播停止
+    clearInterval(timeid);
+    
+  }
+  
+//  4.2 移出事件 mouseleave
+  box.onmouseleave = function(){
+    arr.style.display = 'none';
+    
+    //8.2鼠标移出,自动轮播继续
+    timeid = setInterval(function(){
+      right.onclick();
+    }, 3000); // 自动轮播的间隔时间不能太短
+  }
+  
+  //5. 给左按钮注册点击事件
+  left.onclick = function(){
+    //滚动到上一张
+    //根据indexGlobal知道当前展示的图片的下标
+//    判断当前展示的是否是第一张(下标是0)
+    if(indexGlobal == 0) {
+      //直接跳到最后一张,然后再慢慢滚动到第5张
+      indexGlobal = ol.children.length;
+      //偷偷的跳到最后一张
+      ul.style.left = -indexGlobal * screen.offsetWidth + 'px';
+//      然后再慢慢滚动到第五张
+//      indexGlobal--;
+//      ol.children[indexGlobal].onclick();
+  
+    }
+//    }else{
+//      indexGlobal--;
+//      ol.children[indexGlobal].onclick();
+//    }
+  
+    indexGlobal--;
+    ol.children[indexGlobal].onclick();
+    
+    
+  }
+  
+  //6. 给右边的按钮注册点击事件
+  right.onclick = function(){
+    //判断当前展示的是第五张图的时候,就不能直接调用数字按钮的onclick了
+    if(indexGlobal == ol.children.length-1){
+      //证明当前展示的是第5张
+//      6.1 直接滚动到最后一张
+      indexGlobal++;
+      var target = -indexGlobal * screen.offsetWidth;
+      animate(target, 8, ul,function(){
+        //    6.2 滚动结束之后,直接跳到第一张
+        ul.style.left = '0px';
+       
+      });
+      indexGlobal = 0;
+      //6.3 让数字按钮1高亮
+      for(var i = 0; i < ol.children.length; i++) {
+        ol.children[i].className = '';
+      }
+      ol.children[0].className = 'current';
+      
+
+      
+  
+    }else{
+      indexGlobal++;
+      ol.children[indexGlobal].onclick();
+    }
+    
+  }
+  
+  // 7.自动轮播
+  var timeid = setInterval(function(){
+    right.onclick();
+  }, 3000); // 自动轮播的间隔时间不能太短
+  
+  
+  
+  
+ 
+
+
+ 
+
+ 
+
+</script>
+
+
+</body>
+
+</html>

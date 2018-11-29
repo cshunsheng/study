@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{
+      height:1500px;
+      width:1500px;
+    }
+  </style>
+</head>
+<body>
+<script>
+  //浏览器可视区的宽高,不可以被赋值
+  console.log('可视区的宽度:' + window.innerWidth);
+  console.log('可视区的高度:' + window.innerHeight);
+  
+  //监听浏览器的滚动条
+  window.onscroll = function(){
+//    console.log(window.pageXOffset);
+    console.log(window.pageYOffset);
+  }
+</script>
+</body>
+</html>

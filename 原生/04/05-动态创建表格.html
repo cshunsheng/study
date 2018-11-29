@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    table{
+      border-collapse: collapse;
+     
+    }
+  </style>
+</head>
+<body>
+ <!--<table border = "1px" width = "500px">-->
+   <!--<thead style="background-color: lightgray">-->
+    <!--<tr>-->
+      <!--<th>表头</th>-->
+      <!--<th>表头</th>-->
+      <!--<th>表头</th>-->
+      <!--<th>表头</th>-->
+    <!--</tr>-->
+   <!--</thead>-->
+   <!--<tbody align="center">-->
+    <!--<tr>-->
+      <!--<td>zs</td>-->
+      <!--<td>语文</td>-->
+      <!--<td>成绩</td>-->
+      <!--<td><a href="">删除</a></td>-->
+    <!--</tr>-->
+   <!--</tbody>-->
+ <!--</table>-->
+</body>
+<script>
+  // 数据行 中的数据
+  var bodyData = [
+    {name: 'zs', subject: '语文', score: 100},
+    {name: 'ls', subject: '数学', score: 80},
+    {name: 'sdb', subject: '体育', score: 0},
+    {name: 'gw', subject: '英语', score: 59},
+    {name: 'bzr', subject: '数学', score: 50}
+  ];
+  // 表头数据
+  var headData = ['姓名', '科目', '成绩', '操作'];
+  
+  //1. 表格的基本结构
+  var table  = document.createElement('table');
+  var thead  = document.createElement('thead');
+  var tbody  = document.createElement('tbody');
+  table.appendChild(thead);
+  table.appendChild(tbody);
+  
+  
+//  2. 完成表头部分
+  var tr = document.createElement('tr');
+  thead.appendChild(tr);
+   //2.1 根据headData的数据的个数,动态的创建tr中的th
+  headData.forEach(function(item){
+    var th = document.createElement('th');
+    th.innerText = item;
+    tr.appendChild(th);
+  });
+  
+  //3. 给表头,表体和表格添加一些样式
+  table.border = '1px';
+  table.width = '500px';
+  thead.style.backgroundColor = 'lightgray';
+  tbody.align = 'center';
+  
+  
+  //4. 动态创建表体
+//  4.1 表体中的tr
+    bodyData.forEach(function(item){
+      var tr = document.createElement('tr');
+      tbody.appendChild(tr);
+      //4.2 创建每一个tr中的td
+      //遍历对象 item, 在遍历的过程中去动态的创建td
+      //此处for..in只创建了三个td
+      for(var key in item) {
+        var td = document.createElement('td');
+        td.innerText = item[key];
+        tr.appendChild(td);
+      }
+      //创建一行中最后一个删除的td
+      var td = document.createElement('td');
+      var a = document.createElement('a');
+      a.href = '';
+      a.innerText = '删除';
+      td.appendChild(a);
+      tr.appendChild(td);
+      
+      //给a注册点击事件
+      a.onclick = linkClick;
+      
+  
+    });
+  
+  //点击删除调用的函数
+  function linkClick (){
+    //1.弹出一个确认框
+    var result = confirm('您确定要删除嘛?');
+    if(result) {
+      //删除当前那一行数据 tr
+//      console.log(this);
+      tbody.removeChild(this.parentNode.parentNode);
+    }
+    return false; //阻止默认行为
+    
+  }
+
+  //此时才把table添加到了dom树上 .最终一次性添加到dom树上.这样的话,只会渲染一次
+  document.body.appendChild(table);
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+ 
+ 
+ 
+  
+
+
+</script>
+</html>

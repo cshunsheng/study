@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>大家都饿了没</h2>
+    </div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+
+            // js innerHTML 、、innerText
+
+            // html方法与text方法
+            // 不传参就是获取，传参就是设置
+            
+            // html()  : 可是识别标签
+            // text():  识别不了标签，会对标签进行转义
+
+            // $("div").html("<h2>饿了没</h2>");
+            // $("div").text("<h2>饿了没</h2>");
+
+            console.log($("div").html());
+            console.log($("div").text());
+
+
+        })
+    </script>
+</body>
+</html>

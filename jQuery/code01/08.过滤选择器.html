@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>达达不仅帅，带班也是一流，撩妹更是高手</li>
+        <li>达达不仅帅，带班也是一流，撩妹更是高手</li>
+        <li>达达不仅帅，带班也是一流，撩妹更是高手</li>
+        <li>达达不仅帅，带班也是一流，撩妹更是高手</li>
+        <li>达达不仅帅，带班也是一流，撩妹更是高手</li>
+        <li>达达不仅帅，带班也是一流，撩妹更是高手</li>
+        <li>达达不仅帅，带班也是一流，撩妹更是高手</li>
+        <li>达达不仅帅，带班也是一流，撩妹更是高手</li>
+        <li>达达不仅帅，带班也是一流，撩妹更是高手</li>
+        <li>达达不仅帅，带班也是一流，撩妹更是高手</li>
+    </ul>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // 需求： 找到奇数下标的li
+        // :odd ==>  从获取到元素中过滤出下标为奇数的元素
+        $("li:odd").css("color", "red");
+
+        // :even  ==>  从获取到元素中过滤出下标为偶数的元素
+        $("li:even").css("color", "lime");
+
+        // :frist ==> 从获取到元素中过滤出第一个的元素
+        $("li:first").css("fontSize", "40px");
+
+        // :last ==> 从获取到元素中过滤出z最后一个的元素
+        $("li:last").css("fontSize", "40px");
+
+
+        // :eq(index)  index: 是下标的
+        // 从获取到元素中过滤出指定下标的元素
+        $("li:eq(5)").css("backgroundColor", "hotpink");
+
+
+        // 小结：
+        // 1. 都是以冒号开头的
+    </script>
+</body>
+</html>

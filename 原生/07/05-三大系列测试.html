@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #far{
+      width: 300px;
+      height: 300px;
+      border:1px solid blue;
+    }
+    
+    #son{
+      width: 150px;
+      height: 100px;
+      padding:10px;
+      border:5px solid red
+    }
+  </style>
+</head>
+<body>
+  <div id="far">
+    <div id="son"></div>
+  </div>
+
+  <script>
+    var son = document.getElementById('son');
+    console.log(son.offsetParent);
+    console.log(son.offsetLeft);
+    console.log(son.offsetWidth);
+    console.log(son.clientWidth);
+    console.log(son.scrollWidth);
+  </script>
+</body>
+</html>

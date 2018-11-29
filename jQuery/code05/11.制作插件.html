@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    合适为内资
+
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jQuery.bgc.js"></script>
+
+    <script>
+        $(function(){
+            // $("body").css("backgroundColor", "#f99");
+
+            //封装 
+            //插件名 ： jQuery.bgc.js
+            //方法： bgc();
+            // 如果需要支持链式编程，只能是返回jq对象
+            $("body").bgc("#f99").css("color", "lime");
+        })
+    </script>
+</body>
+</html>

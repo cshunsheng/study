@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<ul id="mv">
+  <li >西施</li>
+  <li>貂蝉</li>
+  <li>王昭君</li>
+  <li>杨玉环</li>
+  <li>芙蓉姐姐</li>
+</ul>
+</body>
+</html>
+<script>
+ //需求: 1. 隔行变色  2. 点击li高亮
+//  1. 获取元素
+    var lis = document.getElementsByTagName('li');
+//  2. 遍历伪数组
+    for(var i = 0; i < lis.length; i++) {
+      //  3. 在遍历的过程中,通过判断下标是奇数还是偶数,来实现隔行变色
+      if(i % 2 == 0){
+        lis[i].style.backgroundColor = 'pink';
+//        lis[i].setAttribute('bgc', 'pink'); //存储到标签上
+        lis[i].bgc = 'pink'; //存到了元素身上
+      }else{
+        lis[i].style.backgroundColor = 'hotpink';
+//        lis[i].setAttribute('bgc', 'hotpink');
+        lis[i].bgc = 'hotpink';
+      }
+      
+//      4. 给每一个li注册点击事件
+      
+      lis[i].onclick = liClick;
+    }
+    
+    //点击每一个li的时候,调用的函数
+    function liClick(){
+      //排他
+      for(var i = 0; i < lis.length; i++) {
+        //获取此次循环中li的本身的背景颜色
+//        var bgc = lis[i].getAttribute('bgc');
+        var bgc = lis[i].bgc;
+        lis[i].style.backgroundColor = bgc;
+      }
+      
+      this.style.backgroundColor = 'blue';
+//      console.log(this.getAttribute('bgc'));
+  
+    }
+    
+    
+    
+
+</script>
+ 

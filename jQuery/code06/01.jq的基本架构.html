@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // jq 沙箱模式：防止全局污染
+        // 传参window的目的：
+        //  window：减少对window的搜索过程
+        //          有利于代码压缩
+        //  undefined: 防止在ie的低版本中undefined数据类型的值被篡改
+        (function(window, undefined){
+            // 函数内的形参如何去理解： 函数内部声明的局部变量
+            // var window = window;
+            // console.log(w);
+
+            // 暂时：理解jQuery是一个构造函数
+            var jQuery = function(){
+
+            }
+
+            // 把jQuery函数暴露到window上
+            window.jQuery = window.$ = jQuery;
+        })(window)
+
+
+        console.log(jQuery);
+
+    </script>
+</body>
+</html>

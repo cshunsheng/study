@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /*style标签只能写在head标签中*/
+    /*css代码*/
+  </style>
+ 
+</head>
+<body>
+
+java 编译语言  java虚拟机  java虚拟机不认识程序猿写的java代码 xxx.java -(编译)-> xx.class -->执行.class文件
+js   脚本语言  浏览器  浏览器认识js代码,不需要编译的过程  xx.js --> 直接在浏览器中解释执行,解释一行,执行一行
+
+
+<script>
+  //js 的嵌入式
+  //    script标签可以放到页面中的任何一个位置,但是我们一般书写的时候,会写在body标签的最下面
+//  当浏览器解析到script标签时,并且标签中书写了js代码,会立刻执行script中 的js代码
+  //    js代码
+//  alert('你好,世界');
+</script>
+<!--引用外部js文件-->
+<!--当浏览器解析到script外部文件引用的地方的时候,会先去请求这个文件,请求到了之后,才立刻执行对应js中的代码-->
+<script src="test.js">
+  //如果script标签被用于引入一个外部的js文件,那么在是script内部,就不要再书写js代码了,
+//  因为就算写了,也不会执行
+  alert('世界'); //由于外部文件的代码,请求下来之后,会放到script标签内,然后会把我们之前书写的代码覆盖掉,所以书写在里面的代码是无法执行的.
+//  注意: 如果script用于引入外部js文件,那么在script中就不要再写代码了
+</script>
+</body>
+
+</html>

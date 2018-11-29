@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>我是c页面</h1>
+<button id="btn">点击到A页面</button>
+<script>
+  var btn = document.getElementById('btn');
+  btn.onclick = function(){
+   history.go(-2);
+  }
+
+</script>
+</body>
+</html>

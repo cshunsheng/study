@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // this的指向 : 谁调用this所在的函数,,,this就指向谁
+
+      //1. 直接调用函数   => window
+      // function test() {
+
+      //     console.log(this);
+          
+      // }
+      // test();
+
+      //2. 构造函数里的this
+      // function Person(name ,age) {
+      //   this.name = name;
+      //   this.age = age;
+      //   this.sayName = function () {
+
+      //     console.log(this);  // 指向的就是 p对象
+          
+      //   }
+      // }
+
+      // var  p = new Person('zs',18);
+      // p.sayName();
+
+      //3. webapi的 this 
+      // this 指向的就是注册事件的事件源
+      // btn.onclick = function () {
+      //   this
+      // }
+        
+       //4.   有时候,需要使用对象里的属性,,借用that
+       function Person(name ,age) {
+        this.name = name;
+        this.age = age;
+        this.sayName = function () {
+
+         // console.log(this);  // 指向的就是p对象 this.name
+
+          var that = this;
+
+          setTimeout(function () {
+            
+            // console.log(this);  // this.name   windowo
+
+            console.log(that.name);
+            
+            
+          },1000);
+          
+        }
+      }
+
+      var  p = new Person('zs',18);
+      p.sayName();
+ 
+
+
+
+
+
+    </script>
+</body>
+</html>

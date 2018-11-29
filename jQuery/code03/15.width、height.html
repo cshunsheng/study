@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            padding: 10px;
+            border: 10px solid #ccc;
+            margin: 10px;
+            height: 200px;
+            background-color: #f99;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // css(width)： 会把单位带上，不利于运算
+        // console.log($("div").css("width"));
+
+        // width() : 设置获取元素的宽度
+        console.log($("div").width());
+        // $("div").width(500)
+
+        // innerWidth():  width + padding
+        console.log($("div").innerWidth());
+
+        // outerWidth():  width + padding + border
+        console.log($("div").outerWidth());
+        // outerWidth 有参数，参数来决定是否需要获取margin的值，类型是布尔类型，默认是false， true的话徐亚获取margin
+
+        // outerWidth(true): width + padding + border + margin
+        console.log($("div").outerWidth(true));
+
+        // height
+        // console.log($("div").height());
+        // $("div").height(500);
+
+
+
+        // 获取可视区的宽高
+        console.log($(window).width());
+        console.log($(window).height());
+
+        // 小结：
+        // width()： ==> width
+        // innerWidth()  ==> width + padding
+        // outerWidth()  ==> width + padding + border
+        // outerWidth(true)  ==> width + padding + border + margin
+
+
+        // $(window).height();
+        // $(window).width()
+    </script>
+</body>
+</html>

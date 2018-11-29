@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // match 匹配
+      // 结构 : 字符串.match(正则)  => 数组 
+      // 将满足正则的数据都获取到 放到一个数组里
+ var str = "我的手机号是：18511241111， 我的女朋友的手机号是：13211111111，我的前女友的手机号是：18522223333，我的前前女友的手机号是：18511112293";
+//需求：把字符串中所有的手机号找出来。
+var reg =  /(13[0-9]|147|15[0-9]|17[0178]|18[0-9])\d{8}/g;
+// console.log(str.match(reg));
+
+// ? 0次或者1次
+var str = '1,10,1000';
+var reg = /10?/g;
+console.log(str.match(reg));
+
+
+
+    </script>
+</body>
+</html>

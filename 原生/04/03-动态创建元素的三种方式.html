@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+//  innerHTML
+  var box = document.getElementById('box');
+//  box.innerHTML = '<p>这是p</p><span>这是span</span>';
+  
+  
+  //document.write()
+//  document.write('<p>这是p</p><span>这是span</span>');
+//  box.write('<p>这是p</p><span>这是span</span>');
+//    注意: document.write() 这个方法只能用document调用,并且只能添加到body里面
+  
+  
+  var div = document.createElement('div');
+  console.log(div);
+  div.innerText = '我是动态创建的div';
+  box.appendChild(div);
+//  注意: document.createElement创建出来的元素,并不会直接添加到dom树上
+  
+  
+//  总结:
+//  元素.innerHTML = 'html形式的字符串';//常用的   把元素创建出来,并且添加到dom树上
+//  document.write('html形式的字符串'); // 几乎不用
+//  document.createElement('标签名');//常用 //返回新创建出来的元素,注意,此时这个元素不在dom树上
+  
+</script>
+</body>
+</html>

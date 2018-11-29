@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /*div{}*/
+    /*#box{}*/
+    /*.ha{}*/
+    
+  </style>
+</head>
+<body>
+
+  <!--<div id="box" name="d">1</div>-->
+  <!--<div name="d">2</div>-->
+  <!--<p class="ha" name="d">3</p>-->
+  <!--<span class="ha">4</span>-->
+  <div id="box">
+    <div name="two">1</div>
+    <div>2</div>
+    <div class='one'>3</div>
+  </div>
+  <div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+<script>
+  //通过id名获取元素
+//  //如果能找到返回对应的元素,如果找不到返回null
+//    var div = document.getElementById('box1');
+//    console.log(div); //注意:div里面存储实际是div标签对应的对象的地址,不是标签
+//    console.dir(div);
+//
+//
+//  //通过标签名获取元素
+//  //返回一个伪数组,伪数组中存储了所有符合条件的元素,如果找不到就返回一个空的伪数组
+//
+//    var divs = document.getElementsByTagName('div');
+//    console.log(divs);
+//    //获取伪数组中具体的元素
+//    console.log(divs[0]);
+//    console.log(divs[1]);
+  
+  
+  //其他获取元素的方式:
+  //通过类名获取元素
+//  document.getElementsByClassName('类名')
+//    var has = document.getElementsByClassName('ha');
+//    console.log(has);
+
+//    通过name属性查找元素
+  //  document.getElementsByName('类名')
+//    var ds = document.getElementsByName('d');
+//    console.log(ds);
+  
+      //通过选择器获取元素
+  //  document.querySelector('选择器') //返回所有符合条件的第一个,没有就是null
+//  document.querySelectorAll('选择器') //返回一个伪数组,存储了所有符合条件的元素,没有就是空的伪数组
+
+//  console.log(document.querySelector('div'));
+//  console.log(document.querySelectorAll('div'));
+  
+  
+  //==============================================
+  
+//  var divs = document.getElementsByTagName('div');
+//
+//  console.log(divs);
+  
+    //只想找到id名是box里面的div
+//  1.   console.log(document.querySelectorAll('#box div'));
+//  2.
+//    var box = document.getElementById('box');
+//    var divs = box.getElementsByTagName('div');
+//    console.log(divs);
+//    如果用document调用查找元素的方法,就是在整个页面的范围内查找
+//    如果使用元素调用查找元素的方法,就是在元素的范围内查找
+  
+
+  //  小结:
+//  返回的是具体的元素
+//  document.getElementById('id名');
+//  document/element.querySelector('选择器');
+//  返回伪数组:
+//    document/element.getElementsByTagName('标签名');
+//    document/element.querySelectorAll('选择器');
+//
+//
+//    document/element.getElementsByClassName('类名');
+//    document.getElementsByName('name属性的值');
+//  注意:
+  //    如果用document调用查找元素的方法,就是在整个页面的范围内查找
+  //    如果使用元素调用查找元素的方法,就是在元素的范围内查找
+  
+//    var divs = document.getElementsByTagName('div');
+//    divs.getElementsByClassName('one');
+//      var box = document.getElementById('box');
+////      box.getElementsByName('two');
+//    console.log(box.querySelector('div'));;
+  
+
+</script>
+</body>
+</html>

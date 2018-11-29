@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      function Person() {
+        this.name = 'zs';
+        // this.say = function() {
+
+        //   console.log('谁说马哥第三帅的站起来');
+        // }
+
+        this.sex = '女';
+      }
+
+      Person.prototype.sex = '不详';
+      Person.prototype.xxx = 'xxx';
+
+      // Object.prototype.say =  function () {
+      //   console.log('都是浮云');
+        
+      // }
+
+      var p = new Person();
+
+      // console.log(p);
+      // p.say();
+
+      // 属性的查找规则
+
+      // 获取 
+      // 1.  (首先从自身属性里去找) 正常的从构造函数里找
+      // 2. 如果自身和原型里都有同一个属性的话,,先从自己的属性里获取
+      // 3. 如果自身没有,,再去找原型
+      
+      // 4. 
+      // p => Person.prototype => Object.prototype
+      
+       // 添加/修改/设置
+       p.sex = '男';
+
+       console.log(p);
+       
+
+      // 如果对象里没有这个属性,  => 添加属性 => p自己
+      //            有          =>  修改属性 =>
+
+    </script>
+</body>
+</html>

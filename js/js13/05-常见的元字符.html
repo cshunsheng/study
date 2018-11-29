@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      //1. \d 数字字符   是否包含了数字 => true
+      // console.log(/\d/.test('123'));
+      // console.log(/\d/.test('abc1'));
+      // console.log(/\d/.test('abc'));
+
+      //2. \D 非数字字符  包含了非数字 => true
+      // console.log(/\D/.test('123'));
+      // console.log(/\D/.test('abc1'));
+      // console.log(/\D/.test('abc'));
+
+      //3. \w  word 字符 (字母 数字 _)  包含字符 => true
+      // console.log(/\w/.test('123'));
+      // console.log(/\w/.test('abc1'));
+      // console.log(/\w/.test('abc'));
+      // console.log(/\w/.test('abc_'));
+      // console.log(/\w/.test('$'));
+
+      //4. \W : 非字符  包含了非字符 => true
+      // console.log(/\W/.test('123'));
+      // console.log(/\W/.test('abc1'));
+      // console.log(/\W/.test('abc'));
+      // console.log(/\W/.test('abc_'));
+      // console.log(/\W/.test('$'));
+      // console.log(/\W/.test('abc$'));
+
+      //5. \s  不可见字符(空格)  包含了不可见字符 =>true
+      // console.log(/\s/.test('abc$\f'));
+      // console.log(/\s/.test('abc$\n'));
+      // console.log(/\s/.test('abc$ '));
+      // console.log(/\s/.test('abc'));
+
+      //6. \S : 可见字符 包含了可见字符 => true
+      // console.log(/\S/.test('abc$\f'));
+      // console.log(/\S/.test('abc$\n'));
+      // console.log(/\S/.test('abc$ '));
+      // console.log(/\S/.test('\n'));
+      
+
+      //7. .  包含了任意字符(除了\n\r) => true
+      // console.log(/./.test('123'));
+      // console.log(/./.test('abc'));
+      // console.log(/./.test('ab\n'));
+      // console.log(/./.test('\n'));
+      // console.log(/./.test('\r'));
+
+      //  总结 : 
+      //  1. \d digist  数字 包含了数字 => true
+      //  2. \w  word 字符(字母 数字 _) 包含了字符 => true
+      //  3.  .  任意字符 (\n\r) 包含任意字符 => true;
+      
+
+    </script>
+</body>
+</html>

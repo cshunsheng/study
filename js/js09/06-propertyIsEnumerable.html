@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+    //  propertyIsEnumerable
+    //  property : 属性
+    //   is : 是否
+    //  Enumerable  enum : 遍历/枚举  -able 后缀 ...能力
+    // 该属性是否是可枚举/可遍历的自身属性
+    // 1. 可枚举
+    // 2. 自身属性
+    function Person() {
+      this.name = 'zs';
+      this.age = 18;
+    }   
+
+
+    Person.prototype.sex = '男';
+
+    var p =  new Person();
+
+    // for(var key in p) {
+    //   console.log(key);
+      
+    // }
+
+    console.log(p.propertyIsEnumerable('name'));
+    console.log(p.propertyIsEnumerable('age'));
+    console.log(p.propertyIsEnumerable('sex'));
+    
+
+
+
+
+
+
+
+
+    // 1. ctrl + shift + p =>  
+    // 2. 搜索 :snippet => 首选项 => 配置用户代码片段
+    // 3. 找语言 :  js => javascript.json (javascript) 
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  1. 字符串是不可变的 ,所以所有字符串的方法都不会改变原来的字符串
+//    var str  = 'abc';
+//    var str1 = 'def';
+//    console.log(str + str1);
+  
+//    2. 字符串常用的方法:
+//     2.1  操作字符的方法
+//          charAt(下标) 根据下标返回对应的字符
+//          字符串[下标]
+//          String.fromCharCode(ASCII码) 根据ASCII码返回字符
+////console.log(String.fromCharCode(87, 88, 89));
+//console.log(String.fromCharCode(81));
+//console.log(String.fromCharCode(113));
+
+//var str = 'abcdef';
+//       var strObj = new String('abcdef');
+//      console.log(strObj);
+//    console.log(str.charAt(2));
+//    console.log(str[2]);
+  
+//  2.2 根据字符,返回字符串中对应的下标(用法和数组的方法是一样的)
+//      indexOf
+//      lastIndexOf
+//      var str = 'abc';
+//console.log(str.indexOf('a'));
+  
+//  2.3 去掉字符串两边空格
+//      trim();
+//        var str = '    a bc    ';
+//        console.log(str);
+//        console.log(str.trim());
+  
+//    2.4 大小写转换
+//      toLowerCase 转小写
+//      toUpperCase 转大写
+//
+//      var str = 'ABC';
+////      console.log(str.toUpperCase());
+//      console.log(str.toLowerCase());
+  
+//   2.5 字符串拼接和截取
+//        拼接的方法:
+//         concat，用法与数组一样(返回新的字符串)，
+//         + 但是字符串拼串我们一般都用 + 号
+
+//          截取的方法:
+          //slice ：从start开始，end结束，包含头,不包含尾 ,返回一个新的字符串,原字符串不变
+          //substring ：从start开始，end结束，包含头,不包含尾  ,返回一个新的字符串,原字符串不变
+          // substr ：从start开始，截取length个字符。(推荐)
+
+//          var str = 'abcdef';
+////          console.log(str.substring(0, 4));
+//          console.log(str.substr(0, 4));
+
+//      2.6  split(切割符)  把字符串转换成数组(常用)
+//          var str = 'abcdef';
+//          var str = 'a,b,c,d,e,f';
+//        console.log(str.split());
+//        console.log(str.split('c'));
+//        console.log(str.split(','));
+//        console.log(str.split('d'));
+
+//     2.7 替换字符串中的某段字符
+        var str = 'abcdcecfc';
+//                  abcdcecfc
+//                abocecfc
+//        str.replace(被替换的字符, 替换的字符);
+//        console.log(str.replace('abd', 'o'));
+//
+
+</script>
+</body>
+</html>

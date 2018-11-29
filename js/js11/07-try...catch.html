@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+
+      // try..catch 捕捉异常
+      // 结构 :
+      // try {  // 尝试 
+        // 尝试可能发生错误、报错的代码
+        // 如果正常 : 直接跳出 这个结构 继续执行下面的代码
+        // 如果报错 : 直接catch 里面的代码
+    //  } catch(error) {
+          // error 报错的信息
+          // 错误是会执行 方便我们怎么处理
+     // }
+
+      var fn = new Function('alert(1)');
+
+      try {
+
+        // 可能出错的代码
+        fn(); 
+
+      } catch(error) {
+        
+        console.log('亲,你的代码有误');
+        console.log(error);
+        
+      }
+
+    
+
+      console.log('达达 航头第一帅');
+      console.log('达达 航头第一帅');
+      console.log('达达 航头第一帅');
+      console.log('达达 航头第一帅');
+      console.log('达达 航头第一帅');
+      
+      
+
+
+    </script>
+</body>
+</html>

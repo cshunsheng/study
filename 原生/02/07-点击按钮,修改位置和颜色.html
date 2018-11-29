@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">点击修改div的位置和背景颜色</button>
+<div></div>
+<script>
+//  1. 获取元素 btn div
+    var btn = document.getElementById('btn');
+    var div = document.getElementsByTagName('div')[0];
+//  2. 给btn注册点击事件
+      btn.onclick = function(){
+        //  3. 给div设置新的位置和新的背景颜色
+        div.style.position = 'absolute';
+        div.style.left = '300px';
+        div.style.top = '200px';
+        div.style.backgroundColor = 'green';
+      }
+      
+      
+      //作业: 位置随机, 颜色随机
+//    位置随机的思路 ,先根据自己的屏幕分辨率写死
+//      颜色随机: rgb(0~255, 0~255, 0~255)
+
+</script>
+</body>
+</html>

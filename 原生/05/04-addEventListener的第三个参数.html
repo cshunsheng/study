@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #far {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  
+    #son {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+<div id="far">
+  <div id="son"></div>
+</div>
+</body>
+<script>
+  var son = document.getElementById('son');
+  var far = document.getElementById('far');
+  
+//  第三个参数可以控制事件处理函数被执行的阶段
+//  false : 在冒泡阶段执行
+//  true :在捕获阶段执行
+//  注意: 实际是控制事件目标的父辈元素们的触发的阶段
+//  可以忽略不写,不写的话,默认传入的是false
+  son.addEventListener('click', function(){
+    console.log('son的点击事件');
+  }, true);
+
+//  far.addEventListener('click', function(){
+//    console.log('far的点击事件');
+//  }, true);
+  far.addEventListener('click', function(){
+    console.log('far的点击事件');
+  });
+  
+  document.body.addEventListener('click', function(){
+    console.log('body的点击事件');
+  },false);
+</script>
+</html>

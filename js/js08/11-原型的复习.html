@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      //  原型 :    Person.prototype
+      // 1. 它是一个对象
+      // 2. 原型的作用 : 共享数据
+      // 3. 构造函数创建的对象 , 都能访问原型里所有的属性和方法
+      // 4. 场景 :  给对象添加方法
+      // 5. 解决资源浪费问题  也解决了全局变量污染的问题
+
+      function Student(name , age) {
+        this.name =  name;
+        this.age = age;
+      }
+
+      Student.prototype.liao = function () {
+          console.log('达达只会撩妹');
+      }
+
+      var s = new Student('达达',19);
+      console.log(s);
+      s.liao();
+
+
+
+    console.log(s.liao);
+    
+
+    // s : 构造函数 Student
+    //     原型 : Student.prototype
+
+    // arr : 构造函数 : Array
+    //       原型 :Arrar.prototype
+
+     // str : 构造函数  String
+     //     原型 : String.prototype
+
+
+    </script>
+</body>
+</html>

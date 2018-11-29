@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn1">点击注册官网</button>
+
+    <img src="http://img.daimg.com/uploads/allimg/160324/1-160324232117.jpg">
+    <img src="http://img.daimg.com/uploads/allimg/160318/1-16031P01P0.jpg">
+    <img src="http://img.daimg.com/uploads/allimg/160318/1-16031P01332.jpg">
+    <img src="http://img.daimg.com/uploads/allimg/160608/1-16060R35630.jpg" alt="">
+    <img src="http://img.daimg.com/uploads/allimg/160531/1-160531224303.jpg" alt="">
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // 执行时机不同：
+        // window.onload = function(){}: 当页面加载完成的时候，需要等待外部资源（css、js、img）加载完成了之后才执行
+        // $(function(){}):  当页面加载完成之后，不管外部资源是否加载完成就执行代码
+
+        // window.onload存在覆盖性
+        // jq 的入口函数不会覆盖
+
+        // window.onload = function(){
+        //     console.log(1111);
+        // }
+
+        // window.onload = function(){
+        //     console.log(2222);
+        // }
+
+        // $(function(){
+        //     console.log(333);
+        // })
+
+        // $(function(){
+        //     console.log(444);
+        // })
+
+
+        
+
+        /*window. onload = function(){
+            console.log(1111);
+
+            var btn1 = document.getElementById("btn1");
+            btn1.onclick = function(){
+                alert("注册官网");
+            }
+        }*/
+
+        $(function(){
+            var btn1 = document.getElementById("btn1");
+            btn1.onclick = function(){
+                alert("注册官网");
+            }
+        })
+    </script>
+</body>
+</html>

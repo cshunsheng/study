@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //需求: 要批量创建一个动物对象, 动物对象要有名字,要有年龄,要有毛色,品种,性别
+//   var cat = {
+//     name : '花花',
+//     age : '半个月',
+//     color: 'pink',
+//     type : '田园',
+//     gender : '母'
+//   }
+//  var cat1 = {
+//    name : '花花',
+//    age : '半个月',
+//    color: 'pink',
+//    type : '田园',
+//    gender : '母'
+//  }
+  
+  //工厂函数方法
+  function createCat(name, age, color, type, gender){
+    return {
+      name : name,
+      age : age,
+      color: color,
+      type : type,
+      gender : gender
+    }
+  }
+  
+  var cat1 = createCat('花花', 1, 'white','田园', '公');
+  var cat2 = createCat('白白', 2, 'pink','英短', '母');
+  console.log(cat1);
+  console.log(cat2);
+</script>
+</body>
+</html>

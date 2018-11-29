@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            background-color: #f99;
+            margin: 10px;
+            display: none;
+        }
+    </style>
+    
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // window.onlaod: 当页面加载完成的时候，来执行这里的代码
+        // window.onload = function(){
+        //     var btn1 = document.getElementById("btn1"); // null
+        //     var btn2 = document.getElementById("btn2");
+        //     var btn3 = document.getElementById("btn3");
+        //     var divs = document.querySelectorAll("div");
+
+        //     btn1.onclick = function(){
+        //         for(var i = 0; i< divs.length; i++){
+        //             divs[i].style.display = "block";
+        //         }
+        //     }
+
+        //     btn2.onclick = function(){
+        //         for(var i = 0; i< divs.length; i++){
+        //             divs[i].innerText = "我是内容";
+        //         }
+        //     }
+
+        //     btn3.onclick = function(){
+        //         for(var i = 0; i< divs.length; i++){
+        //             divs[i].style.color = "#fff";
+        //         }
+        //     }
+        // }
+
+
+        // jq提供的入口函数：
+        // document: 文档
+        // ready： 准备
+        // 1. $(document).ready(function(){
+        // 2. $(function(){}) --- 推荐
+
+        // 入口函数的好处：
+        // 1. 可以减少全局污染的问题
+        // 2. 无论代码放置在何处，都能够正常的获取到元素
+
+        $(function(){
+            var btn1 = document.getElementById("btn1"); // null
+            var btn2 = document.getElementById("btn2");
+            var btn3 = document.getElementById("btn3");
+            var divs = document.querySelectorAll("div");
+
+            btn1.onclick = function(){
+                for(var i = 0; i< divs.length; i++){
+                    divs[i].style.display = "block";
+                }
+            }
+
+            btn2.onclick = function(){
+                for(var i = 0; i< divs.length; i++){
+                    divs[i].innerText = "我是内容";
+                }
+            }
+
+            btn3.onclick = function(){
+                for(var i = 0; i< divs.length; i++){
+                    divs[i].style.color = "#fff";
+                }
+            }
+        })
+
+        // console.log(btn1);
+
+
+        // 使用jq的步骤：
+        // 1. 引用jq文件
+        // 2. 写上入口函数
+        // 3. 在入口函数内实现功能
+
+    </script>
+</head>
+<body>
+    <button id="btn1">展示</button>
+    <button id="btn2">设置内容</button>
+    <button id="btn3">颜色</button>
+
+    <div>01</div>
+    <div>02</div>
+    <div>03</div>
+</body>
+</html>

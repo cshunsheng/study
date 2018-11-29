@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  1. 注册事件的其他方式
+//    事件源.on + 事件名 = 事件处理函数
+//    事件源.addEventListener('事件名', 事件处理函数, true/false)
+//  2. 移除事件的方式
+//      事件源.on + 事件名 = null
+//      事件源.removeEventListener('事件名', 事件处理函数, true/false)
+//  3. 事件流
+//        一旦触发事件,就会产生一个事件流,然后会确定事件路径(window --> 事件目标)
+//        事件流的三个阶段:
+//          捕获阶段: 从外往里
+//          目标阶段: 到达目标
+//          冒泡阶段: 从里往外
+//  4. 事件对象
+//          获取事件对象: 在事件处理函数中,写一个形参接收一下即可
+//          function(e){
+//            e = e || window.event;
+//          }
+
+//        事件对象的属性:
+////            type : 返回事件的类型
+////            target : 返回事件目标
+////            clientX/clientY  返回的是鼠标在浏览器可视区的坐标
+////            pageX/pageY   返回鼠标在页面中的坐标
+////            keyCode: 对应键盘中字符的数字
+//        事件对象的方法:
+//                preventDefault 阻止默认行为
+//                stopPropagation  阻止事件传播
+          
+//
+//  5. 事件委托
+//          本来是自己做的事情,交给父级元素去做
+//        事件委托的作用:
+//            1. 代码简洁
+//            2. 节省内存
+//        事件委托的原理: 事件冒泡
+</script>
+</body>
+</html>

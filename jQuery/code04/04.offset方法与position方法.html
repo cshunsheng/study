@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            position: relative;
+            left: 100px;
+            top: 100px;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+            
+        </div>
+    </div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // offsetLeft  offsetTop  有定位的父元素
+
+        // position(): 作用是获取元素距离有定位的父元素的距离
+        //          返回的是个对象 {top: xx, left: xx}
+        console.log($(".son").position());
+
+
+        // offset():  方法，获取元素距离页面的距离，和父元素无关了
+        //          返回的是个对象 {top: xx, left: xx}
+        console.log($(".son").offset());
+    </script>
+</body>
+</html>

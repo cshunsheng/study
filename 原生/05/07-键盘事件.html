@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text">
+<script>
+//  keydown  键盘按下时触发
+//  keyup  键盘抬起时触发
+//  keypress  键盘按下时触发
+  
+  var input = document.querySelector('input');
+  input.onkeydown = function(e){
+//    console.log('keydown');
+//    console.log(e);
+    console.log(e.keyCode);
+  }
+//  input.onkeyup = function(){
+//    console.log('keyup');
+//  }
+  input.onkeypress = function(e){
+//    console.log('keypress');
+    console.log(e.keyCode);
+  }
+  
+//  总结:
+//  keydown 键盘按下时触发  不区分大小写
+//  keypress 键盘按下时触发  区分大小写
+//  keyup  键盘抬起时触发   不区分大侠写
+  
+//    想要获取键盘按下的是哪个按键
+//     keyCode 返回键盘对应字符的数字 在任何浏览器中都是一样的效果,没有兼容性问题
+//    随便mdn上说推荐使用key属性,但是由于工作习惯,外面开发者还是习惯使用keyCode
+</script>
+</body>
+</html>

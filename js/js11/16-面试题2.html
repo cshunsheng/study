@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+
+    //1. 先找 this 指向谁
+    //2. 计算结果
+
+    //  面试题1 : 
+    // var age = 38;
+    // var obj = {
+    //   age: 18,
+    //   getAge: function () {
+    //     console.log(this.age);
+    //   }
+    // }
+
+    // //  obj.getAge();
+
+    // var f = obj.getAge;
+    // f();
+
+
+    // 面试题2 : 
+    // var age = 38;
+    // var obj = {
+    //   age: 18,
+    //   getAge: function () {
+    //     console.log(this.age);
+    //     function foo() {
+    //       console.log(this.age);
+    //     }
+    //     foo();
+    //   }
+    // }
+    // obj["getAge"]();// obj.getAge();
+
+
+    // 面试题三 :
+    // var length = 10;
+    // var age = 18;
+
+    // function fn() {
+    //   console.log(this.length); //10  2
+    // }
+
+    // var arr = [fn, "222"];
+    // fn();
+    // arr[0](); // arr.0()
+
+    // 面试题四 : 
+    var length = 10
+    function fn() {
+      console.log(this.length) // 10 4
+    }
+    var obj = {
+      length: 5,
+      method: function (fn) { 
+        fn() 
+        arguments[0]();// arguments.0()
+        // obj['name']()  => obj.name ()
+      }
+    }
+
+    obj.method(fn, "222", "333", "4444");
+
+
+  </script>
+</body>
+
+</html>

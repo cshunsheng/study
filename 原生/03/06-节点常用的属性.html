@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="box">
+  <div>haha</div>
+  我是文本
+  <p id="p">p的文本</p>
+  <!--我是注释-->
+  <span>我是span</span>
+</div>
+<p></p>
+<script>
+//  节点的类型的属性:
+  var box = document.getElementById('box');
+console.dir(box);
+//  console.log(box.nodeType); //节点的类型  1
+//  console.log(box.nodeName); //节点的名字 大写的标签名
+//  console.log(box.nodeValue); //节点的值 null
+  
+//  节点的层级的属性
+//   找儿子:
+//    children  返回所有的子元素   !!!
+//    childNodes  返回所有的子节点  !!!
+//    firstChild  返回第一个子节点
+//    firstElementChild 返回第一个子元素  !!!
+//    lastChild  返回最后一个子节点
+//    lastElementChild 返回最后一个子元素  !!!
+//console.log(box.children);
+//console.log(box.childNodes);
+//console.log(box.firstChild);
+//console.log(box.firstElementChild);
+//console.log(box.lastChild);
+//console.log(box.lastElementChild);
+//    找爹:
+//    parentNode 返回自己父节点
+//console.log(box.parentNode);
+  
+//    找兄弟:
+//    nextSibling  返回下一个兄弟节点
+//    nextElementSibling  返回下一个兄弟元素 !!!
+//    previousSibing  返回上一个兄弟节点
+//    previousElementSibing  返回上一个兄弟元素 !!!
+      var p = document.getElementById('p');
+//console.log(p.nextSibling);
+//console.log(p.nextElementSibling);
+//console.log(p.previousSibling);
+//console.log(p.previousElementSibling);
+
+</script>
+</body>
+</html>

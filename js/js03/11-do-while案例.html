@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  使用do-while循环：输出询问“我爱你，嫁给我吧？”，选择“你喜欢我吗？(y/n):"，如果输入为y则打印”我们形影不离“，若输入为n,则继续询问
+  
+  
+  do{
+    var result = confirm('我爱你,嫁给我吧?'); //确认框,点击确定/取消,会返回true/false
+//    console.log(result);
+    if(result){
+      console.log('我们形影不离');
+    }
+  }while(!result); //如果result是true,就不在循环,如果result是false,就要继续循环
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // 边界  
+      // ^ : 开头  
+      // console.log(/^chuan/.test('chuanhha'));
+      // console.log(/^chuan/.test('aaachuan'));
+      // console.log(/^chuan/.test('chuanchuan'));
+      
+      //  $ 结尾
+      // console.log(/chuan$/.test('chuanhha'));
+      // console.log(/chuan$/.test('aaachuan'));
+      // console.log(/chuan$/.test('chuanchuan'));
+
+      //  ^ $ 同时使用  同一个
+      console.log(/^chuan$/.test('chuanhha'));
+      console.log(/^chuan$/.test('aaachuan'));
+      console.log(/^chuan$/.test('chuanchuan'));  // 特殊 
+      console.log(/^chuan$/.test('chuan'));
+      
+
+    </script>
+</body>
+</html>

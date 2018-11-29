@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div>我是一个div</div>
+  <span>我是一个span</span>
+<script>
+  //要点击div的时候,在控制台打印一句话
+  //  1. 获取事件源
+//  var div = document.querySelector('div');
+//  //    2. 给元素注册事件 (给div注册点击事件)
+//  div.onclick = function(){
+////      3. 点击div时,具体要执行的代码
+//    console.log('hello world');
+//  }
+//
+//  事件的三要素:
+//  事件源: div (被触发的那个元素)
+//  事件名: 具体注册的是什么事件  点击事件 click
+//  事件处理函数: 函数 (当触发事件时,会被调用)
+//
+//  如果想要给元素注册事件的话:
+//  事件源.on + 事件名 = 事件处理函数
+  
+  
+  //需求: 给span注册一个点击事件,在事件处理函数中alert一句话
+//  1. 获取事件源
+      var span = document.querySelector('span');
+////  2. 给span注册点击事件 click
+      span.onclick = function(){
+        alert('hello world');
+      }
+      span.onclick();
+      //其实注册事件,就是给一个对象的属性赋值为一个方法
+//      由于事件比较特殊,所以当用户触发了事件,浏览器会自动调用事件处理函数.
+//          而我们其实也可以自己手动调用
+  
+  
+  
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 在ie中的低版本中，undefined这个数据类型可以被修改
+        undefined = 13;
+        console.log(undefined);
+
+        (function(undefined){
+//             var undefined = undefined;
+
+            console.log(undefined); // 13
+        })()
+
+    </script>
+</body>
+</html>

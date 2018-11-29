@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var num = 1; //全局变量
+  function fn(){
+    var num = 2; //局部变量
+    function fnSon(){
+      var num = 3; //局部变量
+    }
+  }
+</script>
+</body>
+</html>

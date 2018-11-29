@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      function Person(name,age) {
+        this.name = name;
+        this.age = age;
+        this.liaomei = function () {
+
+          console.log(this.name);
+
+          // 中转
+          var that = this;
+
+          setTimeout(function () {
+            
+            console.log(that.name);
+            
+          },500);
+        }
+      }
+      
+      var p =  new Person('dada',18);
+      p.liaomei();
+
+
+      
+
+    </script>
+</body>
+</html>

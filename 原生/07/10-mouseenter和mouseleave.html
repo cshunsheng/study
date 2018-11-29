@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #far{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+    #son{
+      width: 100px;
+      height: 100px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div id="far">
+    <div id="son"></div>
+  </div>
+  <script>
+//    son.onmouseover = function(){
+//      console.log('son移入');
+//    }
+//    son.onmouseout = function(){
+//      console.log('son移出');
+//    }
+    
+//    far.onmouseover = function(){
+//      console.log('far移入');
+//    }
+//    far.onmouseout = function(){
+//      console.log('far移出');
+//    }
+
+    far.onmouseenter= function(){
+      console.log('far移入');
+    }
+    far.onmouseleave = function(){
+      console.log('far移出');
+    }
+  </script>
+</body>
+</html>

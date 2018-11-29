@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .parentWrap {
+        width: 200px;
+        text-align: center;
+    }
+
+    .menuGroup {
+        border: 1px solid #999;
+        background-color: #e0ecff;
+    }
+
+    .groupTitle {
+        display: block;
+        height: 20px;
+        line-height: 20px;
+        font-size: 16px;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+    }
+
+    .menuGroup>div {
+        height: 200px;
+        background-color: #fff;
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <ul class="parentWrap">
+        <li class="menuGroup">
+            <span class="groupTitle">标题1</span>
+            <div>我是弹出来的div1</div>
+        </li>
+        <li class="menuGroup">
+            <span class="groupTitle">标题2</span>
+            <div>我是弹出来的div2</div>
+        </li>
+        <li class="menuGroup">
+            <span class="groupTitle">标题3</span>
+            <div>我是弹出来的div3</div>
+        </li>
+        <li class="menuGroup">
+            <span class="groupTitle">标题4</span>
+            <div>我是弹出来的div4</div>
+        </li>
+    </ul>
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // 思路：
+        // 1. 找到所有的.groupTitle
+        // 2. 给.groupTitle注册click
+        // 3. 让当前.groupTitle的兄弟div展示
+        // 4. 找到当前li的父元素，通过父元素找到其他兄弟的li，找到li下的div，让他隐藏
+
+        // 1. 
+        var $groupTitle = $(".groupTitle");
+        // 2. 
+        $groupTitle.click(function(){
+            // 3.
+            // slideDown: 向下展示，并且默认有动画效果
+            $(this).siblings("div").slideDown();
+
+            // 4.需要让其他的隐藏
+            // jq: 提供的parent():   获取当前元素的父元素
+            // slideUp: 向上隐藏，并且默认有动画效果
+            $(this).parent().siblings().children("div").slideUp();
+        })
+
+        // 小结：
+        // 1. parent(): 找当前元素的父元素
+        // 2. slideDown、slideUp() :  做动画的方法，支持传参，默认是有动画效果，默认是400ms
+    </script>
+
+</body>
+
+</html>

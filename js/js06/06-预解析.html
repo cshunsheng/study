@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  预解析一个规则:
+//    1. 如果看到用var 申明的变量,会提前加载到内存中,相当于提前申明出来(所以又叫变量提升)
+//    2. 如果看到申明的函数,也会提前加载到内存中,函数表达式不会提前加载
+//    3. 先提升变量,后提升申明的函数,所以如果重名,函数会覆盖变量中的undefined
+
+    注意: 不仅在全局会有预解析,执行函数中代码的时候,也有预解析
+
+//    var a = 1;
+//    console.log(a);
+  
+
+//      console.log(a);
+//      var a = 1;
+////   预解析阶段:
+//      var a;
+////      代码执行阶段:
+//      console.log(a);
+//      a = 1;
+
+
+
+//        fn();
+//        function fn(){
+//          console.log('函数执行了');
+//        }
+//        //预解析阶段:
+//        function fn(){
+//          console.log('函数执行了');
+//        }
+//        //代码执行阶段:
+//        fn();
+
+//=================================================
+  
+//          fn();
+//          var fn = function (){
+//            console.log(1);
+//          }
+//
+//          //预解析阶段:
+//          var fn;
+////         代码执行阶段
+//          fn(); //-- >undefined()
+//          fn = function(){
+//            console.log(1);
+//          }
+          
+          
+//  =============================================
+
+//          console.log(fn);
+//          var fn = function (){
+//              console.log(1);
+//          }
+          
+//          //预解析阶段:
+//          var fn;
+//          //代码执行阶段
+//          console.log(fn);
+//          fn = function(){
+//            console.log(1);
+//          }
+  
+  
+  
+  //========================================
+  
+//      var fn;
+//      function fn(){
+//        console.log('我是函数');
+//      }
+//      console.log(fn);
+  
+////   预解析阶段
+//     var fn;
+//      function fn(){
+//        console.log('我是函数');
+//      }
+//      // 代码执行阶段
+//      console.log(fn);
+  
+  
+  
+//      var fn = 1;
+//      function fn(){
+//        console.log('马上下课');
+//      }
+//      fn();
+  
+      //预解析阶段
+//      var fn;
+//      function fn(){
+//        console.log('马上下课');
+//      }
+//
+//      //代码执行阶段
+//      fn = 1;
+//      fn();
+  
+  //===========================================
+  
+  fn();
+  function fn(){
+    console.log(a);
+    var a = 1;
+  }
+      
+          
+       
+  
+    
+</script>
+</body>
+</html>

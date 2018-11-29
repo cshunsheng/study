@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+  <button>按钮0</button>
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <button>按钮4</button>
+  <button>按钮5</button>
+  <button>按钮6</button>
+  <button>按钮7</button>
+
+    <script>
+
+      //1. 获取全部的按钮
+      var btns = document.querySelectorAll('button');
+      //2. for注册点击事件
+      for ( var i = 0 ; i < btns.length ; i++) {
+
+
+        //  btns[i].index  = i; 
+
+        // btns[i].onclick = function () {
+          
+        //   console.log( this.index );
+          
+        // }
+
+
+          //1. 因为闭包有这个作用  :将变量的值保存在内存中
+          //2. 里面函数 , 外部函数, 可以直接使用匿名函数
+          //3. 闭包就保存了每次传进来的i 
+  
+         (function (i) {
+           // var i = i;
+          btns[i].onclick = function () {
+           
+            console.log(i);
+            
+          }
+         })(i);
+      }
+      //3. 打印对应的下标
+
+
+
+      
+
+    </script>
+</body>
+</html>

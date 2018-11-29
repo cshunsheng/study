@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+    html,
+    body {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: 100%;
+        font-family: "微软雅黑";
+        font-size: 62.5%;
+    }
+
+    .boxDom {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .idDom {
+        width: 100%;
+        height: 100px;
+        background: #666;
+        position: fixed;
+        bottom: 0px;
+    }
+
+    .content {
+        display: inline-block;
+        width: 430px;
+        height: 40px;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        margin: auto;
+    }
+
+    .title {
+        display: inline;
+        font-size: 4em;
+        vertical-align: bottom;
+        color: #fff;
+    }
+
+    .text {
+        border: none;
+        width: 300px;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 2.4em;
+    }
+
+    .btn {
+        width: 60px;
+        height: 30px;
+        background: #f90000;
+        border: none;
+        color: #fff;
+        font-size: 2.4em;
+    }
+
+    span {
+        width: 300px;
+        height: 40px;
+        position: absolute;
+        overflow: hidden;
+        color: #000;
+        font-size: 4em;
+        line-height: 1.5em;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="boxDom" id="boxDom">
+        <div class="idDom" id="idDom">
+            <div class="content">
+                <p class="title">吐槽:</p>
+                <input type="text" class="text" id="text" />
+                <button type="button" class="btn" id="btn">发射</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+    $(function() {
+        // 提供的颜色数组
+        var colors = ["red", "green", "hotpink", "pink", "cyan", "yellowgreen", "purple", "deepskyblue"];
+
+        // 思路：
+        // 1. 获取#bnt,注册click
+        // 2. 获取#text的value属性值
+        // 3. 创建span元素，文字内容为value，
+        // 4. 随机颜色值给span
+        // 5. span的left为屏幕的宽度
+        // 6. 随机span的top（需要在可视区的高度基础上去随机）
+        // 7. 添加到#boxDom
+        // 8. 给span自定义animate({left: -span的宽度})
+        // 9. 当动画运动结束的时候，清除掉span
+
+
+        // 1.
+        $("#btn").click(function(){
+            // 2.
+            var txt = $("#text").val();
+
+            if(txt.trim().length === 0){
+                return;
+            }
+
+            $("#text").val("");
+
+            // 3.
+            var $span = $("<span>"+ txt +"</span>");
+
+            // 4.
+            // 随机下标
+            var index = parseInt(Math.random() * colors.length);
+            console.log(index);
+            // 取出颜色值
+            var color = colors[index];
+
+            // 随机span的top
+            var tp = parseInt(Math.random() * $(window).height() / 3)
+
+            $span.css({
+                color: color,
+                left: $(window).width(),
+                top: tp
+            })
+            .appendTo( '#boxDom' )
+            .animate({
+                left: -$span.width()
+            }, 5000, "linear", function(){
+                $span.remove();
+            })
+
+
+        })
+
+
+
+        
+    })
+    </script>
+</body>
+
+</html>

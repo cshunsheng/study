@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  Number(其他类型) //返回把其他类型转换成数字的结果
+//  alert(Number('123'));
+//  alert(typeof Number('123'));
+//    alert(Number(false)); //true转数字1 false转数字是0
+//    alert(typeof Number(false));
+//      Number(null) //0
+////    alert(Number(undefined)); //NaN
+//  注意: alert(Number('123abc')); 如果字符串中包含非数字字符,Number返回NaN
+  
+//    parseInt(其他类型) parseInt只能把字符串转换成数字,其他类型转不了,转字符传的时候根据字符串中非数字字符的位置,决定转成什么样子
+  
+//    alert(parseInt('123')); //123
+//    alert(typeof parseInt('123'));
+
+//      alert(parseInt('123.456')); //如果字符串中是小数, 转换的还是整数部分
+//      alert(typeof parseInt('123.456'));
+
+//    alert(parseInt('123abc')); //123
+////      alert(typeof parseInt('123abc'));
+//    alert(parseInt('abc123')); // NaN
+//    alert(parseInt('01abc123')); //01
+
+  //  注意: parseInt根据字符串中非数字字符的位置,决定转成什么样子
+    
+     
+
+//    alert(parseInt(false));
+//    alert(typeof parseInt(false));
+  
+//    parseFloat() //也是只能转字符串,如果字符串是浮点数,也可以转成浮点数.转字符传的时候根据字符串中非数字字符的位置,决定转成什么样子
+//    alert(parseFloat('1234.567'));
+//    alert(parseFloat('123abc4.567'));
+//    alert(parseFloat(false));
+  
+////    +其他类型(底层就是调用了Number)
+//
+////      alert(+false);
+////      alert(+'123');
+////      alert(typeof +'123');
+////        alert(+null); 0
+//        alert(+undefined); //NaN
+  
+//   +什么时候转数字,什么时候转字符串?
+//       + 两边都是数据,并且有一边是字符串,那么+就是转字符串
+//        + 只有一边有数据, 那么就是转成数字
+  
+  
+//  小结(不同点):
+//  Number 其他都可以转, 如果字符串中有非数字字符就一定是NaN
+//  parseInt 只能转字符串,如果字符中有非数字字符,根据位置去决定转换的结果, 直接转成整数
+//  parseFloat 只能转字符串,如果字符中有非数字字符,根据位置去决定转换的结果, 支持转浮点数
+</script>
+</body>
+</html>

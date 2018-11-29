@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>达达</div>
+    <div>达达</div>
+    <div>达达</div>
+    <div>达达</div>
+    <div>达达</div>
+
+
+    <p>达达在看着我们</p>
+    <p>达达在看着我们</p>
+    <p>达达在看着我们</p>
+    <p>达达在看着我们</p>
+
+
+    <script>
+    (function(window) {
+        // 需求：省去new操作，还能的到jq的实例对象
+        var jQuery = function(selector) {
+
+            // jQuery不是构造函数了，而是工厂函数，内部new + 构造函数，并且return
+            // 在jq里面，init才是真正的构造函数
+
+            // return new 构造函数()；
+            return new jQuery.fn.init(selector);
+        }
+
+        jQuery.fn = jQuery.prototype = {
+            constructor: jQuery, // 指定构造函数jQuery
+            init: function(selector){
+                // 才是真正的构造函数
+                // 获取元素
+                var ele = document.querySelectorAll(selector);
+                [].push.apply(this, ele);
+            },
+            css: function(){
+
+            },
+            hasClass: function(){
+
+            },
+            addClass: function(){
+                console.log("我添加了类名");
+            },
+            removeClass: function(){
+
+            }
+        }
+
+        window.jQuery = window.$ = jQuery;
+    })(window)
+
+    // 如何用jQuery实例化对象
+    var divs = $("div");
+    console.log(divs);
+
+    var ps = $("p");
+    console.log(ps);
+    ps.addClass();
+
+    </script>
+</body>
+
+</html>

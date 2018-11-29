@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //"abcoefoxyozzopp" 找到o出现的位置
+    var str =  'abcoefoxyozzopp' //在js中基本都用单引号
+
+////    console.log(str.length);
+//    for(var i = 0; i< str.length; i++){
+//      if(str[i] === 'o'){
+//        console.log(i);
+//      }
+//    }
+  
+  //==========================================
+//  把字符串中所有的o替换成!
+//  var str =  'abcoefoxyozzopp';
+//  console.log(str.split('o'));
+//  var arr = str.split('o');
+//  console.log(arr.join('!'));
+  
+  //=========================================
+//  判断一个字符串中出现次数最多的字符，统计这个次数
+    var str =  'abcoefoxyozzopp';
+//
+//    var obj = {
+//      a : 1,
+//      b : 1,
+//      c : 1,
+//      o : 4
+//    }
+  
+//    1. 统计一个字符串中每一个字符出现的次数
+      var obj = {} //用于存储每一个字符,出现的次数
+      for(var i = 0; i < str.length; i++) {
+//        str[i]
+        //在遍历的过程中,把字符串中的每一个字符拿出来,判断一下,对象中是否已经统计过了,
+//        如果没有,则添加,如果已经有了,就把对应的值+1
+        if(obj[str[i]]) {//obj['a']
+          //证明统计过
+          obj[str[i]]++;
+        }else{
+          //证明没有统计过
+          obj[str[i]] = 1;
+        }
+        
+      }
+      console.log(obj);
+  //    2. 把出现次数最多的找出来
+      var max = obj['a'];
+      var char = 'a';
+      for(var key in obj){
+        if(obj[key] > max){
+          max = obj[key];
+          char = key;
+        }
+      }
+
+    console.log(max);
+    console.log(char);
+
+
+</script>
+</body>
+</html>

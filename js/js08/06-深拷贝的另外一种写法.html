@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+
+    // 对象
+    var obj = {
+      name: '马哥',
+      age: 18,
+      car: {
+        name: '法拉利',
+        price: 1000
+      }
+    }
+
+    //  深拷贝
+    function copy (o) {
+
+      //1. 新建一个空对象
+      var o1 = {};
+
+      //2. 遍历老对象  拷贝到新对象里
+      for (var key in o) {
+
+        // 另外一种写法 
+        o1[key] =  typeof o[key] == 'object'  ?  copy(o[key]) :  o[key];
+
+
+        // if (typeof o[key] == 'object') {
+        //       o1[key] =  copy(o[key]);
+        // }else {
+        //       o1[key] = o[key];
+        // }
+      }
+
+      //3. 返回新对象
+      return o1;
+    }
+
+
+  </script>
+</body>
+
+</html>

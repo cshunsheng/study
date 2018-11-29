@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+     // bind 也是指定this的指向
+     function test() {
+       console.log(this);
+     }
+
+    //  test();
+
+    var obj = {
+      name : '达达'
+    }
+  // 结构 :  函数.bind(this的指向)
+  // 注意1 : bind和call和apply不一样 
+  // 有返回值的 新的函数 
+  // 注意2 : bind绑定的this, 不会因为其他的因素改变的 
+
+   var newTest =  test.bind(obj);
+   newTest();
+
+   var obj1 = {
+     f : newTest
+   }
+
+   obj1.f()
+
+
+
+
+    </script>
+</body>
+</html>

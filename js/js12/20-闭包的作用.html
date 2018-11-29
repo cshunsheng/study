@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+
+
+    // 闭包的作用 : ★
+    //1. 将变量保护起来 
+    //2. 这些变量的值始终保存在内存中
+
+    //1. 概念
+    //2. 条件
+    //3. 作用:  
+
+
+    function outer() {
+
+      var ml_count = 0;
+      function inner() {
+        ml_count++;
+        console.log('访问的次数 :' + ml_count);
+
+      }
+      return inner;
+    }
+
+    outer()();
+    outer()();
+    outer()();
+
+    // var xxx = outer();
+
+    // xxx = null
+  
+
+
+    // var xxx = 10;
+
+    // function test() {
+
+    //   var count = 0;
+
+    //   count++;
+    //   console.log(count); //1 1 1
+      
+    // }
+
+    // test();
+    // test();
+    // test();
+
+  </script>
+</body>
+
+</html>

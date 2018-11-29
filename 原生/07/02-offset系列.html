@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #grandfar{
+      position:relative;
+      width: 300px;
+      height: 300px;
+      border:1px solid blue;
+    }
+    
+    #son{
+      width:100px;
+      height: 100px;
+      padding:20px;
+      border:10px solid blue;
+      margin:20px;
+      position:absolute;
+      left: 30px;
+      top:30px;
+    }
+  </style>
+</head>
+<body>
+<div id="grandfar">
+  <div id="far">
+    <div id="son"></div>
+  </div>
+</div>
+<script>
+  var son  = document.getElementById('son');
+//  console.log(son.parentNode);
+//  console.log(son.offsetParent);
+
+//  console.log(son.offsetWidth); //content + padding + border
+//  console.log(son.offsetHeight); //content + padding + border
+  
+//  offsetLeft 距离定位父元素的左偏移量
+//  offsetTop  距离定位父元素的上偏移量
+  console.log(son.offsetLeft);
+  console.log(son.offsetTop);
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text"><br>
+<input type="text"><br>
+<input type="button" value="我是按钮"><br>
+<input type="text"><br>
+<button>点击按钮禁用文本框</button>
+
+<script>
+  //需求: 点击button按钮,禁用 文本框
+//  1. 获取元素 button input
+    var btn = document.querySelector('button');
+    var inputs = document.querySelectorAll('input');
+//   2. 给button注册点击事件
+    btn.onclick = function(){
+      //  3. 在事件处理函数中禁用文本框
+      for(var i = 0; i < inputs.length; i++) {
+        
+        //判断如果是文本框才禁用
+        if(inputs[i].type === 'text'){
+          inputs[i].disabled = true;
+        }
+      }
+    }
+    
+    1-9
+    0-2
+    0-10                                                            
+
+  
+ 
+
+</script>
+</body>
+</html>

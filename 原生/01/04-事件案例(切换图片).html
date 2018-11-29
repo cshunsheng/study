@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+
+<!--<button id="btn">点击切换图片</button>-->
+<a href="http://www.baidu.com" id="link">点击切换</a>
+<br>
+
+<img id="img" src="images/a.jpg" alt="图片" width="500" height="350">
+
+<script>
+//  需求: 点击按钮,切换img的图片
+//  给btn注册点击事件, 在事件处理函数中,修改img的src属性的值
+////    1. 获取元素
+//      var btn = document.getElementById('btn');
+//      var img = document.getElementById('img');
+////    2. 给btn注册点击事件
+//      btn.onclick = function(){
+//        //    3. 在事件处理函数中,修改img的src属性的值
+//        console.dir(img.src);
+//        img.src = 'images/b.jpg';
+//      }
+      
+      
+      // 需求: 点击按钮,来回切换图片
+
+//    1. 获取元素
+//    var btn = document.getElementById('btn');
+    var link = document.getElementById('link');
+    var img = document.getElementById('img');
+    var flag = true; //true代表当前展示的是a.jpg
+    //    2. 给btn注册点击事件
+    link.onclick = function(){
+      //    3. 在事件处理函数中,修改img的src属性的值
+//      3.1 判断当前flag的值是什么,如果是true,给img.src赋值为b.jpg
+//      如果flag是false,那么就给img.src赋值为a.jpg
+      if(flag){
+        img.src = 'images/b.jpg';
+        flag = false;
+      }else{
+        img.src = 'images/a.jpg';
+        flag = true;
+      }
+      return false; //阻止a的默认行为
+    }
+      
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>这是b页面</h1>
+<a href="c.html">跳转到c页面</a>
+<button id="btn">点击回到a页面</button>
+<script>
+  var btn = document.getElementById('btn');
+  btn.onclick = function(){
+    history.back();
+  }
+
+</script>
+</body>
+</html>

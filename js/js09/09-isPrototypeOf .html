@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+
+      // the age of 马哥
+
+      // isPrototypeOf    (掌握一下)
+
+      // 结构 : 
+      // A.isPrototypeOf(B)  A 是否在 B 的原型链上
+
+      function Person() {
+        this.name = 'zs';
+        this.age = 18;
+      }
+      
+      var p =  new Person();
+      
+
+      console.log( Person.prototype.isPrototypeOf(p) );
+      console.log( Object.prototype.isPrototypeOf(p) );
+      console.log( Array.prototype.isPrototypeOf(p) );
+
+
+      // instanceof   (了解)
+      // 结构 C instanceof B 
+      // 结构 : object instanceof constructor 
+      // 功能 : constructor的原型 是否 在 object 的原型上 
+
+      console.log(p instanceof Person);
+      console.log(p instanceof Object);
+
+      //  object instanceof constructor 
+      //  object 是否是 constructor 实例化出来的
+      var arr = [];
+      var obj = {}
+      console.log( p instanceof Person);
+      console.log( arr instanceof Array);
+      console.log( obj instanceof Object);
+      
+      
+      
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="26期学习气氛很棒">
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // val(): 专门用来设置和获取表单元素的value属性值
+            // 不传参就是获取，传参就是设置
+            console.log($("input").val());
+
+            $("input").val("期待达达在带出个上海精品班，就业薪资超2万");
+        })
+    </script>
+</body>
+</html>

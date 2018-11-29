@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // 创建一个空函数
+      // var fn = function () {
+      // }
+
+      // // 
+      // var fn =  new Function();
+      // console.log(fn);
+
+      // 参数的
+      // 1. 所有的参数都是字符串格式的
+      // 2. 最后一个参数是函数体 , 前面的参数才是函数的形参
+     
+      var fn = new Function('num1');
+      var fn = new Function('num1','num2');
+      var fn = new Function('num1','num2','alert(1)');
+      // var  fn = function (num1,num2) {
+      //   alert(1)
+      // }
+      console.log(fn);
+      fn();
+      
+
+      
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            background-color: #f99;
+            margin: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">展示</button>
+    <button id="btn2">设置内容</button>
+    <button id="btn3">颜色</button>
+
+    <div>01</div>
+    <div>02</div>
+    <div>03</div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // 觉得不好的地方：
+        // 1. 获取元素方法名字太长，书写和记忆不利于
+        // 2. 使用on系列注册的事件，会存在覆盖，
+        // 3. 代码冗余（for）
+        // 4. 给元素添加动画效果，需要手动封装代码
+
+
+        // 获取元素： $("");
+        // 不存在覆盖和兼容性问题
+        // 没有使用for
+        // 很简单，提供了动画方法
+
+        $("#btn1").click(function(){
+            // div: 标签选择器
+            // show()： 展示元素的
+            //  参数： 动画时长，单位：ms
+            $("div").show(1000);
+        });
+
+        $("#btn1").click(function(){
+            console.log(222);
+        })
+
+        $("#btn2").click(function(){
+            $("div").text("达达真帅");
+        })
+
+    </script>
+</body>
+</html>

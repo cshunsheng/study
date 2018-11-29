@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  作用域: 变量起作用的范围
+//    全局作用域: 整个js的执行环境(不是在函数中)
+//    局部作用域: 函数内部就是一个局部作用域
+//    全局变量: 在全局作用域申明的变量
+//    局部变量: 在局部作用域申明的变量
+//    在js中,函数会构成一个局部作用域, 在函数中申明的变量叫做局部变量,这个变量只能在函数的范围内使用
+//      在js中,只要不是在函数中,那么就是全局作用域,在全局作用域申明的变量就是全局变量
+//    var num = 1;
+//
+//    function fn(){
+//      var num = 2;
+//    }
+  
+//      var num = 1;
+//      function fn(){
+//        var num =2;
+//        function fnSon(){
+//          var num = 3;
+//        }
+//
+//      }
+  
+  var num = 1;
+    
+</script>
+<script>
+  var num = 2;
+</script>
+<script src="test.js">
+//  console.log(num);
+</script>
+
+<!--最终的效果-->
+<script>
+  var num = 1;
+  var num = 2;
+  console.log(num);
+</script>
+</body>
+</html>

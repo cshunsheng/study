@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+
+  <div>哈哈</div>
+
+
+    <script>
+
+      // 方法 
+      var dd = {
+        name : '达达',
+        liaomei : function () {
+          console.log('达达只会撩妹');
+          console.log(this); 
+        }
+      }
+
+      dd.liaomei()
+
+
+      // DOM 
+      var div = document.querySelector('div');
+      div.onclick = function () {
+        console.log('点击了');
+        console.log(this);
+      }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // 函数 : 不在对象里
+      // 方法 : 在对象里作为属性
+
+      //  谁调用 this 所在的函数  this 就指向谁
+
+      function test() {
+        
+        console.log(this); // window
+        
+      }
+
+      window.test();
+
+    </script>
+</body>
+</html>

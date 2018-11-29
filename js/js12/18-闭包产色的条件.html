@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // ★ 闭包的概念 :  外部函数嵌套一个子函数 , 子函数引用了外部函数的变量
+      // ★ 最重要的条件 : 子函数引用了外部函数的变量
+
+      function outer() {
+        
+        var num = 10;
+
+        function inner() {
+          
+          console.log(11);
+        }
+
+        inner();
+      }
+
+      outer();
+
+    </script>
+</body>
+</html>

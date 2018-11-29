@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      var arr = ['zs' , 'ls' ,'ww','mg'];
+
+      // 遍历数组
+      for (var i = 0; i < arr.length ; i++) {
+
+        // 当索引为第三个的时候,停止
+        // if (i == 1) {
+        //   break;
+        // }
+
+        //   console.log(arr[i]);
+          
+      }
+      
+      // 三个参数 :
+      // foreach : 遍历数组 
+      // 第一个参数 : value  元素值
+      // 第二个参数 : index  索引
+      // 第三个参数 :  array 数组的本身  (很少用)
+      arr.forEach(function (value,index,array) {
+        // 值 : value
+        // console.log(value);
+
+        // 索引 index
+        // console.log(index);
+        
+        // console.log(array);
+
+        //  给每一个元素后面都拼接一个帅字
+        // array[index] = value +'帅';
+
+        // if (index == 1) {
+
+        //     continue;
+        // }
+        
+      })
+
+      // console.log(arr);
+
+      // 不同点 : foreach 不能停止 不能使用 break 和 continue
+      
+
+
+
+    </script>
+</body>
+</html>

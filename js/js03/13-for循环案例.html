@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  同时求1-100之间所有偶数和奇数的和
+//  var oddSum = 0; //奇数的和
+//  var evenSum = 0; //偶数的和
+//  for(var i = 1; i <=100; i++ ){
+//
+//    //找奇数和偶数
+//    if(i % 2 ==0 ){
+//      //证明是偶数
+//      evenSum += i;
+//    }else{
+//      //证明是奇数
+//      oddSum += i;
+//    }
+//
+//  }
+//
+//  console.log(evenSum);
+//  console.log(oddSum);
+  
+  
+  //打印正方形
+//  console.log('************');
+//  console.log('************');
+//  console.log('************');
+//  console.log('************');
+  
+//  for(var i = 0; i < 4; i++){
+//    console.log('*******\n******'); //\n在js的字符串是换行的意思
+//  }
+
+//  一行打印9个星星, 然后打印9行
+//  var str = '';
+// for(var i = 0; i < 9; i++){
+//
+//  for(var j = 0; j < 9; j++){
+//    str += '* ';
+//  }
+//
+//  str += '\n';
+//}
+//console.log(str);
+
+
+//打印直角三角形
+//  *****\n
+//  ****\n
+//  ***\n
+//  **\n
+//  *\n
+//  var str = '';
+//  for(var j = 5; j > 0; j--){
+//    for(var i = 0; i < j; i++){
+//      str += '*';
+//    }
+//    str+='\n';
+//  }
+//  console.log(str);
+
+//打印9*9乘法表
+  var str = '';
+  for(var j = 1; j <= 9 ; j++){
+    
+    for(var i = j; i <= 9; i++){
+      //九九乘法表
+//      i 1 j 1
+//      i 2 j 1
+//      i 3 j 1
+//      j + '*' + i --> '1 * 1'
+      str += j + ' * ' + i + ' = ' + j * i + '\t'; //tab键
+    }
+    
+    str += '\n';
+  }
+  
+  console.log(str);
+  
+  
+ 
+</script>
+</body>
+</html>

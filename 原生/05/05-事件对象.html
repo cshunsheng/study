@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{
+      height:1500px;
+    }
+    /**{*/
+      /*margin:0;*/
+    /*}*/
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+<div id="box"></div>
+
+<script>
+  var box = document.getElementById('box');
+//  当事件产生的时候,浏览器会自动帮我们创建一个事件对象,里面存储了一些我们需要的信息.
+//  并且浏览器会把这个事件对象传递到事件处理函数中,我们只需要在事件处理函数的小括号里面写一个形参,接收一下即可
+//  event 事件
+  box.onclick = function(e){
+//    console.log(e);
+//    console.log(e.type);
+//    console.log(e.target);
+    console.log('clientX :' +e.clientX);
+    console.log('clientY :' +e.clientY);
+      console.log('pageX :' +e.pageX);
+      console.log('pageY :' +e.pageY);
+  }
+  
+//  document.body.onclick = function(e){
+//    console.log(e.target);
+//  }
+  
+//  box.onmouseover = function(e){
+//    console.log(e.type);
+//  }
+  
+</script>
+</body>
+</html>

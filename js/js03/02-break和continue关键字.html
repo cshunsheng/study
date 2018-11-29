@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+//  循环中的break和continue
+//    break : 直接停止循环(在while, do..while, for中都可以使用)
+//    continue: 跳过当前循环(当前循环中continue后面的代码不执行),执行下一次循环(在while, do..while, for中都可以使用)
+//  for(var i = 0; i < 10; i++) {
+//    console.log(i);
+//  }
+
+    for(var i = 0; i < 10; i++) {
+      if(i == 5){
+//        break; //直接停止循环
+        continue;
+      }
+      console.log(i);
+    }
+
+</script>
+</body>
+</html>

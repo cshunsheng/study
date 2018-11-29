@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+
+  <script>
+
+    // 深浅拷贝的区别 
+    // 浅拷贝 :  只复制了一层属性 导致如果属性是对象的话,只复制了地址
+    // 深拷贝 :  遍历一遍 拷贝属性,,如果属性是对象的话,继续遍历拷贝
+
+    // 对象
+    var obj = {
+      name: '马哥',
+      age: 18,
+      car: {
+        name: '法拉利',
+        price: 1000
+      }
+    }
+
+
+    //  shift + alt + F : 格式化代码规范
+    // alt + ↑
+
+    // 封装到一个函数里面
+    function copy(o) {
+      
+      //1. 新建一个空对象
+      var o1 = {};
+      //2. 遍历老对象,,,赋值给新对象
+      for (var key in o) {
+        
+        // console.log(typeof o[key]);
+
+        //  说明这个属性是一个对象
+        // 对象不能直接复制,不然复制的是地址
+        if (typeof o[key] == 'object') {
+            // 遍历
+            o1[key]  =  copy(o[key]);
+        }else {
+            o1[key] = o[key];
+        }
+
+      }
+      //3. 返回新对象
+      return o1;
+    }
+
+   var obj1 =   copy(obj);
+
+   obj1.car.name = '雅迪';
+   console.log(obj);
+   console.log(obj1);
+   
+  
+  
+
+
+  </script>
+</body>
+
+</html>

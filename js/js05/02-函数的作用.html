@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  
+  //  函数的作用: 把一些具有功能性的代码通过函数包裹起来(封装起来),再需要的时候,不在自己重复写具体的逻辑,而是直接调用函数,这样的话,让我们的编程更加的容易了
+  
+//  var arr = [2,6,1,4,7,5];
+//  for(var i = 0; i < arr.length; i++) {
+//    for(var i = 0; i < .length; i++) {
+//      if()
+//    }
+//  }
+//  var arr1 = [2,6,3,4,7,5];
+//  for(var i = 0; i < arr1.length; i++) {
+//    for(var i = 0; i < .length; i++) {
+//      if()
+//          }
+//  }
+//
+
+
+  var arr = [2,6,1,4,7,5];
+  var arr1 = [2,6,3,4,7,5];
+  var arr2 = [2,6,3,4,7,9];
+  var arr3 = [2,8,3,4,7,5];
+  var arr4 = [2,6,3,4,7,12];
+  function sort(arr){
+    for(var i = 0; i < arr.length - 1; i++){
+      for(var j = 0; j < arr.length - 1 - i;j++){
+        if(arr[j] > arr[j + 1]){
+          var temp;
+          temp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = temp;
+        }
+      }
+    }
+    console.log(arr);
+  }
+  
+  sort(arr);
+  sort(arr1);
+  sort(arr2);
+  sort(arr3);
+  sort(arr4);
+  
+  
+</script>
+</body>
+</html>

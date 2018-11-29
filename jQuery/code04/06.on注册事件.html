@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: #f99;
+            padding: 10px;
+        }
+        p{
+            padding: 10px;
+            background-color: lime;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>这里是达达的乐园</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <button>解绑div的事件</button>
+    <br>
+    <br>
+    <button>点击我创建达达</button>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // on(type, selector, data, fn);
+            //  type: 事件类型
+            //  selector： 指定触发事件的子元素，可选，  如果写上了，就是注册事件委托，事件是注册给父元素，子元素来触发
+            //  data：     用于传递给事件处理函数内部使用的数据，可选
+            //  fn：     事件处理函数
+
+            // 注册普通事件- 把事件注册给了元素本身， 不支持动态绑定的
+            // $("p").on("click mouseenter", function(){
+            //     alert(111)
+            // })
+
+
+            // 这是注册的事件委托，就支持动态绑定
+            $("div").on("click", "p", function(){
+                 // 由指定的子元素啦触发这个事件
+                alert(22);
+            })
+
+            $("button").eq(1).click(function(){
+                var $p = $("<p>这是创建出来的达达</p>");
+                $("div").append($p);
+                // $p.appendTo( $("div") );
+            })
+
+            // off(type); // 用来解绑事件
+            // 没有传参，解绑元素的所有事件
+            // 如果有该参数type， 解绑元素的指定事件
+            $("button").eq(0).click(function(){
+                // $("p").off("mouseenter");
+                
+                // $("div").off();
+
+                // 解绑具体的事件委托
+                $("div").off("click", "p");
+            })
+
+        })
+    </script>
+</body>
+</html>

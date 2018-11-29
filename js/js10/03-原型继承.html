@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+
+      // 原型继承 
+      function Person(name,age) {
+        this.name = name;
+        this.age = age;
+      }
+
+
+      //2. 那个对象里要添加 constructor : 'Person',
+      var mg = {
+        constructor : 'Person',
+        car : '法拉利'
+      }
+
+
+      //1.  Person.prototype 指向要继承的那个对象
+      Person.prototype = mg;
+      
+      var dd =  new Person('dd',18);
+
+      console.log(dd.car);
+      
+      //1. 原型对象本来就是对象 ,所以可以赋值对象
+      //2. 构造函数生成的对象,都能访问原型对象里的属性和方法 =>继承
+      //3.  constructor : 'Person',
+
+
+
+      
+
+    </script>
+</body>
+</html>

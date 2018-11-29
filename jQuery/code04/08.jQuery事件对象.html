@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: lime;
+            padding: 10px;
+        }
+        p{
+            padding: 10px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>达达好月半</p>
+        
+        <a href="http://dadagreen.com">达达的官网-又帅又绿的官网</a>
+    </div>
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // on(type, selector, data, fn)
+
+            // 
+            var obj = {name: "ls", age:18, name1: "dada", age1: 20, gender: "female"};
+
+            // data： 传递给事件处理函数中用的，
+            $("div").on("click", function(e){
+                // e: 事件对象
+                // console.log(e);
+                // 通过事件对象e可以拿到data传递过来的数据，  e.data
+                // console.log(e.data);
+                console.log(obj);
+            })
+
+            // 给p元素注册事件
+            $("p").on("click", function(e){
+                // 阻止事件冒泡 -- jq已经处理了兼容性
+                e.stopPropagation();
+                alert(11);
+            })
+
+            // 给a注册click，阻止浏览器的默认行为
+            $("a").on("click", function(e){
+                // 阻止浏览器的默认行为
+                // e.preventDefault();
+                // e.stopPropagation();
+
+                console.log(111);
+
+                // jq中的return false. 作用： 既可以阻止事件冒泡，可阻止浏览器的默认行为
+                // 原生js的return false ， 作用，只能阻止浏览器的默认行为
+                return false;
+            })
+
+
+
+            // 获取键盘码
+            // $(document).on("keyup", function(e){
+            //     console.log(e.keyCode);
+            // })
+        })
+    </script>
+</body>
+</html>

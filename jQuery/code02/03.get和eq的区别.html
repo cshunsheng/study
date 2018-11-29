@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // eq():  返回jq对象
+        // console.log($("div").eq(0).text("达达哪去了"));
+
+        // get(); 返回的是dom对象, 作用：就相当于[] 的作用，将jq对象转成dom对象
+        console.log($("div").get(0));
+        console.log($("div")[0]);
+    </script>
+</body>
+</html>

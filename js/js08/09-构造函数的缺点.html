@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+
+    //2. 自定义构造函数 
+
+
+    function say() {
+      console.log('阿尼亚赛哟');
+    }
+
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      this.say = say;
+    }
+
+    var p = new Person('马哥', 18);
+    p.say()
+    var p1 = new Person('达哥', 19);
+    p1.say()
+
+    console.log(p.say == p1.say);
+
+    // 对象里方法 是不需要每个对象里都有一个内容空间的
+    // 每个对象里都分配一个函数空间 => 资源浪费
+
+
+    //  解决资源浪费的问题: 
+    // 把函数 放到window下,, 把window下的函数地址 赋值给每个对象
+    // 每个对象都能直接访问window下的函数了.
+
+    // 问题又来了 :  都放到全局里 => 全局变量污染的问题
+
+    // ==> 原型 
+
+
+    
+
+  </script>
+</body>
+
+</html>

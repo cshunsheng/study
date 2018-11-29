@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: lime;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button>展示div</button>
+    <button>隐藏div</button>
+    <button>切换div</button>
+
+    <div></div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // show(speed, easing, callback) / hide(speed, easing, callback) / toggle(speed, easing, callback)
+        //  展示                              隐藏                          切换
+        //  如果没有传递参数，没有动画效果
+        //  主要修改的是元素的width、height、opacity样式
+        //  参数：
+        //      speed： 动画时长 ，单位是ms，提供了三个默认的字符串
+        //                          "slow": 600ms
+        //                          "normal": 400ms
+        //                          "fast": 200ms
+        //                          如果字符串不是上面任意一个，默认取normal
+        //      easing: 动画效果， 默认有swing（秋千： 由慢-快-慢）， linear（匀速），可选
+        //      callback： 当动画运动结束的时候，来执行的函数
+
+        $("button").eq(0).click(function(){
+            $("div").show(2000, function(){
+                console.log("达达来了，别睡了");
+            });
+        })
+
+        $("button").eq(1).click(function(){
+            $("div").hide(2000, function(){
+                console.log("达达，不好黑");
+            });
+        })
+
+        $("button").eq(2).click(function(){
+            // toggle： 切换，当元素展示，隐藏，如果元素是隐藏，展示元素
+            $("div").toggle(2000, function(){
+                console.log("toggle 结束了");
+            });
+        })
+    </script>
+</body>
+</html>

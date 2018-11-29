@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="box">
+  这是box
+  <span id="s">这是span</span>
+</div>
+<p id="one"></p>
+<p id="p"></p>
+
+<script>
+//  appendChild() //往一个节点的最后面,添加一个子节点
+//  语法: 节点.appendChild(节点)
+//    var box = document.getElementById('box');
+//    var p = document.getElementById('p');
+//    box.appendChild(p);
+//  注意: 如果传递进来的节点,是页面上已经存在的,那么appendChild会有剪切的效果
+  
+//    insertBefore(新的节点, 参考的节点) //往一个节点中添加子节点,会添加到参考节点之前
+//    节点.insertBefore(新的节点, 参考的节点)  同样有剪切的效果
+//    var box = document.getElementById('box');
+//    var p = document.getElementById('p');
+//    var s = document.getElementById('s');
+//    var one = document.getElementById('one');
+//    box.insertBefore(p, s);
+
+//  注意: 第二个参数参考节点,必须是调用这个方法的子节点
+//    box.insertBefore(p, one);
+  
+  
+//    replaceChild() //替换子节点  有剪切的效果
+//    节点.replaceChild(新的节点, 被替换的节点) //替换子节点
+//  注意: 第二个参数被替换的节点也必须调用这个方法节点的子节点
+//    box.replaceChild(one, s);
+  
+  
+//    removeChild(子节点) //移除子节点
+  //注意: 要求传入的必须是子节点
+//    box.removeChild(p);
+  
+//      cloneNode() //克隆节点
+////     语法: 节点.cloneNode(true/false) 返回克隆之后的新的节点
+//      console.log(box.cloneNode(true)); //传true,克隆节点所有的内容
+//      console.log(box.cloneNode(false)); //传false, 只克隆节点本身
+//      box.cloneNode(); //-->如果没有传参数,那么默认传递的false
+  
+//      var newNode = box.cloneNode(true); //此时newNode只是在内存中,并没有在dom树上.也不会渲染出来
+//      console.log(newNode);
+//      document.body.appendChild(newNode); //才是把新的节点添加到了dom树上了
+  
+  
+//  小结:
+//  添加子节点:  有剪切效果
+//  appendChild()
+//  insertBefore(新的, 旧的)
+//  replaceChild(新的, 旧的)
+//  移除子节点:
+//  removeChild()
+//  克隆节点
+//  cloneNode()
+</script>
+
+</body>
+</html>

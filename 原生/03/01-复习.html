@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      background-color: red !important;
+    }
+  </style>
+</head>
+<body>
+<div id="box"></div>
+<div ></div>
+<script>
+  var box = document.getElementById('box');
+//表单元素的属性
+//  value 获取input的值
+//  type 获取input的类型
+//  disabled , checked , selected 这类在html中,只需要写属性名的属性,在js中通过true/false来控制
+//  如果给这几个属性设置为true, 相当于给标签添加上了这个属性,如果是false,就是没有添加
+  
+  //操作样式
+//  style 操作的是行内的样式
+//  box.style = 'width:100px'; //错误的
+//  box.style.width = '100px';
+//    通过style获取样式,只能获取到行内的样式
+//  className 操作的是类名
+//  元素.className 获取元素的类名
+//  元素.className = '类名';  //会覆盖原来的类名
+  
+</script>
+</body>
+</html>
